@@ -3,15 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		99E47E117996AE43729C95ED /* Pods_ef_pulsar_palace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38336DD43B9EC803A6DD7BE1 /* Pods_ef_pulsar_palace.framework */; };
+		DA19106124F0360300C72477 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19106024F0360300C72477 /* IntroView.swift */; };
+		DA19106324F0394400C72477 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19106224F0394400C72477 /* SignInView.swift */; };
+		DA19106524F0396500C72477 /* HaveCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19106424F0396500C72477 /* HaveCardView.swift */; };
+		DA19106724F03AB500C72477 /* CreateACharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19106624F03AB500C72477 /* CreateACharacterView.swift */; };
+		DA19106924F03B3000C72477 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19106824F03B3000C72477 /* MainView.swift */; };
+		DA19106B24F03BDA00C72477 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19106A24F03BDA00C72477 /* EntryView.swift */; };
+		DA19106D24F03C3200C72477 /* DeathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19106C24F03C3200C72477 /* DeathView.swift */; };
+		DA19106F24F03C5300C72477 /* ReadEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19106E24F03C5300C72477 /* ReadEntryView.swift */; };
+		DA19107124F03D2A00C72477 /* SendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19107024F03D2A00C72477 /* SendView.swift */; };
 		DA24006C24EB54F3009CCD22 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = DA24006B24EB54F3009CCD22 /* Podfile */; };
 		DA87074F24EADD9600CF7B62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87074E24EADD9600CF7B62 /* AppDelegate.swift */; };
 		DA87075124EADD9600CF7B62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87075024EADD9600CF7B62 /* SceneDelegate.swift */; };
-		DA87075324EADD9600CF7B62 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87075224EADD9600CF7B62 /* ContentView.swift */; };
+		DA87075324EADD9600CF7B62 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87075224EADD9600CF7B62 /* StartView.swift */; };
 		DA87075524EADD9900CF7B62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA87075424EADD9900CF7B62 /* Assets.xcassets */; };
 		DA87075824EADD9900CF7B62 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA87075724EADD9900CF7B62 /* Preview Assets.xcassets */; };
 		DA87075B24EADD9900CF7B62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA87075924EADD9900CF7B62 /* LaunchScreen.storyboard */; };
@@ -21,11 +30,20 @@
 		03F5851E84F4279D66B451DE /* Pods-ef.pulsar-palace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ef.pulsar-palace.release.xcconfig"; path = "Target Support Files/Pods-ef.pulsar-palace/Pods-ef.pulsar-palace.release.xcconfig"; sourceTree = "<group>"; };
 		38336DD43B9EC803A6DD7BE1 /* Pods_ef_pulsar_palace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ef_pulsar_palace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91859D72A373C2D9A5DE46F7 /* Pods-ef.pulsar-palace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ef.pulsar-palace.debug.xcconfig"; path = "Target Support Files/Pods-ef.pulsar-palace/Pods-ef.pulsar-palace.debug.xcconfig"; sourceTree = "<group>"; };
+		DA19106024F0360300C72477 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		DA19106224F0394400C72477 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		DA19106424F0396500C72477 /* HaveCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveCardView.swift; sourceTree = "<group>"; };
+		DA19106624F03AB500C72477 /* CreateACharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateACharacterView.swift; sourceTree = "<group>"; };
+		DA19106824F03B3000C72477 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		DA19106A24F03BDA00C72477 /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
+		DA19106C24F03C3200C72477 /* DeathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathView.swift; sourceTree = "<group>"; };
+		DA19106E24F03C5300C72477 /* ReadEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadEntryView.swift; sourceTree = "<group>"; };
+		DA19107024F03D2A00C72477 /* SendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendView.swift; sourceTree = "<group>"; };
 		DA24006B24EB54F3009CCD22 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		DA87074B24EADD9600CF7B62 /* PulsarPalace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PulsarPalace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA87074E24EADD9600CF7B62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA87075024EADD9600CF7B62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DA87075224EADD9600CF7B62 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DA87075224EADD9600CF7B62 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		DA87075424EADD9900CF7B62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA87075724EADD9900CF7B62 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DA87075A24EADD9900CF7B62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,8 +76,24 @@
 				91859D72A373C2D9A5DE46F7 /* Pods-ef.pulsar-palace.debug.xcconfig */,
 				03F5851E84F4279D66B451DE /* Pods-ef.pulsar-palace.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		DA19105F24F0350600C72477 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				DA87075224EADD9600CF7B62 /* StartView.swift */,
+				DA19106024F0360300C72477 /* IntroView.swift */,
+				DA19106224F0394400C72477 /* SignInView.swift */,
+				DA19106424F0396500C72477 /* HaveCardView.swift */,
+				DA19106624F03AB500C72477 /* CreateACharacterView.swift */,
+				DA19106824F03B3000C72477 /* MainView.swift */,
+				DA19106A24F03BDA00C72477 /* EntryView.swift */,
+				DA19106C24F03C3200C72477 /* DeathView.swift */,
+				DA19106E24F03C5300C72477 /* ReadEntryView.swift */,
+				DA19107024F03D2A00C72477 /* SendView.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		DA87074224EADD9600CF7B62 = {
@@ -84,9 +118,9 @@
 		DA87074D24EADD9600CF7B62 /* ef.pulsar-palace */ = {
 			isa = PBXGroup;
 			children = (
+				DA19105F24F0350600C72477 /* UI */,
 				DA87074E24EADD9600CF7B62 /* AppDelegate.swift */,
 				DA87075024EADD9600CF7B62 /* SceneDelegate.swift */,
-				DA87075224EADD9600CF7B62 /* ContentView.swift */,
 				DA87075424EADD9900CF7B62 /* Assets.xcassets */,
 				DA87075924EADD9900CF7B62 /* LaunchScreen.storyboard */,
 				DA87075C24EADD9900CF7B62 /* Info.plist */,
@@ -220,8 +254,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA87074F24EADD9600CF7B62 /* AppDelegate.swift in Sources */,
+				DA19106924F03B3000C72477 /* MainView.swift in Sources */,
+				DA19107124F03D2A00C72477 /* SendView.swift in Sources */,
+				DA19106124F0360300C72477 /* IntroView.swift in Sources */,
+				DA19106524F0396500C72477 /* HaveCardView.swift in Sources */,
 				DA87075124EADD9600CF7B62 /* SceneDelegate.swift in Sources */,
-				DA87075324EADD9600CF7B62 /* ContentView.swift in Sources */,
+				DA19106D24F03C3200C72477 /* DeathView.swift in Sources */,
+				DA87075324EADD9600CF7B62 /* StartView.swift in Sources */,
+				DA19106F24F03C5300C72477 /* ReadEntryView.swift in Sources */,
+				DA19106724F03AB500C72477 /* CreateACharacterView.swift in Sources */,
+				DA19106324F0394400C72477 /* SignInView.swift in Sources */,
+				DA19106B24F03BDA00C72477 /* EntryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

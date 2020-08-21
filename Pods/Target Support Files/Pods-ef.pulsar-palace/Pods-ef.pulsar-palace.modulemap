@@ -1,0 +1,6 @@
+framework module Pods_ef_pulsar_palace {
+  umbrella header "Pods-ef.pulsar-palace-umbrella.h"
+
+  export *
+  module * { export * }
+}
