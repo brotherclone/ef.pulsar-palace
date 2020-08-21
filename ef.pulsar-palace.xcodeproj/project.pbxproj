@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99E47E117996AE43729C95ED /* Pods_ef_pulsar_palace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38336DD43B9EC803A6DD7BE1 /* Pods_ef_pulsar_palace.framework */; };
+		DA24006C24EB54F3009CCD22 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = DA24006B24EB54F3009CCD22 /* Podfile */; };
 		DA87074F24EADD9600CF7B62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87074E24EADD9600CF7B62 /* AppDelegate.swift */; };
 		DA87075124EADD9600CF7B62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87075024EADD9600CF7B62 /* SceneDelegate.swift */; };
 		DA87075324EADD9600CF7B62 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87075224EADD9600CF7B62 /* ContentView.swift */; };
@@ -16,7 +18,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DA87074B24EADD9600CF7B62 /* ef.pulsar-palace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ef.pulsar-palace.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		03F5851E84F4279D66B451DE /* Pods-ef.pulsar-palace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ef.pulsar-palace.release.xcconfig"; path = "Target Support Files/Pods-ef.pulsar-palace/Pods-ef.pulsar-palace.release.xcconfig"; sourceTree = "<group>"; };
+		38336DD43B9EC803A6DD7BE1 /* Pods_ef_pulsar_palace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ef_pulsar_palace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91859D72A373C2D9A5DE46F7 /* Pods-ef.pulsar-palace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ef.pulsar-palace.debug.xcconfig"; path = "Target Support Files/Pods-ef.pulsar-palace/Pods-ef.pulsar-palace.debug.xcconfig"; sourceTree = "<group>"; };
+		DA24006B24EB54F3009CCD22 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		DA87074B24EADD9600CF7B62 /* PulsarPalace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PulsarPalace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA87074E24EADD9600CF7B62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA87075024EADD9600CF7B62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DA87075224EADD9600CF7B62 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -31,24 +37,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99E47E117996AE43729C95ED /* Pods_ef_pulsar_palace.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BCA686B90E3E6663F3AF6A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				38336DD43B9EC803A6DD7BE1 /* Pods_ef_pulsar_palace.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		570C1C08F33CFDFE2BBCF806 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91859D72A373C2D9A5DE46F7 /* Pods-ef.pulsar-palace.debug.xcconfig */,
+				03F5851E84F4279D66B451DE /* Pods-ef.pulsar-palace.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		DA87074224EADD9600CF7B62 = {
 			isa = PBXGroup;
 			children = (
+				DA24006B24EB54F3009CCD22 /* Podfile */,
 				DA87074D24EADD9600CF7B62 /* ef.pulsar-palace */,
 				DA87074C24EADD9600CF7B62 /* Products */,
+				570C1C08F33CFDFE2BBCF806 /* Pods */,
+				0BCA686B90E3E6663F3AF6A3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		DA87074C24EADD9600CF7B62 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DA87074B24EADD9600CF7B62 /* ef.pulsar-palace.app */,
+				DA87074B24EADD9600CF7B62 /* PulsarPalace.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA87075F24EADD9900CF7B62 /* Build configuration list for PBXNativeTarget "ef.pulsar-palace" */;
 			buildPhases = (
+				F10917BAF0CF56C6BD262431 /* [CP] Check Pods Manifest.lock */,
 				DA87074724EADD9600CF7B62 /* Sources */,
 				DA87074824EADD9600CF7B62 /* Frameworks */,
 				DA87074924EADD9600CF7B62 /* Resources */,
+				AA4CA341DF0670823B791987 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -92,7 +122,7 @@
 			);
 			name = "ef.pulsar-palace";
 			productName = "ef.pulsar-palace";
-			productReference = DA87074B24EADD9600CF7B62 /* ef.pulsar-palace.app */;
+			productReference = DA87074B24EADD9600CF7B62 /* PulsarPalace.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -135,11 +165,54 @@
 			files = (
 				DA87075B24EADD9900CF7B62 /* LaunchScreen.storyboard in Resources */,
 				DA87075824EADD9900CF7B62 /* Preview Assets.xcassets in Resources */,
+				DA24006C24EB54F3009CCD22 /* Podfile in Resources */,
 				DA87075524EADD9900CF7B62 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AA4CA341DF0670823B791987 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ef.pulsar-palace/Pods-ef.pulsar-palace-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ef.pulsar-palace/Pods-ef.pulsar-palace-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ef.pulsar-palace/Pods-ef.pulsar-palace-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F10917BAF0CF56C6BD262431 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ef.pulsar-palace-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DA87074724EADD9600CF7B62 /* Sources */ = {
@@ -282,6 +355,7 @@
 		};
 		DA87076024EADD9900CF7B62 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91859D72A373C2D9A5DE46F7 /* Pods-ef.pulsar-palace.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -294,7 +368,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "brotherclone.ef-pulsar-palace";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PulsarPalace;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,6 +376,7 @@
 		};
 		DA87076124EADD9900CF7B62 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03F5851E84F4279D66B451DE /* Pods-ef.pulsar-palace.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -314,7 +389,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "brotherclone.ef-pulsar-palace";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PulsarPalace;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
