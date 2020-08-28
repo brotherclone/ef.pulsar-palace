@@ -51,6 +51,11 @@
 	</array>
 	<key>NFCReaderUsageDescription</key>
 	<string>Used to scan the card format of the Pulsar Palace Album</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

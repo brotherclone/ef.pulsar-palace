@@ -9,12 +9,18 @@
 import SwiftUI
 
 struct StartView: View {
+    
+    let test = Scanner()
+    
     var body: some View {
         NavigationView{
             VStack{
                 Text("Pulsar Palace")
                 NavigationLink(destination: IntroView()){
                     Text("Get Started")
+                }
+                NavigationLink(destination: ScannerView()){
+                    Text("scan")
                 }
             }
         }

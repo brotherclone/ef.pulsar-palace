@@ -24,6 +24,15 @@
 		DA87075524EADD9900CF7B62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA87075424EADD9900CF7B62 /* Assets.xcassets */; };
 		DA87075824EADD9900CF7B62 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA87075724EADD9900CF7B62 /* Preview Assets.xcassets */; };
 		DA87075B24EADD9900CF7B62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA87075924EADD9900CF7B62 /* LaunchScreen.storyboard */; };
+		DAAD1C8324F6AE3000872B79 /* ScannerUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD1C8224F6AE3000872B79 /* ScannerUIViewController.swift */; };
+		DAAD1C8524F6B0E000872B79 /* ScannerViewRepresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD1C8424F6B0E000872B79 /* ScannerViewRepresent.swift */; };
+		DAAD1C8724F6B24600872B79 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD1C8624F6B24600872B79 /* ScannerView.swift */; };
+		DAB501EE24F6E0E60048175E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB501ED24F6E0E60048175E /* NetworkManager.swift */; };
+		DAB501F024F6E1490048175E /* APITargets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB501EF24F6E1490048175E /* APITargets.swift */; };
+		DAB501F224F6E2910048175E /* NetworkKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB501F124F6E2910048175E /* NetworkKeys.swift */; };
+		DAB501F424F6E7B60048175E /* MockResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB501F324F6E7B60048175E /* MockResponses.swift */; };
+		DAB501F724F6E8260048175E /* playerCharacterData.json in Resources */ = {isa = PBXBuildFile; fileRef = DAB501F624F6E8260048175E /* playerCharacterData.json */; };
+		DAB501FA24F6E9C40048175E /* CharacterBackgrounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB501F924F6E9C40048175E /* CharacterBackgrounds.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +48,7 @@
 		DA19106C24F03C3200C72477 /* DeathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathView.swift; sourceTree = "<group>"; };
 		DA19106E24F03C5300C72477 /* ReadEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadEntryView.swift; sourceTree = "<group>"; };
 		DA19107024F03D2A00C72477 /* SendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendView.swift; sourceTree = "<group>"; };
-		DA24006B24EB54F3009CCD22 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		DA24006B24EB54F3009CCD22 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DA87074B24EADD9600CF7B62 /* PulsarPalace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PulsarPalace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA87074E24EADD9600CF7B62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA87075024EADD9600CF7B62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +57,16 @@
 		DA87075724EADD9900CF7B62 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DA87075A24EADD9900CF7B62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA87075C24EADD9900CF7B62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAAD1C8224F6AE3000872B79 /* ScannerUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerUIViewController.swift; sourceTree = "<group>"; };
+		DAAD1C8424F6B0E000872B79 /* ScannerViewRepresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewRepresent.swift; sourceTree = "<group>"; };
+		DAAD1C8624F6B24600872B79 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		DAB501EB24F6E0740048175E /* PulsarPalace.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PulsarPalace.entitlements; sourceTree = "<group>"; };
+		DAB501ED24F6E0E60048175E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		DAB501EF24F6E1490048175E /* APITargets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITargets.swift; sourceTree = "<group>"; };
+		DAB501F124F6E2910048175E /* NetworkKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkKeys.swift; sourceTree = "<group>"; };
+		DAB501F324F6E7B60048175E /* MockResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockResponses.swift; sourceTree = "<group>"; };
+		DAB501F624F6E8260048175E /* playerCharacterData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = playerCharacterData.json; sourceTree = "<group>"; };
+		DAB501F924F6E9C40048175E /* CharacterBackgrounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterBackgrounds.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +111,9 @@
 				DA19106C24F03C3200C72477 /* DeathView.swift */,
 				DA19106E24F03C5300C72477 /* ReadEntryView.swift */,
 				DA19107024F03D2A00C72477 /* SendView.swift */,
+				DAAD1C8224F6AE3000872B79 /* ScannerUIViewController.swift */,
+				DAAD1C8424F6B0E000872B79 /* ScannerViewRepresent.swift */,
+				DAAD1C8624F6B24600872B79 /* ScannerView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -118,6 +140,9 @@
 		DA87074D24EADD9600CF7B62 /* ef.pulsar-palace */ = {
 			isa = PBXGroup;
 			children = (
+				DAB501F824F6E9B30048175E /* Models */,
+				DAB501EC24F6E0C20048175E /* Network */,
+				DAB501EB24F6E0740048175E /* PulsarPalace.entitlements */,
 				DA19105F24F0350600C72477 /* UI */,
 				DA87074E24EADD9600CF7B62 /* AppDelegate.swift */,
 				DA87075024EADD9600CF7B62 /* SceneDelegate.swift */,
@@ -135,6 +160,34 @@
 				DA87075724EADD9900CF7B62 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DAB501EC24F6E0C20048175E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DAB501F524F6E8050048175E /* Mocks */,
+				DAB501ED24F6E0E60048175E /* NetworkManager.swift */,
+				DAB501EF24F6E1490048175E /* APITargets.swift */,
+				DAB501F124F6E2910048175E /* NetworkKeys.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DAB501F524F6E8050048175E /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				DAB501F324F6E7B60048175E /* MockResponses.swift */,
+				DAB501F624F6E8260048175E /* playerCharacterData.json */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		DAB501F824F6E9B30048175E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DAB501F924F6E9C40048175E /* CharacterBackgrounds.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +253,7 @@
 				DA87075B24EADD9900CF7B62 /* LaunchScreen.storyboard in Resources */,
 				DA87075824EADD9900CF7B62 /* Preview Assets.xcassets in Resources */,
 				DA24006C24EB54F3009CCD22 /* Podfile in Resources */,
+				DAB501F724F6E8260048175E /* playerCharacterData.json in Resources */,
 				DA87075524EADD9900CF7B62 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,13 +309,21 @@
 			files = (
 				DA87074F24EADD9600CF7B62 /* AppDelegate.swift in Sources */,
 				DA19106924F03B3000C72477 /* MainView.swift in Sources */,
+				DAB501F024F6E1490048175E /* APITargets.swift in Sources */,
 				DA19107124F03D2A00C72477 /* SendView.swift in Sources */,
 				DA19106124F0360300C72477 /* IntroView.swift in Sources */,
+				DAB501FA24F6E9C40048175E /* CharacterBackgrounds.swift in Sources */,
+				DAB501EE24F6E0E60048175E /* NetworkManager.swift in Sources */,
+				DAAD1C8524F6B0E000872B79 /* ScannerViewRepresent.swift in Sources */,
 				DA19106524F0396500C72477 /* HaveCardView.swift in Sources */,
 				DA87075124EADD9600CF7B62 /* SceneDelegate.swift in Sources */,
+				DAAD1C8324F6AE3000872B79 /* ScannerUIViewController.swift in Sources */,
 				DA19106D24F03C3200C72477 /* DeathView.swift in Sources */,
+				DAAD1C8724F6B24600872B79 /* ScannerView.swift in Sources */,
 				DA87075324EADD9600CF7B62 /* StartView.swift in Sources */,
 				DA19106F24F03C5300C72477 /* ReadEntryView.swift in Sources */,
+				DAB501F424F6E7B60048175E /* MockResponses.swift in Sources */,
+				DAB501F224F6E2910048175E /* NetworkKeys.swift in Sources */,
 				DA19106724F03AB500C72477 /* CreateACharacterView.swift in Sources */,
 				DA19106324F0394400C72477 /* SignInView.swift in Sources */,
 				DA19106B24F03BDA00C72477 /* EntryView.swift in Sources */,
@@ -401,6 +463,7 @@
 			baseConfigurationReference = 91859D72A373C2D9A5DE46F7 /* Pods-ef.pulsar-palace.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "ef.pulsar-palace/PulsarPalace.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ef.pulsar-palace/Preview Content\"";
 				DEVELOPMENT_TEAM = A3QT3RRV5J;
@@ -422,6 +485,7 @@
 			baseConfigurationReference = 03F5851E84F4279D66B451DE /* Pods-ef.pulsar-palace.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "ef.pulsar-palace/PulsarPalace.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ef.pulsar-palace/Preview Content\"";
 				DEVELOPMENT_TEAM = A3QT3RRV5J;

@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct MainView: View {
+    
     var body: some View {
-     
             VStack{
                 Text("Main Menu")
                 NavigationLink(destination: EntryView()){
@@ -27,8 +27,7 @@ struct MainView: View {
                     }
             }
         .navigationBarHidden(true)
-         .navigationBarBackButtonHidden(true)
-        
+        .navigationBarBackButtonHidden(true)
     }
 }
 
