@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		99E47E117996AE43729C95ED /* Pods_ef_pulsar_palace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38336DD43B9EC803A6DD7BE1 /* Pods_ef_pulsar_palace.framework */; };
+		DA03A54F24FEEB9000E562E0 /* UserDefaultExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03A54E24FEEB9000E562E0 /* UserDefaultExtensions.swift */; };
+		DA1545D424FD7D95005CEF7F /* tagData.json in Resources */ = {isa = PBXBuildFile; fileRef = DA1545D324FD7D95005CEF7F /* tagData.json */; };
 		DA19106124F0360300C72477 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19106024F0360300C72477 /* IntroView.swift */; };
 		DA19106324F0394400C72477 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19106224F0394400C72477 /* SignInView.swift */; };
 		DA19106524F0396500C72477 /* HaveCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19106424F0396500C72477 /* HaveCardView.swift */; };
@@ -33,12 +35,29 @@
 		DAB501F424F6E7B60048175E /* MockResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB501F324F6E7B60048175E /* MockResponses.swift */; };
 		DAB501F724F6E8260048175E /* playerCharacterData.json in Resources */ = {isa = PBXBuildFile; fileRef = DAB501F624F6E8260048175E /* playerCharacterData.json */; };
 		DAB501FA24F6E9C40048175E /* CharacterBackgrounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB501F924F6E9C40048175E /* CharacterBackgrounds.swift */; };
+		DAC2B0AD24F96D5300FF2F9E /* CharacterDescriptors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC2B0AC24F96D5300FF2F9E /* CharacterDescriptors.swift */; };
+		DAC2B0AF24F96D6700FF2F9E /* CharacterSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC2B0AE24F96D6700FF2F9E /* CharacterSettings.swift */; };
+		DAC2B0B124F96D7400FF2F9E /* CharacterRoles.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC2B0B024F96D7400FF2F9E /* CharacterRoles.swift */; };
+		DAC2B0B524F96D9C00FF2F9E /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC2B0B424F96D9C00FF2F9E /* Users.swift */; };
+		DAC2B0B724F96DAD00FF2F9E /* Entries.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC2B0B624F96DAD00FF2F9E /* Entries.swift */; };
+		DAC2B0B924F96DBD00FF2F9E /* Logs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC2B0B824F96DBD00FF2F9E /* Logs.swift */; };
+		DAC2B0BB24F96DD300FF2F9E /* Songs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC2B0BA24F96DD300FF2F9E /* Songs.swift */; };
+		DAC2B0BD24F96DE600FF2F9E /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC2B0BC24F96DE600FF2F9E /* Characters.swift */; };
+		DAC2B0BF24F96DF400FF2F9E /* Prompts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC2B0BE24F96DF400FF2F9E /* Prompts.swift */; };
+		DAC2B0C424FA8D8900FF2F9E /* SongPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC2B0C324FA8D8900FF2F9E /* SongPlayerViewController.swift */; };
+		DAC2B0C624FA908E00FF2F9E /* example.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DAC2B0C524FA908E00FF2F9E /* example.mp3 */; };
+		DAC2B0C924FA93FF00FF2F9E /* SongPlayerViewRepresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC2B0C824FA93FF00FF2F9E /* SongPlayerViewRepresent.swift */; };
+		DAC2B0CB24FA953200FF2F9E /* SongPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC2B0CA24FA953200FF2F9E /* SongPlayerView.swift */; };
+		DAFD9DA02508019C00116198 /* CharacterUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFD9D9F2508019C00116198 /* CharacterUIView.swift */; };
+		DAFD9DA2250984EA00116198 /* createCharacter.json in Resources */ = {isa = PBXBuildFile; fileRef = DAFD9DA1250984EA00116198 /* createCharacter.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		03F5851E84F4279D66B451DE /* Pods-ef.pulsar-palace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ef.pulsar-palace.release.xcconfig"; path = "Target Support Files/Pods-ef.pulsar-palace/Pods-ef.pulsar-palace.release.xcconfig"; sourceTree = "<group>"; };
 		38336DD43B9EC803A6DD7BE1 /* Pods_ef_pulsar_palace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ef_pulsar_palace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91859D72A373C2D9A5DE46F7 /* Pods-ef.pulsar-palace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ef.pulsar-palace.debug.xcconfig"; path = "Target Support Files/Pods-ef.pulsar-palace/Pods-ef.pulsar-palace.debug.xcconfig"; sourceTree = "<group>"; };
+		DA03A54E24FEEB9000E562E0 /* UserDefaultExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultExtensions.swift; sourceTree = "<group>"; };
+		DA1545D324FD7D95005CEF7F /* tagData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tagData.json; sourceTree = "<group>"; };
 		DA19106024F0360300C72477 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 		DA19106224F0394400C72477 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		DA19106424F0396500C72477 /* HaveCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveCardView.swift; sourceTree = "<group>"; };
@@ -67,6 +86,21 @@
 		DAB501F324F6E7B60048175E /* MockResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockResponses.swift; sourceTree = "<group>"; };
 		DAB501F624F6E8260048175E /* playerCharacterData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = playerCharacterData.json; sourceTree = "<group>"; };
 		DAB501F924F6E9C40048175E /* CharacterBackgrounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterBackgrounds.swift; sourceTree = "<group>"; };
+		DAC2B0AC24F96D5300FF2F9E /* CharacterDescriptors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDescriptors.swift; sourceTree = "<group>"; };
+		DAC2B0AE24F96D6700FF2F9E /* CharacterSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSettings.swift; sourceTree = "<group>"; };
+		DAC2B0B024F96D7400FF2F9E /* CharacterRoles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRoles.swift; sourceTree = "<group>"; };
+		DAC2B0B424F96D9C00FF2F9E /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		DAC2B0B624F96DAD00FF2F9E /* Entries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entries.swift; sourceTree = "<group>"; };
+		DAC2B0B824F96DBD00FF2F9E /* Logs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logs.swift; sourceTree = "<group>"; };
+		DAC2B0BA24F96DD300FF2F9E /* Songs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Songs.swift; sourceTree = "<group>"; };
+		DAC2B0BC24F96DE600FF2F9E /* Characters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
+		DAC2B0BE24F96DF400FF2F9E /* Prompts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompts.swift; sourceTree = "<group>"; };
+		DAC2B0C324FA8D8900FF2F9E /* SongPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPlayerViewController.swift; sourceTree = "<group>"; };
+		DAC2B0C524FA908E00FF2F9E /* example.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = example.mp3; sourceTree = "<group>"; };
+		DAC2B0C824FA93FF00FF2F9E /* SongPlayerViewRepresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPlayerViewRepresent.swift; sourceTree = "<group>"; };
+		DAC2B0CA24FA953200FF2F9E /* SongPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPlayerView.swift; sourceTree = "<group>"; };
+		DAFD9D9F2508019C00116198 /* CharacterUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterUIView.swift; sourceTree = "<group>"; };
+		DAFD9DA1250984EA00116198 /* createCharacter.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = createCharacter.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +132,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DA03A54D24FEEB7C00E562E0 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DA03A54E24FEEB9000E562E0 /* UserDefaultExtensions.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		DA19105F24F0350600C72477 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +156,10 @@
 				DAAD1C8224F6AE3000872B79 /* ScannerUIViewController.swift */,
 				DAAD1C8424F6B0E000872B79 /* ScannerViewRepresent.swift */,
 				DAAD1C8624F6B24600872B79 /* ScannerView.swift */,
+				DAC2B0C324FA8D8900FF2F9E /* SongPlayerViewController.swift */,
+				DAC2B0C824FA93FF00FF2F9E /* SongPlayerViewRepresent.swift */,
+				DAC2B0CA24FA953200FF2F9E /* SongPlayerView.swift */,
+				DAFD9D9F2508019C00116198 /* CharacterUIView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -140,6 +186,8 @@
 		DA87074D24EADD9600CF7B62 /* ef.pulsar-palace */ = {
 			isa = PBXGroup;
 			children = (
+				DA03A54D24FEEB7C00E562E0 /* extensions */,
+				DAC2B0C724FA90AF00FF2F9E /* Media */,
 				DAB501F824F6E9B30048175E /* Models */,
 				DAB501EC24F6E0C20048175E /* Network */,
 				DAB501EB24F6E0740048175E /* PulsarPalace.entitlements */,
@@ -178,6 +226,8 @@
 			children = (
 				DAB501F324F6E7B60048175E /* MockResponses.swift */,
 				DAB501F624F6E8260048175E /* playerCharacterData.json */,
+				DA1545D324FD7D95005CEF7F /* tagData.json */,
+				DAFD9DA1250984EA00116198 /* createCharacter.json */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -186,8 +236,25 @@
 			isa = PBXGroup;
 			children = (
 				DAB501F924F6E9C40048175E /* CharacterBackgrounds.swift */,
+				DAC2B0AC24F96D5300FF2F9E /* CharacterDescriptors.swift */,
+				DAC2B0AE24F96D6700FF2F9E /* CharacterSettings.swift */,
+				DAC2B0B024F96D7400FF2F9E /* CharacterRoles.swift */,
+				DAC2B0B424F96D9C00FF2F9E /* Users.swift */,
+				DAC2B0B624F96DAD00FF2F9E /* Entries.swift */,
+				DAC2B0B824F96DBD00FF2F9E /* Logs.swift */,
+				DAC2B0BA24F96DD300FF2F9E /* Songs.swift */,
+				DAC2B0BC24F96DE600FF2F9E /* Characters.swift */,
+				DAC2B0BE24F96DF400FF2F9E /* Prompts.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		DAC2B0C724FA90AF00FF2F9E /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				DAC2B0C524FA908E00FF2F9E /* example.mp3 */,
+			);
+			path = Media;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,9 +317,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA1545D424FD7D95005CEF7F /* tagData.json in Resources */,
 				DA87075B24EADD9900CF7B62 /* LaunchScreen.storyboard in Resources */,
 				DA87075824EADD9900CF7B62 /* Preview Assets.xcassets in Resources */,
 				DA24006C24EB54F3009CCD22 /* Podfile in Resources */,
+				DAC2B0C624FA908E00FF2F9E /* example.mp3 in Resources */,
+				DAFD9DA2250984EA00116198 /* createCharacter.json in Resources */,
 				DAB501F724F6E8260048175E /* playerCharacterData.json in Resources */,
 				DA87075524EADD9900CF7B62 /* Assets.xcassets in Resources */,
 			);
@@ -307,24 +377,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAC2B0C424FA8D8900FF2F9E /* SongPlayerViewController.swift in Sources */,
 				DA87074F24EADD9600CF7B62 /* AppDelegate.swift in Sources */,
 				DA19106924F03B3000C72477 /* MainView.swift in Sources */,
 				DAB501F024F6E1490048175E /* APITargets.swift in Sources */,
+				DAFD9DA02508019C00116198 /* CharacterUIView.swift in Sources */,
 				DA19107124F03D2A00C72477 /* SendView.swift in Sources */,
+				DAC2B0B924F96DBD00FF2F9E /* Logs.swift in Sources */,
 				DA19106124F0360300C72477 /* IntroView.swift in Sources */,
 				DAB501FA24F6E9C40048175E /* CharacterBackgrounds.swift in Sources */,
+				DAC2B0AF24F96D6700FF2F9E /* CharacterSettings.swift in Sources */,
 				DAB501EE24F6E0E60048175E /* NetworkManager.swift in Sources */,
 				DAAD1C8524F6B0E000872B79 /* ScannerViewRepresent.swift in Sources */,
 				DA19106524F0396500C72477 /* HaveCardView.swift in Sources */,
 				DA87075124EADD9600CF7B62 /* SceneDelegate.swift in Sources */,
 				DAAD1C8324F6AE3000872B79 /* ScannerUIViewController.swift in Sources */,
+				DAC2B0CB24FA953200FF2F9E /* SongPlayerView.swift in Sources */,
+				DAC2B0B724F96DAD00FF2F9E /* Entries.swift in Sources */,
 				DA19106D24F03C3200C72477 /* DeathView.swift in Sources */,
+				DAC2B0BD24F96DE600FF2F9E /* Characters.swift in Sources */,
+				DAC2B0BB24F96DD300FF2F9E /* Songs.swift in Sources */,
+				DAC2B0C924FA93FF00FF2F9E /* SongPlayerViewRepresent.swift in Sources */,
 				DAAD1C8724F6B24600872B79 /* ScannerView.swift in Sources */,
 				DA87075324EADD9600CF7B62 /* StartView.swift in Sources */,
+				DAC2B0AD24F96D5300FF2F9E /* CharacterDescriptors.swift in Sources */,
+				DAC2B0B524F96D9C00FF2F9E /* Users.swift in Sources */,
+				DAC2B0B124F96D7400FF2F9E /* CharacterRoles.swift in Sources */,
 				DA19106F24F03C5300C72477 /* ReadEntryView.swift in Sources */,
 				DAB501F424F6E7B60048175E /* MockResponses.swift in Sources */,
+				DAC2B0BF24F96DF400FF2F9E /* Prompts.swift in Sources */,
 				DAB501F224F6E2910048175E /* NetworkKeys.swift in Sources */,
 				DA19106724F03AB500C72477 /* CreateACharacterView.swift in Sources */,
+				DA03A54F24FEEB9000E562E0 /* UserDefaultExtensions.swift in Sources */,
 				DA19106324F0394400C72477 /* SignInView.swift in Sources */,
 				DA19106B24F03BDA00C72477 /* EntryView.swift in Sources */,
 			);

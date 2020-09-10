@@ -21,6 +21,10 @@ extension APITargets{
         switch self {
         case .getPlayerCharacterData:
             return stubbedResponse("playerCharacterData")
+        case .checkTag:
+            return stubbedResponse("tagData")
+        case .newCharacter:
+            return stubbedResponse("createCharacter")
         }
     }
 }

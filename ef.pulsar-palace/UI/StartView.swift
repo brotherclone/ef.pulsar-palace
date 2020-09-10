@@ -14,16 +14,24 @@ struct StartView: View {
     
     var body: some View {
         NavigationView{
-            VStack{
-                Text("Pulsar Palace")
-                NavigationLink(destination: IntroView()){
-                    Text("Get Started")
-                }
-                NavigationLink(destination: ScannerView()){
-                    Text("scan")
-                }
-            }
+            Color.purple
+                .overlay(
+                    VStack{
+                        Text("Pulsar Palace")
+                        NavigationLink(destination: IntroView()){
+                            Text("Get Started")
+                        }
+                        NavigationLink(destination: ScannerView()){
+                            Text("scan")
+                        }
+                        NavigationLink(destination: SongPlayerView() ){
+                            Text("play")
+                        }
+                    }
+            )
+                .edgesIgnoringSafeArea(.vertical)
         }
+        
     }
 }
 
