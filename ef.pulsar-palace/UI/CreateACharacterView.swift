@@ -133,11 +133,20 @@ func sendCharacter(character: Character?){
             print(error as Any)
         } else {
             print(response as Any)
-
+            do {
+                let data = response!.data
+                let json = try JSON(data: data)
+                print(json)
+                
+                let anIDExample: [CharacterDescriptor] = descriptors.filter { $0.id == 1}
+                let dExample: CharacterDescriptor = anIDExample[0]
+                print(dExample)
+                
+            }catch{
+                print("conversion error")
+            }
         }
     })
-    
-    
 }
 
 

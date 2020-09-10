@@ -71,6 +71,8 @@ extension Character: Decodable {
     }
 }
 
+
+
 public struct CharacterPost: Codable {
     private enum CodingKeys: String, CodingKey{
         case name = "name"

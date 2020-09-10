@@ -50,6 +50,7 @@
 		DAC2B0CB24FA953200FF2F9E /* SongPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC2B0CA24FA953200FF2F9E /* SongPlayerView.swift */; };
 		DAFD9DA02508019C00116198 /* CharacterUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFD9D9F2508019C00116198 /* CharacterUIView.swift */; };
 		DAFD9DA2250984EA00116198 /* createCharacter.json in Resources */ = {isa = PBXBuildFile; fileRef = DAFD9DA1250984EA00116198 /* createCharacter.json */; };
+		DAFD9DA4250AAC5000116198 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFD9DA3250AAC5000116198 /* ArrayExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,7 @@
 		DAC2B0CA24FA953200FF2F9E /* SongPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPlayerView.swift; sourceTree = "<group>"; };
 		DAFD9D9F2508019C00116198 /* CharacterUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterUIView.swift; sourceTree = "<group>"; };
 		DAFD9DA1250984EA00116198 /* createCharacter.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = createCharacter.json; sourceTree = "<group>"; };
+		DAFD9DA3250AAC5000116198 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				DA03A54E24FEEB9000E562E0 /* UserDefaultExtensions.swift */,
+				DAFD9DA3250AAC5000116198 /* ArrayExtensions.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				DA87075124EADD9600CF7B62 /* SceneDelegate.swift in Sources */,
 				DAAD1C8324F6AE3000872B79 /* ScannerUIViewController.swift in Sources */,
 				DAC2B0CB24FA953200FF2F9E /* SongPlayerView.swift in Sources */,
+				DAFD9DA4250AAC5000116198 /* ArrayExtensions.swift in Sources */,
 				DAC2B0B724F96DAD00FF2F9E /* Entries.swift in Sources */,
 				DA19106D24F03C3200C72477 /* DeathView.swift in Sources */,
 				DAC2B0BD24F96DE600FF2F9E /* Characters.swift in Sources */,
