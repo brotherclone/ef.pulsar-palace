@@ -10,6 +10,8 @@ import SwiftUI
 import Moya
 import SwiftyJSON
 
+// MARK: Change this to Create and View check for existing, active character.
+
 var settings: [CharacterSetting] = []
 var backgrounds: [CharacterBackground] = []
 var descriptors: [CharacterDescriptor] = []
@@ -93,6 +95,43 @@ func parsePlayerCharacterData(json: JSON){
     }
 }
 
+
+func reconstituteCharacter(json: JSON) -> Character? {
+    let user: User = User(id: 1, first_name: "String", last_name: "String", username: "String", email: "String", password: "String")
+    let log: Log = Log(id:1, title: "")
+    let descriptorIndex: Int = json["character_descriptor_id"].intValue
+    let descriptionSelection: [CharacterDescriptor] = descriptors.filter { $0.id == descriptorIndex}
+    let descriptor: CharacterDescriptor = descriptionSelection[0]
+ 
+    
+    let roleIndex: Int = json["character_role_id"].intValue
+    let roleSelection: [CharacterRole] = roles.filter { $0.id == roleIndex}
+    let role: CharacterRole = roleSelection[0]
+
+    let settingIndex: Int = json["character_setting_id"].intValue
+    let settingSelection: [CharacterSetting] = settings.filter { $0.id == settingIndex}
+    let setting: CharacterSetting = settingSelection[0]
+
+    let backgroundIndex: Int = json["character_background_id"].intValue
+    let backgroundSelection: [CharacterBackground] = backgrounds.filter { $0.id == backgroundIndex}
+    let background: CharacterBackground = backgroundSelection[0]
+
+    let reconstitutedCharacter: Character = Character(id: json["id"].intValue,
+                                                      user: user,
+                                                      name: json["name"].stringValue,
+                                                      additionalBio: json["additional_bio"].stringValue,
+                                                      characterBackground: background,
+                                                      characterSetting: setting,
+                                                      characterRole: role,
+                                                      characterDescriptor: descriptor,
+                                                      currentHealth: json["current_health"].intValue,
+                                                      maxHealth: json["max_health"].intValue,
+                                                      log: log,
+                                                      archived: json["archived"].boolValue)
+    return reconstitutedCharacter
+    
+}
+
 func roll(name: String?) -> Character? {
     var characterName: String = "Stranger"
     let user: User = User(id: 1, first_name: "String", last_name: "String", username: "String", email: "String", password: "String")
@@ -132,15 +171,40 @@ func sendCharacter(character: Character?){
         if error != nil{
             print(error as Any)
         } else {
-            print(response as Any)
             do {
                 let data = response!.data
                 let json = try JSON(data: data)
-                print(json)
-                
-                let anIDExample: [CharacterDescriptor] = descriptors.filter { $0.id == 1}
-                let dExample: CharacterDescriptor = anIDExample[0]
-                print(dExample)
+                let defaults = UserDefaults.standard
+
+                print("got json")
+                // MARK: Try to reconstitute and if valid save to user defaults
+                if let aCharacter: Character = reconstituteCharacter(json: json){
+                    print("got a character")
+                    print(aCharacter)
+                    let encoder = JSONEncoder()
+                    if let encoded = try? encoder.encode(aCharacter){
+                        defaults.set(encoded, forKey: "CurrentCharacter")
+                        print("saved")
+                    }
+                    
+                    if let savedCharacter = defaults.object(forKey: "CurrentCharacter") as? Data {
+                        let decoder = JSONDecoder()
+                        print(savedCharacter)
+                        if let loadedCharacter = try? decoder.decode(Character.self, from: savedCharacter) {
+                            print("loaded")
+                            print(loadedCharacter.name)
+                        }else{
+                            print("couldn't load")
+                        }
+                    } else{
+                        print("no data")
+                    }
+                    
+                    
+                }else{
+                    
+                    print("nope!")
+                }
                 
             }catch{
                 print("conversion error")

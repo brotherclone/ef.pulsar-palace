@@ -14,7 +14,7 @@ public struct CharacterSetting {
     var time: String
 }
 
-extension CharacterSetting: Decodable {
+extension CharacterSetting: Encodable, Decodable {
     
     enum CharacterSettingKeys: String, CodingKey{
         case id

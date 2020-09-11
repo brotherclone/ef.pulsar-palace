@@ -13,7 +13,7 @@ public struct CharacterDescriptor {
     var descriptor: String
 }
 
-extension CharacterDescriptor: Decodable {
+extension CharacterDescriptor: Encodable, Decodable {
     
     enum CharacterDescriptorKeys: String, CodingKey{
         case id

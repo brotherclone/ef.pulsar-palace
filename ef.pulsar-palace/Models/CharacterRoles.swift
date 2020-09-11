@@ -13,7 +13,7 @@ public struct CharacterRole {
     var character_role: String
 }
 
-extension CharacterRole: Decodable {
+extension CharacterRole: Encodable, Decodable {
     
     enum CharacterRoleKeys: String, CodingKey{
         case id

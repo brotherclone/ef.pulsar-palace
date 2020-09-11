@@ -18,7 +18,7 @@ public struct User {
 
 }
 
-extension User: Decodable {
+extension User: Encodable, Decodable {
     
     enum UserKeys: String, CodingKey{
         case id

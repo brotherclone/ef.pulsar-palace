@@ -13,7 +13,7 @@ public struct CharacterBackground {
     var background: String
 }
 
-extension CharacterBackground: Decodable {
+extension CharacterBackground: Encodable, Decodable {
     
     enum CharacterBackgroundKeys: String, CodingKey{
         case id

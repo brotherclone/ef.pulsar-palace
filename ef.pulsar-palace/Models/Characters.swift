@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 public struct Character {
     var id: Int?
@@ -25,7 +26,7 @@ public struct Character {
 }
 
 
-extension Character: Decodable {
+extension Character: Decodable, Encodable {
     
     enum CharacterKeys: String, CodingKey{
         case id
@@ -70,8 +71,6 @@ extension Character: Decodable {
         archived = try container.decode(Bool.self, forKey: .archived)
     }
 }
-
-
 
 public struct CharacterPost: Codable {
     private enum CodingKeys: String, CodingKey{

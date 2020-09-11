@@ -8,13 +8,14 @@
 
 import SwiftUI
 
+
 struct StartView: View {
     
     let test = Scanner()
     
     var body: some View {
         NavigationView{
-            Color.purple
+            Color.yellow
                 .overlay(
                     VStack{
                         Text("Pulsar Palace")

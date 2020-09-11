@@ -13,7 +13,7 @@ public struct Log {
     var title: String
 }
 
-extension Log: Decodable {
+extension Log: Encodable, Decodable {
 
     enum LogKeys: String, CodingKey{
         case id
