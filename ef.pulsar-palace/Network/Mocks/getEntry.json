@@ -1,0 +1,10 @@
+{
+    "id": 3,
+    "entry_text": "testing",
+    "prompt_id": 1,
+    "character_id": 1,
+    "character": {
+        "name": "updated name",
+        "log_id": 1
+    }
+}

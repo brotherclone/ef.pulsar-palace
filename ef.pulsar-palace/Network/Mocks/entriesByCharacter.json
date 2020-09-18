@@ -1,0 +1,8 @@
+{
+    [
+        {
+        "id":3,
+        "entry_text":"testing",
+        "prompt_id":1,
+        "character_id":1,
+        "character":{"name":"updated name","log_id":1}},{"id":4,"entry_text":"testing","prompt_id":1,"character_id":1,"character":{"name":"updated name","log_id":1}},{"id":5,"entry_text":"testing","prompt_id":1,"character_id":1,"character":{"name":"updated name","log_id":1}},{"id":6,"entry_text":"testing","prompt_id":1,"character_id":1,"character":{"name":"updated name","log_id":1}},{"id":7,"entry_text":"testing","prompt_id":1,"character_id":1,"character":{"name":"updated name","log_id":1}},{"id":8,"entry_text":"testing","prompt_id":1,"character_id":1,"character":{"name":"updated name","log_id":1}},{"id":9,"entry_text":"testing","prompt_id":1,"character_id":1,"character":{"name":"updated name","log_id":1}},{"id":10,"entry_text":"testing","prompt_id":1,"character_id":1,"character":{"name":"updated name","log_id":1}}]}

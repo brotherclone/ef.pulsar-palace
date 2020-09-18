@@ -11,16 +11,16 @@ import SwiftyJSON
 
 public struct Character {
     var id: Int?
-    var user: User
+    var user_id: Int
     var name: String
-    var additionalBio: String?
-    var characterBackground: CharacterBackground
-    var characterSetting: CharacterSetting
-    var characterRole: CharacterRole
-    var characterDescriptor: CharacterDescriptor
-    var currentHealth: Int
-    var maxHealth: Int
-    var log: Log
+    var additional_bio: String?
+    var character_background_id: Int
+    var character_setting_id: Int
+    var character_role_id: Int
+    var character_descriptor_id: Int
+    var current_health: Int
+    var max_health: Int
+    var log_id: Int?
     var archived: Bool
     
 }
@@ -30,90 +30,58 @@ extension Character: Decodable, Encodable {
     
     enum CharacterKeys: String, CodingKey{
         case id
-        case user
+        case user_id
         case name
-        case additionalBio
-        case characterBackground
-        case characterSetting
-        case characterRole
-        case characterDescriptor
-        case currentHealth
-        case maxHealth
-        case log
+        case additional_bio
+        case character_background_id
+        case character_setting_id
+        case character_role_id
+        case character_descriptor_id
+        case current_health
+        case max_health
+        case log_id
         case archived
     }
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CharacterKeys.self)
+        
         _ = try container.decode(Character.self, forKey: .id)
         id = try container.decode(Int.self, forKey: .id)
-        _ = try container.decode(Character.self, forKey: .user)
-        user = try container.decode(User.self, forKey: .user)
+        
+        _ = try container.decode(Character.self, forKey: .user_id)
+        user_id = try container.decode(Int.self, forKey: .user_id)
+        
         _ = try container.decode(Character.self, forKey: .name)
         name = try container.decode(String.self, forKey: .name)
-        _ = try container.decode(Character.self, forKey: .additionalBio)
-        additionalBio = try container.decode(String.self, forKey: .additionalBio)
-        _ = try container.decode(Character.self, forKey: .characterBackground)
-        characterBackground = try container.decode(CharacterBackground.self, forKey: .characterBackground)
-        _ = try container.decode(Character.self, forKey: .characterSetting)
-        characterSetting = try container.decode(CharacterSetting.self, forKey: .characterSetting)
-        _ = try container.decode(Character.self, forKey: .characterRole)
-        characterRole = try container.decode(CharacterRole.self, forKey: .characterRole)
-        _ = try container.decode(Character.self, forKey: .characterDescriptor)
-        characterDescriptor = try container.decode(CharacterDescriptor.self, forKey: .characterDescriptor)
-        _ = try container.decode(Character.self, forKey: .currentHealth)
-        currentHealth = try container.decode(Int.self, forKey: .currentHealth)
-        _ = try container.decode(Character.self, forKey: .maxHealth)
-        maxHealth = try container.decode(Int.self, forKey: .maxHealth)
-        _ = try container.decode(Character.self, forKey: .log)
-        log = try container.decode(Log.self, forKey: .log)
+        
+        _ = try container.decode(Character.self, forKey: .additional_bio)
+        additional_bio = try container.decode(String.self, forKey: .additional_bio)
+        
+        _ = try container.decode(Character.self, forKey: .character_background_id)
+        character_background_id = try container.decode(Int.self, forKey: .character_background_id)
+        
+        _ = try container.decode(Character.self, forKey: .character_setting_id)
+        character_setting_id = try container.decode(Int.self, forKey: .character_setting_id)
+        
+        _ = try container.decode(Character.self, forKey: .character_role_id)
+        character_role_id = try container.decode(Int.self, forKey: .character_role_id)
+        
+        _ = try container.decode(Character.self, forKey: .character_descriptor_id)
+        character_descriptor_id = try container.decode(Int.self, forKey: .character_descriptor_id)
+        
+        _ = try container.decode(Character.self, forKey: .current_health)
+        current_health = try container.decode(Int.self, forKey: .current_health)
+        
+        _ = try container.decode(Character.self, forKey: .max_health)
+        max_health = try container.decode(Int.self, forKey: .max_health)
+        
+        _ = try container.decode(Character.self, forKey: .log_id)
+        log_id = try container.decode(Int.self, forKey: .log_id)
+        
         _ = try container.decode(Character.self, forKey: .archived)
         archived = try container.decode(Bool.self, forKey: .archived)
     }
 }
 
-public struct CharacterPost: Codable {
-    private enum CodingKeys: String, CodingKey{
-        case name = "name"
-        case userId = "user_id"
-        case additionalBio = "additional_bio"
-        case characterBackgroundId = "character_background_id"
-        case characterSettingId = "character_setting_id"
-        case characterRoleId = "character_role_id"
-        case characterDescriptorId = "character_descriptor_id"
-        case currentHealth = "current_health"
-        case maxHealth = "max_health"
-        case logId = "log_id"
-        case archived = "archived"
-    }
-    
-    let name: String
-    let userId: Int
-    let additionalBio: String
-    let characterBackgroundId: Int
-    let characterSettingId: Int
-    let characterRoleId: Int
-    let characterDescriptorId: Int
-    let currentHealth: Int
-    let maxHealth: Int
-    let logId: Int
-    let archived: Bool
-    
-}
 
-
-extension CharacterPost {
-    init(character:Character) {
-        self.init(name: character.name,
-                  userId: character.user.id,
-                  additionalBio: character.additionalBio!,
-                  characterBackgroundId: character.characterBackground.id,
-                  characterSettingId: character.characterSetting.id,
-                  characterRoleId: character.characterRole.id,
-                  characterDescriptorId: character.characterDescriptor.id,
-                  currentHealth: character.currentHealth,
-                  maxHealth: character.maxHealth,
-                  logId: character.log.id,
-                  archived: character.archived)
-    }
-}

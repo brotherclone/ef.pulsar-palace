@@ -1,7 +1,7 @@
 {
-    "id": 67,
-    "name": "hi",
-    "additional_bio": "hi",
+    "id": 1,
+    "name": "updated name",
+    "additional_bio": "updated additional bio",
     "current_health": 1,
     "max_health": 4,
     "archived": false,

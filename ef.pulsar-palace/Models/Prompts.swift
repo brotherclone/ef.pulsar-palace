@@ -10,7 +10,7 @@ import Foundation
 
 public struct Prompt {
     var id: Int
-    var song: Song
+    var song_id: Int
     var encounter_type: Int
     var prompt_title: String
     var prompt_text: String
@@ -22,7 +22,7 @@ extension Prompt: Decodable {
     
     enum PromptKeys: String, CodingKey{
         case id
-        case song
+        case song_id
         case encounter_type
         case prompt_title
         case prompt_text
@@ -35,8 +35,8 @@ extension Prompt: Decodable {
         _ = try container.decode(Prompt.self, forKey: .id)
         id = try container.decode(Int.self, forKey: .id)
 
-        _ = try container.decode(Prompt.self, forKey: .song)
-        song = try container.decode(Song.self, forKey: .song)
+        _ = try container.decode(Prompt.self, forKey: .song_id)
+        song_id = try container.decode(Int.self, forKey: .song_id)
 
         _ = try container.decode(Prompt.self, forKey: .encounter_type)
         encounter_type = try container.decode(Int.self, forKey: .encounter_type)

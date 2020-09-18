@@ -90,15 +90,15 @@ class ScannerUIViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     }
     
     func requestTagValidation(uuid: String, requestTagValidationCompletionHandler: @escaping (Response?, Error?) -> Void) {
-        let networkProvider = NetworkManager.provider
-        networkProvider.request(.checkTag(uuid: uuid), completion: {result in
-            switch result{
-            case let .success(moyaResponse):
-                requestTagValidationCompletionHandler(moyaResponse, nil)
-            case let .failure(error):
-                requestTagValidationCompletionHandler(nil, error)
-            }
-        })
+       // let networkProvider = NetworkManager.provider
+//        networkProvider.request(.checkTag(uuid: uuid), completion: {result in
+//            switch result{
+//            case let .success(moyaResponse):
+//                requestTagValidationCompletionHandler(moyaResponse, nil)
+//            case let .failure(error):
+//                requestTagValidationCompletionHandler(nil, error)
+//            }
+//        })
     }
 }
 

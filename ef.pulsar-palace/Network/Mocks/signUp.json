@@ -1,0 +1,12 @@
+{
+    "user": {
+        "id": 22,
+        "first_name": "Example",
+        "last_name": "User",
+        "username": "anexampleuser",
+        "email": "anexampleuser@example.com",
+        "created_at": "2020-09-16T13:45:11.145Z",
+        "updated_at": "2020-09-16T13:45:11.145Z"
+    },
+    "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MjIsImV4cCI6MTYwNTQ0NzkxMX0.FHHqndNb5WSSkIRvNvP1iarF1beahxScaTwxLJ-VFYw"
+}

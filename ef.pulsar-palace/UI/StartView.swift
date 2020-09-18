@@ -11,22 +11,27 @@ import SwiftUI
 
 struct StartView: View {
     
-    let test = Scanner()
+    @ObservedObject  var authtenticationHelper = AuthenticationHelper()
     
     var body: some View {
         NavigationView{
             Color.yellow
                 .overlay(
-                    VStack{
-                        Text("Pulsar Palace")
-                        NavigationLink(destination: IntroView()){
-                            Text("Get Started")
-                        }
-                        NavigationLink(destination: ScannerView()){
-                            Text("scan")
-                        }
-                        NavigationLink(destination: SongPlayerView() ){
-                            Text("play")
+                    Group{
+                        if authtenticationHelper.isLoggedIn {
+                            Group{
+                                SplashUIView()
+                                NavigationLink(destination: MainView()){
+                                    Text("Continue")
+                                }
+                            }
+                        }else{
+                            Group{
+                                SplashUIView()
+                                NavigationLink(destination: SignInView()){
+                                    Text("Sign In")
+                                }
+                            }
                         }
                     }
             )

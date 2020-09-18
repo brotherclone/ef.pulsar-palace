@@ -12,15 +12,11 @@ import SwiftUI
 
 struct CharacterUIView: View {
     
-    var character: Character    
+    //var character: Character
     
     var body: some View {
         VStack{
-            Text(character.characterBackground.background)
-            Text(character.characterRole.character_role)
-            Text(character.characterSetting.place)
-            Text(character.characterSetting.time)
-            Text(character.characterDescriptor.descriptor)
+           Text("Character")
         }
     }
 }
@@ -29,8 +25,8 @@ struct CharacterUIView: View {
 
 // MARK: Add Preview from Mocks
 
-//struct CharacterUIView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CharacterUIView()
-//    }
-//}
+struct CharacterUIView_Previews: PreviewProvider {
+    static var previews: some View {
+        CharacterUIView()
+    }
+}

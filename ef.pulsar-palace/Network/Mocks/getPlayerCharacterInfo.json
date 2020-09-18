@@ -1,0 +1,46 @@
+[
+    {
+        "character_backgrounds": [
+            {
+                "id": 1,
+                "background": "On a mission from God"
+            },
+            {
+                "id": 2,
+                "background": "Secret society reject"
+            }
+        ],
+        "character_descriptors": [
+            {
+                "id": 1,
+                "descriptor": "happy"
+            },
+            {
+                "id": 2,
+                "descriptor": "sad"
+            }
+        ],
+        "character_roles": [
+            {
+                "id": 1,
+                "character_role": "actor"
+            },
+            {
+                "id": 2,
+                "character_role": "astronomer"
+            }
+        ],
+        "character_settings": [
+            {
+                "id": 1,
+                "time": "1892",
+                "place": "Sweden"
+            },
+            {
+                "id": 2,
+                "time": "1893",
+                "place": "England"
+            }
+        ]
+    }
+]

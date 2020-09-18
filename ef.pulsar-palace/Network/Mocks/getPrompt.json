@@ -1,0 +1,9 @@
+{
+    "id": 1,
+    "prompt_text": "You arrive and the gateway to the Pulsar Palace estate. You hear its crackling pops and pings luring you closer. Take some time to listen and write down your impressions. What does the palace look like? Who else is there? Speaking of which, who are you? And how exactly did you find your way here?",
+    "prompt_image": null,
+    "encounter_type": "start",
+    "prompt_title": "In a dream? In a ship?",
+    "damage": 1,
+    "song_id": 1
+}
