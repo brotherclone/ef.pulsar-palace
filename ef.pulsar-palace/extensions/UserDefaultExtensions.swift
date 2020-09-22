@@ -13,3 +13,11 @@ extension UserDefaults {
         return UserDefaults.standard.object(forKey: key) != nil
     }
 }
+
+extension UserDefaults{
+    public struct Keys{
+        static let token = "Token"
+        static let currentUser = "CurrentUser"
+        static let isLoggedIn = "IsLoggedIn"
+    }
+}

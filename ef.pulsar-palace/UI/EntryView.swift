@@ -13,12 +13,7 @@ struct EntryView: View {
    
             VStack{
                 Text("Add an Entry")
-                NavigationLink(destination: MainView()){
-                        Text("Cool")
-                    }
-                NavigationLink(destination: DeathView()){
-                        Text("Dead")
-                    }
+            
             }
         }
     

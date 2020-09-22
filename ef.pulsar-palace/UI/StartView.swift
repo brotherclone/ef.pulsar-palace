@@ -34,10 +34,11 @@ struct StartView: View {
                             }
                         }
                     }
-            )
+                )
                 .edgesIgnoringSafeArea(.vertical)
-        }
-        
+        }.onAppear( perform: {
+            authtenticationHelper.refreshAutenticationInfo()
+        })
     }
 }
 

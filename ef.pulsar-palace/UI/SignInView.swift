@@ -56,12 +56,12 @@ struct SignInView: View {
         do{
             let json = try JSON(data:data)
             if let token:String = json["token"].string {
-                let defaults = UserDefaults.standard
-                defaults.setValue(token, forKey: "Token")
-                authenticationHelper.token = token
-                authenticationHelper.isLoggedIn = true
+                authenticationHelper.setToken(tokenData: token)
                 if let id:Int = json["id"].int{
-                    defaults.setValue(id, forKey: "UserId")
+                    if let email:String = json["email"].string{
+                        let userData: User = User(id: id, first_name: json["first_name"].string, last_name: json["last_name"].string, email: email, password: "logged-in")
+                        authenticationHelper.setCurrentUser(user: userData)
+                    }
                 }
             }else{
                 print("can not set token")
@@ -90,7 +90,6 @@ struct SignInView: View {
                                     self.setAccessToken(data: data)
                                 }
                             }
-                            
                         })
                     }) {
                         Text("Submit")
@@ -119,9 +118,7 @@ struct SignInView: View {
                                     self.setAccessToken(data: data)
                                 }
                             }
-                            
                         })
-                        
                     }) {
                         Text("Submit")
                     }
