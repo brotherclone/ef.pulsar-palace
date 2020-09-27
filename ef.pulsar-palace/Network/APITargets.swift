@@ -16,14 +16,14 @@ enum APITargets {
     case getUserByEmail(email: String)
     case updateUser(userId:Int, username:String, password: String, firstName: String, lastName: String, email: String)
     case getUser(userId:Int)
-    case createEntry(entryText: String, promptId: Int, characterId: Int)
-    case updateEntry(entryId: Int, entryText: String, promptId: Int, characterId: Int, userId: Int)
+    case createEntry(entry: Entry)
+    case updateEntry(entry: Entry)
     case deleteEntry(entryId: Int, characterId: Int, userId: Int)
-    case entryByCharacter(characterId: Int)
+    case getEntriesByCharacter(characterId: Int)
     case getEntry(entryId:Int)
-    case createCharacter(userId: Int, name: String, additionalBio: String, characterSettingId: Int, characterBackgroundId: Int, characterRoleId: Int, characterDescriptorId: Int, currentHealth: Int, maxHealth: Int, logId: Int, archived: Bool)
-    case archiveCharacter(characterId: Int, logId: Int)
-    case updateCharacter(characterId:Int, userId: Int, name: String, additionalBio: String, characterSettingId: Int, characterBackgroundId: Int, characterRoleId: Int, characterDescriptorId: Int, currentHealth: Int, maxHealth: Int, logId: Int, archived: Bool)
+    case createCharacter(character: Character)
+    case archiveCharacter(character: Character, logId: Int)
+    case updateCharacter(character: Character)
     case deleteCharacter(characterId: Int, userId: Int)
     case getPlayerCharacterInfo
     case getCharacter(characterId: Int)
@@ -32,6 +32,7 @@ enum APITargets {
     case createLog(title: String)
     case updateLog(logId: Int, title:String)
     case getPrompt(lastEntryId: Int)
+    case revealConsequences(promptId: Int, condition: Int)
 }
 
 extension APITargets: TargetType, AccessTokenAuthorizable {
@@ -49,22 +50,22 @@ extension APITargets: TargetType, AccessTokenAuthorizable {
              return "users/\(userId).json"
         case .getUser(let userId):
              return "users/\(userId).json"
-        case .createEntry(_, _, _):
+        case .createEntry(_):
              return "entries/create.json"
-        case .updateEntry(let entryId, _, _, _, _):
-             return "entries/\(entryId).json"
+        case .updateEntry(let entry):
+            return "entries/\(entry.id).json"
         case .deleteEntry(let entryId, _, _):
              return "entries/\(entryId).json"
-        case .entryByCharacter(_):
+        case .getEntriesByCharacter(_):
             return "api/entries-for-character.json"
         case .getEntry(let entryId):
              return "entries/\(entryId).json"
-        case .createCharacter(_,_,_,_,_,_,_,_,_,_,_):
+        case .createCharacter(_):
              return "characters/create.json"
-        case .archiveCharacter(let characterId,_):
-             return "characters/\(characterId)/archive.json"
-        case .updateCharacter(let characterId, _,_,_,_,_,_,_,_,_,_,_):
-             return "characters/\(characterId).json"
+        case .archiveCharacter(let character, _):
+            return "characters/\(String(describing: character.id))/archive.json"
+        case .updateCharacter(let character):
+            return "characters/\(String(describing: character.id)).json"
         case .deleteCharacter(let characterId,_):
              return "characters/\(characterId).json"
         case .getPlayerCharacterInfo:
@@ -81,6 +82,8 @@ extension APITargets: TargetType, AccessTokenAuthorizable {
             return "logs/\(logId).json"
         case .getPrompt(let lastEntryId):
             return "prompts.json/?last_entry_id=\(lastEntryId)"
+        case.revealConsequences(_,_):
+            return "consequences"
         }
     }
     
@@ -106,7 +109,7 @@ extension APITargets: TargetType, AccessTokenAuthorizable {
             return .delete
         case .getEntry:
             return .get
-        case .entryByCharacter:
+        case .getEntriesByCharacter:
             return .get
         case .createCharacter:
             return .post
@@ -130,9 +133,10 @@ extension APITargets: TargetType, AccessTokenAuthorizable {
             return .put
         case .getPrompt:
             return .get
+        case .revealConsequences:
+            return .post
         }
     }
-    
     
     var task: Task {
         switch self{
@@ -148,23 +152,22 @@ extension APITargets: TargetType, AccessTokenAuthorizable {
             return .requestJSONEncodable([String(userId), username, password, firstName, lastName, email])
         case .getUser(_):
             return .requestPlain
-        case .createEntry(entryText: let entryText, promptId: let promptId, characterId: let characterId):
-            return .requestJSONEncodable([entryText, String(promptId), String(characterId)])
-        case .updateEntry(entryId: let entryId, entryText: let entryText, promptId: let promptId, characterId: let characterId, userId: let userId):
-            return .requestJSONEncodable([String(entryId), entryText, String(promptId), String(characterId), String(userId)])
+        case .createEntry(let entry):
+            return .requestJSONEncodable(["entry" : entry])
+        case .updateEntry(let entry):
+            return .requestJSONEncodable(["entry" : entry])
         case .deleteEntry(entryId: let entryId, characterId: let characterId, userId: let userId):
             return .requestJSONEncodable([String(entryId), String(characterId), String(userId)])
-        case .entryByCharacter(let characterId):
+        case .getEntriesByCharacter(let characterId):
             return .requestParameters(parameters: ["character_id" : String(characterId)], encoding: URLEncoding.default)
         case .getEntry(_):
             return .requestPlain
-        case .createCharacter(userId: let userId, name: let name, additionalBio: let additionalBio, characterSettingId: let characterSettingId, characterBackgroundId: let characterBackgroundId, characterRoleId: let characterRoleId, characterDescriptorId: let characterDescriptorId, currentHealth: let currentHealth, maxHealth: let maxHealth, logId: let logId, archived: let archived):
-            return .requestJSONEncodable([String(userId), name, additionalBio, String(characterSettingId),
-            String(characterBackgroundId), String(characterBackgroundId), String(characterRoleId), String(characterDescriptorId), String(currentHealth), String(maxHealth), String(logId), String(archived)])
-        case .archiveCharacter(characterId: let characterId, logId: let logId):
-            return .requestJSONEncodable([String(characterId), String(logId)])
-        case .updateCharacter(characterId: let characterId, userId: let userId, name: let name, additionalBio: let additionalBio, characterSettingId: let characterSettingId, characterBackgroundId: let characterBackgroundId, characterRoleId: let characterRoleId, characterDescriptorId: let characterDescriptorId, currentHealth: let currentHealth, maxHealth: let maxHealth, logId: let logId, archived: let archived):
-            return .requestJSONEncodable([String(characterId),String(userId), name, additionalBio, String(characterSettingId),String(characterBackgroundId), String(characterBackgroundId), String(characterRoleId), String(characterDescriptorId), String(currentHealth), String(maxHealth), String(logId), String(archived)])
+        case .createCharacter(let character):
+            return .requestJSONEncodable(["character": character])
+        case .archiveCharacter(let character, let logId):
+            return .requestCompositeParameters(bodyParameters: ["characters": character], bodyEncoding: URLEncoding.default, urlParameters:["log_id":logId])
+        case .updateCharacter(let character):
+            return .requestJSONEncodable(["character" : character])
         case .deleteCharacter(characterId: let characterId, userId: let userId):
             return .requestJSONEncodable([String(characterId), String(userId)])
         case .getPlayerCharacterInfo:
@@ -181,6 +184,8 @@ extension APITargets: TargetType, AccessTokenAuthorizable {
             return .requestJSONEncodable([String(logId), title])
         case .getPrompt(lastEntryId: let lastEntryId):
             return .requestJSONEncodable([String(lastEntryId)])
+        case .revealConsequences(let promptId, let condition):
+            return .requestJSONEncodable([promptId,condition])
         }
     }
     
@@ -191,6 +196,7 @@ extension APITargets: TargetType, AccessTokenAuthorizable {
     var baseURL: URL{
         return URL(string: "http://192.168.1.15:8081/api")!
     }
+    
     var authorizationType: AuthorizationType? {
          switch self {
          case .signIn:
@@ -213,7 +219,7 @@ extension APITargets: TargetType, AccessTokenAuthorizable {
              return .bearer
          case .getEntry:
             return .bearer
-         case .entryByCharacter:
+         case .getEntriesByCharacter:
              return nil
          case .createCharacter:
             return .bearer
@@ -237,6 +243,8 @@ extension APITargets: TargetType, AccessTokenAuthorizable {
              return .bearer
          case .getPrompt:
              return nil
+         case .revealConsequences:
+            return nil
          }
     }
 }

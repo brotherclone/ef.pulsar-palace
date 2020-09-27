@@ -16,9 +16,12 @@ class MainViewStatusHelper: ObservableObject {
     @Published var activeCharacter: Character? = nil
     @Published var playerDataIsReady: Bool  = false
     @Published var nonActiveCharacters: [Character] = []
+    @Published var settings: [CharacterSetting] = []
+    @Published var backgrounds: [CharacterBackground] = []
+    @Published var roles: [CharacterRole] = []
+    @Published var descriptors: [CharacterDescriptor]=[]
     
 }
-
 
 struct MainView: View {
     
@@ -57,7 +60,6 @@ struct MainView: View {
     
     func initializeCharacters(backgrounds: [CharacterBackground], settings: [CharacterSetting], descriptors: [CharacterDescriptor], roles: [CharacterRole]){
         //MARK: Takes the info from the Player Character data, now in environment data, and comebines combines it with individual characters to create character data.
-        
         getPlayerCharacterData(getPlayerCharacterDataCompletionHandler: { response, error in
             if error != nil{
                 print(error as Any)
@@ -125,6 +127,7 @@ struct MainView: View {
                         let aRole: CharacterRole = role as! CharacterRole
                         characterRoles.append(aRole)
                     }
+                    mainStatusHelper.roles = characterRoles
                 }
                 var characterSettings: [CharacterSetting] = []
                 if let settings: [Any] = json["character_settings"].array {
@@ -132,6 +135,7 @@ struct MainView: View {
                         let aSetting: CharacterSetting = setting as! CharacterSetting
                         characterSettings.append(aSetting)
                     }
+                    mainStatusHelper.settings = characterSettings
                 }
                 var characterDescriptors: [CharacterDescriptor] = []
                 if let descriptors: [Any] = json["character_descriptors"].array {
@@ -139,6 +143,7 @@ struct MainView: View {
                         let aDescriptor: CharacterDescriptor = descriptor as! CharacterDescriptor
                         characterDescriptors.append(aDescriptor)
                     }
+                    mainStatusHelper.descriptors = characterDescriptors
                 }
                 var characterBackgrounds: [CharacterBackground] = []
                 if let backgrounds: [Any] = json["character_backgrounds"].array{
@@ -146,6 +151,7 @@ struct MainView: View {
                         let aBackground: CharacterBackground = background as! CharacterBackground
                         characterBackgrounds.append(aBackground)
                     }
+                    mainStatusHelper.backgrounds = characterBackgrounds
                 }
                 initializeCharacters(backgrounds: characterBackgrounds, settings:characterSettings, descriptors: characterDescriptors, roles: characterRoles)
                 
@@ -158,35 +164,42 @@ struct MainView: View {
         }
     }
     
-    
     var body: some View {
-        Group{
-            // MARK: If there's an active character display that view...
-            if mainStatusHelper.playerDataIsReady == false{
+        NavigationView{
+            Group{
+                // MARK: If there's an active character display that view...
                 Group{
-                    // MARK: Replace with animation
-                    Text("Loading")
-                }
-            }
-            if mainStatusHelper.activeCharacter != nil {
-                Group{
-                    ActiveCharacterCardView(character: mainStatusHelper.activeCharacter!)
-                    // MARK: And offer the user the ability to add a new entry with that character.
-                    // MARK: Or, if previous entries exists, display a means to see that view.
-                }
-            } else {
-                Group{
-                    // MARK: If there's no active character, give the user a link to create one.
-                    NavigationLink(destination: CreateACharacterView()){
-                        Text("Create a Character")
+                    if mainStatusHelper.playerDataIsReady == false{
+                        Group{
+                            // MARK: Replace with animation
+                            Text("Loading")
+                        }
                     }
                 }
+                Group{
+                    if mainStatusHelper.activeCharacter != nil {
+                        Group{
+                            ActiveCharacterCardView(character: mainStatusHelper.activeCharacter!)
+                            // MARK: And offer the user the ability to add a new entry with that character.
+                            // MARK: Or, if previous entries exists, display a means to see that view.
+                        }
+                    } else {
+                        Group{
+                            // MARK: If there's no active character, give the user a link to create one.
+                            NavigationLink(destination: CreateACharacterView(settings: mainStatusHelper.settings,
+                                                                             backgrounds:mainStatusHelper.backgrounds,
+                                                                             roles: mainStatusHelper.roles,
+                                                                             descriptors: mainStatusHelper.descriptors)){
+                                Text("Create a Character")
+                            }
+                        }
+                    }
+                }
+                Group{
+                    CharacterListView(characters: mainStatusHelper.nonActiveCharacters)
+                }
             }
-            Group{
-                CharacterListView(characters: mainStatusHelper.nonActiveCharacters)
-            }
-        }
-        .navigationBarHidden(true)
+        }.navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
         .onAppear( perform: {
             authtenticationHelper.refreshAutenticationInfo()

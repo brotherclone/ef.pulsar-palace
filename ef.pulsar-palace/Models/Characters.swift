@@ -9,6 +9,11 @@
 import Foundation
 import SwiftyJSON
 
+enum DefaultCharacterAttributes{
+    static let max_health: Int = 4
+    static let current_health: Int = 4
+}
+
 public struct Character {
     var id: Int?
     var user_id: Int

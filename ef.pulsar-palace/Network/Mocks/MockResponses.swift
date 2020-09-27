@@ -61,8 +61,10 @@ extension APITargets{
             return stubbedResponse("updateLog")
         case .getPrompt:
             return stubbedResponse("getPrompt")
-        case .entryByCharacter:
+        case .getEntriesByCharacter:
             return stubbedResponse("entriesByCharacter")
+        case .revealConsequences:
+            return stubbedResponse("revealConsequences")
         }
     }
 }

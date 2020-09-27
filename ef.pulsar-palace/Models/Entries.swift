@@ -9,13 +9,13 @@
 import Foundation
 
 public struct Entry {
-    var id: Int
+    var id: Int?
     var entry_text: String
     var prompt_id: Int
     var character_id: Int
 }
 
-extension Entry: Decodable {
+extension Entry: Encodable, Decodable {
     
     enum EntryKeys: String, CodingKey{
         case id
@@ -28,7 +28,7 @@ extension Entry: Decodable {
         let container = try decoder.container(keyedBy: EntryKeys.self)
         
         _ = try container.decode(Entry.self, forKey: .id)
-        id = try container.decode(Int.self, forKey: .id)
+        id = try container.decode(Int?.self, forKey: .id)
         
         _ = try container.decode(Entry.self, forKey: .entry_text)
         entry_text = try container.decode(String.self, forKey: .entry_text)

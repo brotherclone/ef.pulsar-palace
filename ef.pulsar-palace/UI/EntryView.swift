@@ -9,18 +9,21 @@
 import SwiftUI
 
 struct EntryView: View {
+    
+    var entry: Entry
+    
     var body: some View {
    
             VStack{
-                Text("Add an Entry")
+                Text("Entry")
             
             }
         }
     
 }
 
-struct EntryView_Previews: PreviewProvider {
-    static var previews: some View {
-        EntryView()
-    }
-}
+//struct EntryView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EntryView()
+//    }
+//}
