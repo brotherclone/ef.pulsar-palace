@@ -18,6 +18,7 @@
 		DA29997C250BD9E300A67035 /* AuthenticationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29997B250BD9E300A67035 /* AuthenticationHelper.swift */; };
 		DA3833C02523B0CE00C3937E /* PulsarErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3833BF2523B0CE00C3937E /* PulsarErrors.swift */; };
 		DA426D232520EFD9005E7B98 /* revealConsequences.json in Resources */ = {isa = PBXBuildFile; fileRef = DA426D222520EFD9005E7B98 /* revealConsequences.json */; };
+		DA58E98A254614430048CC84 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DA58E989254614430048CC84 /* .gitignore */; };
 		DA87074F24EADD9600CF7B62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87074E24EADD9600CF7B62 /* AppDelegate.swift */; };
 		DA87075124EADD9600CF7B62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87075024EADD9600CF7B62 /* SceneDelegate.swift */; };
 		DA87075324EADD9600CF7B62 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87075224EADD9600CF7B62 /* StartView.swift */; };
@@ -101,6 +102,7 @@
 		DA29997B250BD9E300A67035 /* AuthenticationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationHelper.swift; sourceTree = "<group>"; };
 		DA3833BF2523B0CE00C3937E /* PulsarErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulsarErrors.swift; sourceTree = "<group>"; };
 		DA426D222520EFD9005E7B98 /* revealConsequences.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = revealConsequences.json; sourceTree = "<group>"; };
+		DA58E989254614430048CC84 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		DA87074B24EADD9600CF7B62 /* PulsarPalace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PulsarPalace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA87074E24EADD9600CF7B62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA87075024EADD9600CF7B62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 		DA87074224EADD9600CF7B62 = {
 			isa = PBXGroup;
 			children = (
+				DA58E989254614430048CC84 /* .gitignore */,
 				DA24006B24EB54F3009CCD22 /* Podfile */,
 				DA87074D24EADD9600CF7B62 /* ef.pulsar-palace */,
 				DA87074C24EADD9600CF7B62 /* Products */,
@@ -462,6 +465,7 @@
 				DA8A8303252638D4003CC6A5 /* 05 Guest Quarters.m4a in Resources */,
 				DAC2B0C624FA908E00FF2F9E /* example.mp3 in Resources */,
 				DA87075524EADD9900CF7B62 /* Assets.xcassets in Resources */,
+				DA58E98A254614430048CC84 /* .gitignore in Resources */,
 				DA8A8302252638D4003CC6A5 /* 02 Vestibule.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
