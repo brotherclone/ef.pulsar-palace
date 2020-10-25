@@ -15,6 +15,7 @@ struct EntryView: View {
     var body: some View {
    
             VStack{
+                
                 Text("Entry")
             
             }

@@ -50,7 +50,7 @@ struct CreateACharacterView: View {
     @State var inputBio: String = ""
     
     func rollAttributes(attributes: AttributesContainer) -> AttributeContainer {
-        
+        print("rollAttributes \(attributes)")
         let settingRoll = attributes.settings?.randomElement()
         let backgroundRoll = attributes.backgrounds?.randomElement()
         let descriptorRoll = attributes.descriptors?.randomElement()
@@ -61,6 +61,7 @@ struct CreateACharacterView: View {
     }
     
     func createBlankCharacter(userId:Int)-> Character {
+        print("creating character for userId: \(userId)")
         return Character(user_id: userId,
                          name: "",
                          character_background_id: 1,
@@ -111,50 +112,66 @@ struct CreateACharacterView: View {
             TextField("Character Name", text: $inputName)
             TextField("Bio", text: $inputBio)
             Group{
-                Text("Descriptor:")
-                HStack{
-                    Text(characterCreationHelper.currentDescriptor!.descriptor)
-                    Button(action: {
-                        let descriptorRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
-                        characterCreationHelper.currentDescriptor = descriptorRoll.descriptor
-                    }){
-                        Text("Re-Roll")
+                if characterCreationHelper.currentDescriptor != nil{
+                    Group{
+                        Text("Descriptor:")
+                        HStack{
+                            Text(characterCreationHelper.currentDescriptor!.descriptor)
+                            Button(action: {
+                                let descriptorRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
+                                characterCreationHelper.currentDescriptor = descriptorRoll.descriptor
+                            }){
+                                Text("Re-Roll")
+                            }
+                        }
                     }
                 }
             }
             Group{
-                Text("Role:")
-                HStack{
-                    Text(characterCreationHelper.currentRole!.character_role)
-                    Button(action: {
-                        let roleRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
-                        characterCreationHelper.currentRole = roleRoll.role
-                    }){
-                        Text("Re-Roll")
+                if characterCreationHelper.currentRole != nil{
+                    Group{
+                        Text("Role:")
+                        HStack{
+                            Text(characterCreationHelper.currentRole!.character_role)
+                            Button(action: {
+                                let roleRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
+                                characterCreationHelper.currentRole = roleRoll.role
+                            }){
+                                Text("Re-Roll")
+                            }
+                        }
                     }
                 }
             }
             Group{
-                Text("Setting:")
-                HStack{
-                    Text("\(characterCreationHelper.currentSetting!.time),\(characterCreationHelper.currentSetting!.place)")
-                    Button(action: {
-                        let settingRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
-                        characterCreationHelper.currentSetting = settingRoll.setting
-                    }){
-                        Text("Re-Roll")
+                if characterCreationHelper.currentSetting != nil {
+                    Group{
+                        Text("Setting:")
+                        HStack{
+                            Text("\(characterCreationHelper.currentSetting!.time),\(characterCreationHelper.currentSetting!.place)")
+                            Button(action: {
+                                let settingRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
+                                characterCreationHelper.currentSetting = settingRoll.setting
+                            }){
+                                Text("Re-Roll")
+                            }
+                        }
                     }
                 }
             }
             Group{
-                Text("Background:")
-                HStack{
-                    Text(characterCreationHelper.currentBackground!.background)
-                    Button(action: {
-                        let backgroundRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
-                        characterCreationHelper.currentBackground = backgroundRoll.background
-                    }){
-                        Text("Re-Roll")
+                if characterCreationHelper.currentBackground != nil{
+                    Group{
+                        Text("Background:")
+                        HStack{
+                            Text(characterCreationHelper.currentBackground!.background)
+                            Button(action: {
+                                let backgroundRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
+                                characterCreationHelper.currentBackground = backgroundRoll.background
+                            }){
+                                Text("Re-Roll")
+                            }
+                        }
                     }
                 }
             }
@@ -184,7 +201,20 @@ struct CreateACharacterView: View {
         }.onAppear( perform: {
             characterCreationHelper.defaultAttributesContainer = AttributesContainer(settings: self.settings, backgrounds: self.backgrounds, descriptors: self.descriptors, roles: self.roles)
             authenticationHelper.refreshAutenticationInfo()
-            characterCreationHelper.currentCharacter = createBlankCharacter(userId: authenticationHelper.currentUser!.id! as Int)
+            if let currentUser: User = authenticationHelper.currentUser{
+                if currentUser.id! > 0 {
+                    let userId = currentUser.id
+                    characterCreationHelper.currentCharacter = createBlankCharacter(userId: userId!)
+                    let initRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
+                    characterCreationHelper.currentDescriptor = initRoll.descriptor
+                    characterCreationHelper.currentRole = initRoll.role
+                    characterCreationHelper.currentSetting = initRoll.setting
+                    characterCreationHelper.currentBackground = initRoll.background
+                }else{
+                    print("rut roh")
+                }
+            }
+        
         })
     }
     

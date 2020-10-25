@@ -21,9 +21,13 @@ class AuthenticationHelper: ObservableObject {
     }
     
     func setCurrentUser(user: User){
-        let defaults = UserDefaults.standard
-        defaults.setValue(user, forKey:  UserDefaults.Keys.currentUser)
-        currentUser = defaults.object(forKey: UserDefaults.Keys.currentUser) as? User
+        let encoder = JSONEncoder()
+        if let encodedUser = try? encoder.encode(user){
+            let defaults = UserDefaults.standard
+            defaults.setValue(encodedUser, forKey:  UserDefaults.Keys.currentUser)
+            isLoggedIn = true
+            currentUser = user
+        }
     }
     
     func getAutenticationInfo() -> (Bool,String?, User?){
@@ -41,7 +45,12 @@ class AuthenticationHelper: ObservableObject {
         }
         
         if UserDefaults.contains(UserDefaults.Keys.currentUser){
-            currentUser = defaults.object(forKey: UserDefaults.Keys.currentUser) as? User
+            if let encodedUser = defaults.object(forKey: UserDefaults.Keys.currentUser) as? Data {
+                let decoder = JSONDecoder()
+                if let storedUser = try? decoder.decode(User.self, from: encodedUser){
+                    currentUser = storedUser
+                }
+            }
         }
         
         return (isLoggedIn, token, currentUser)

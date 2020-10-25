@@ -16,6 +16,7 @@
 		DA19106B24F03BDA00C72477 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19106A24F03BDA00C72477 /* EntryView.swift */; };
 		DA24006C24EB54F3009CCD22 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = DA24006B24EB54F3009CCD22 /* Podfile */; };
 		DA29997C250BD9E300A67035 /* AuthenticationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29997B250BD9E300A67035 /* AuthenticationHelper.swift */; };
+		DA3833C02523B0CE00C3937E /* PulsarErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3833BF2523B0CE00C3937E /* PulsarErrors.swift */; };
 		DA426D232520EFD9005E7B98 /* revealConsequences.json in Resources */ = {isa = PBXBuildFile; fileRef = DA426D222520EFD9005E7B98 /* revealConsequences.json */; };
 		DA87074F24EADD9600CF7B62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87074E24EADD9600CF7B62 /* AppDelegate.swift */; };
 		DA87075124EADD9600CF7B62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87075024EADD9600CF7B62 /* SceneDelegate.swift */; };
@@ -23,6 +24,17 @@
 		DA87075524EADD9900CF7B62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA87075424EADD9900CF7B62 /* Assets.xcassets */; };
 		DA87075824EADD9900CF7B62 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA87075724EADD9900CF7B62 /* Preview Assets.xcassets */; };
 		DA87075B24EADD9900CF7B62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA87075924EADD9900CF7B62 /* LaunchScreen.storyboard */; };
+		DA8A82FD252638D4003CC6A5 /* 04 Drawing Room.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DA8A82F3252638D1003CC6A5 /* 04 Drawing Room.m4a */; };
+		DA8A82FE252638D4003CC6A5 /* 08 Nursery.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DA8A82F4252638D1003CC6A5 /* 08 Nursery.m4a */; };
+		DA8A82FF252638D4003CC6A5 /* 09 Cloak Room.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DA8A82F5252638D2003CC6A5 /* 09 Cloak Room.m4a */; };
+		DA8A8300252638D4003CC6A5 /* 10 Back Gardens.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DA8A82F6252638D2003CC6A5 /* 10 Back Gardens.m4a */; };
+		DA8A8301252638D4003CC6A5 /* 06 Great Chamber.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DA8A82F7252638D2003CC6A5 /* 06 Great Chamber.m4a */; };
+		DA8A8302252638D4003CC6A5 /* 02 Vestibule.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DA8A82F8252638D3003CC6A5 /* 02 Vestibule.m4a */; };
+		DA8A8303252638D4003CC6A5 /* 05 Guest Quarters.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DA8A82F9252638D3003CC6A5 /* 05 Guest Quarters.m4a */; };
+		DA8A8304252638D4003CC6A5 /* 01 Entrance.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DA8A82FA252638D4003CC6A5 /* 01 Entrance.m4a */; };
+		DA8A8305252638D4003CC6A5 /* 03 Foyer.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DA8A82FB252638D4003CC6A5 /* 03 Foyer.m4a */; };
+		DA8A8306252638D4003CC6A5 /* 07 Study.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DA8A82FC252638D4003CC6A5 /* 07 Study.m4a */; };
+		DA8A830925263903003CC6A5 /* MediaLookUpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8A830825263903003CC6A5 /* MediaLookUpHelper.swift */; };
 		DA8CA228250BDE0900A53D6B /* SplashUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CA227250BDE0900A53D6B /* SplashUIView.swift */; };
 		DA8CA22A250BE65300A53D6B /* signIn.json in Resources */ = {isa = PBXBuildFile; fileRef = DA8CA229250BE65300A53D6B /* signIn.json */; };
 		DA8CA22C250BE66500A53D6B /* signUp.json in Resources */ = {isa = PBXBuildFile; fileRef = DA8CA22B250BE66500A53D6B /* signUp.json */; };
@@ -87,6 +99,7 @@
 		DA19106A24F03BDA00C72477 /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
 		DA24006B24EB54F3009CCD22 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DA29997B250BD9E300A67035 /* AuthenticationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationHelper.swift; sourceTree = "<group>"; };
+		DA3833BF2523B0CE00C3937E /* PulsarErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulsarErrors.swift; sourceTree = "<group>"; };
 		DA426D222520EFD9005E7B98 /* revealConsequences.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = revealConsequences.json; sourceTree = "<group>"; };
 		DA87074B24EADD9600CF7B62 /* PulsarPalace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PulsarPalace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA87074E24EADD9600CF7B62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +109,17 @@
 		DA87075724EADD9900CF7B62 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DA87075A24EADD9900CF7B62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA87075C24EADD9900CF7B62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA8A82F3252638D1003CC6A5 /* 04 Drawing Room.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "04 Drawing Room.m4a"; sourceTree = "<group>"; };
+		DA8A82F4252638D1003CC6A5 /* 08 Nursery.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "08 Nursery.m4a"; sourceTree = "<group>"; };
+		DA8A82F5252638D2003CC6A5 /* 09 Cloak Room.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "09 Cloak Room.m4a"; sourceTree = "<group>"; };
+		DA8A82F6252638D2003CC6A5 /* 10 Back Gardens.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "10 Back Gardens.m4a"; sourceTree = "<group>"; };
+		DA8A82F7252638D2003CC6A5 /* 06 Great Chamber.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "06 Great Chamber.m4a"; sourceTree = "<group>"; };
+		DA8A82F8252638D3003CC6A5 /* 02 Vestibule.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "02 Vestibule.m4a"; sourceTree = "<group>"; };
+		DA8A82F9252638D3003CC6A5 /* 05 Guest Quarters.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "05 Guest Quarters.m4a"; sourceTree = "<group>"; };
+		DA8A82FA252638D4003CC6A5 /* 01 Entrance.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "01 Entrance.m4a"; sourceTree = "<group>"; };
+		DA8A82FB252638D4003CC6A5 /* 03 Foyer.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "03 Foyer.m4a"; sourceTree = "<group>"; };
+		DA8A82FC252638D4003CC6A5 /* 07 Study.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "07 Study.m4a"; sourceTree = "<group>"; };
+		DA8A830825263903003CC6A5 /* MediaLookUpHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaLookUpHelper.swift; sourceTree = "<group>"; };
 		DA8CA227250BDE0900A53D6B /* SplashUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashUIView.swift; sourceTree = "<group>"; };
 		DA8CA229250BE65300A53D6B /* signIn.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = signIn.json; sourceTree = "<group>"; };
 		DA8CA22B250BE66500A53D6B /* signUp.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = signUp.json; sourceTree = "<group>"; };
@@ -317,6 +341,7 @@
 				DAC2B0BA24F96DD300FF2F9E /* Songs.swift */,
 				DAC2B0BC24F96DE600FF2F9E /* Characters.swift */,
 				DAC2B0BE24F96DF400FF2F9E /* Prompts.swift */,
+				DA3833BF2523B0CE00C3937E /* PulsarErrors.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -324,7 +349,18 @@
 		DAC2B0C724FA90AF00FF2F9E /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				DA8A82FA252638D4003CC6A5 /* 01 Entrance.m4a */,
+				DA8A82F8252638D3003CC6A5 /* 02 Vestibule.m4a */,
+				DA8A82FB252638D4003CC6A5 /* 03 Foyer.m4a */,
+				DA8A82F3252638D1003CC6A5 /* 04 Drawing Room.m4a */,
+				DA8A82F9252638D3003CC6A5 /* 05 Guest Quarters.m4a */,
+				DA8A82F7252638D2003CC6A5 /* 06 Great Chamber.m4a */,
+				DA8A82FC252638D4003CC6A5 /* 07 Study.m4a */,
+				DA8A82F4252638D1003CC6A5 /* 08 Nursery.m4a */,
+				DA8A82F5252638D2003CC6A5 /* 09 Cloak Room.m4a */,
+				DA8A82F6252638D2003CC6A5 /* 10 Back Gardens.m4a */,
 				DAC2B0C524FA908E00FF2F9E /* example.mp3 */,
+				DA8A830825263903003CC6A5 /* MediaLookUpHelper.swift */,
 			);
 			path = Media;
 			sourceTree = "<group>";
@@ -390,20 +426,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA95EE4625124DC100AE4248 /* getCharacter.json in Resources */,
+				DA8A82FF252638D4003CC6A5 /* 09 Cloak Room.m4a in Resources */,
 				DA95EE3A25124D4C00AE4248 /* getEntry.json in Resources */,
 				DA87075B24EADD9900CF7B62 /* LaunchScreen.storyboard in Resources */,
+				DA8A8306252638D4003CC6A5 /* 07 Study.m4a in Resources */,
 				DA95EE3025124D0600AE4248 /* updateUser.json in Resources */,
 				DA95EE4225124DA500AE4248 /* deleteCharacter.json in Resources */,
+				DA8A82FD252638D4003CC6A5 /* 04 Drawing Room.m4a in Resources */,
 				DA95EE2C25124CDA00AE4248 /* getUsersCharacters.json in Resources */,
 				DACB717325152C3B006BA73E /* entriesByCharacter.json in Resources */,
+				DA8A8301252638D4003CC6A5 /* 06 Great Chamber.m4a in Resources */,
 				DA95EE5025124E0D00AE4248 /* getPrompt.json in Resources */,
 				DA95EE4425124DB200AE4248 /* getPlayerCharacterInfo.json in Resources */,
+				DA8A8305252638D4003CC6A5 /* 03 Foyer.m4a in Resources */,
 				DA95EE4025124D9100AE4248 /* updateCharacter.json in Resources */,
 				DA8CA22A250BE65300A53D6B /* signIn.json in Resources */,
 				DA8CA22C250BE66500A53D6B /* signUp.json in Resources */,
 				DA87075824EADD9900CF7B62 /* Preview Assets.xcassets in Resources */,
 				DA95EE4825124DCE00AE4248 /* invitePlayerToLog.json in Resources */,
 				DA95EE3425124D2600AE4248 /* createEntry.json in Resources */,
+				DA8A82FE252638D4003CC6A5 /* 08 Nursery.m4a in Resources */,
 				DA24006C24EB54F3009CCD22 /* Podfile in Resources */,
 				DA95EE2E25124CF000AE4248 /* getUserByEmail.json in Resources */,
 				DA95EE3E25124D7E00AE4248 /* createCharacter.json in Resources */,
@@ -411,12 +453,16 @@
 				DA95EE3825124D4000AE4248 /* deleteEntry.json in Resources */,
 				DA95EE3625124D3200AE4248 /* updateEntry.json in Resources */,
 				DA95EE4A25124DE200AE4248 /* getLog.json in Resources */,
+				DA8A8300252638D4003CC6A5 /* 10 Back Gardens.m4a in Resources */,
 				DA95EE4E25124DFF00AE4248 /* updateLog.json in Resources */,
+				DA8A8304252638D4003CC6A5 /* 01 Entrance.m4a in Resources */,
 				DA95EE3C25124D6F00AE4248 /* archiveCharacter.json in Resources */,
 				DA95EE4C25124DF000AE4248 /* createLog.json in Resources */,
 				DA95EE3225124D1900AE4248 /* getUser.json in Resources */,
+				DA8A8303252638D4003CC6A5 /* 05 Guest Quarters.m4a in Resources */,
 				DAC2B0C624FA908E00FF2F9E /* example.mp3 in Resources */,
 				DA87075524EADD9900CF7B62 /* Assets.xcassets in Resources */,
+				DA8A8302252638D4003CC6A5 /* 02 Vestibule.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +520,7 @@
 				DAA4C8F5251A1371000E15B7 /* CharacterListView.swift in Sources */,
 				DA19106924F03B3000C72477 /* MainView.swift in Sources */,
 				DAB501F024F6E1490048175E /* APITargets.swift in Sources */,
+				DA3833C02523B0CE00C3937E /* PulsarErrors.swift in Sources */,
 				DA29997C250BD9E300A67035 /* AuthenticationHelper.swift in Sources */,
 				DAC2B0B924F96DBD00FF2F9E /* Logs.swift in Sources */,
 				DAB501FA24F6E9C40048175E /* CharacterBackgrounds.swift in Sources */,
@@ -488,6 +535,7 @@
 				DAA4C8E6251A127C000E15B7 /* CharacterView.swift in Sources */,
 				DAC2B0BD24F96DE600FF2F9E /* Characters.swift in Sources */,
 				DAA4C8EF251A132F000E15B7 /* ActiveCharacterCardView.swift in Sources */,
+				DA8A830925263903003CC6A5 /* MediaLookUpHelper.swift in Sources */,
 				DAC2B0BB24F96DD300FF2F9E /* Songs.swift in Sources */,
 				DAC2B0C924FA93FF00FF2F9E /* SongPlayerViewRepresent.swift in Sources */,
 				DAA4C8FF251A70D2000E15B7 /* EntryListRowView.swift in Sources */,

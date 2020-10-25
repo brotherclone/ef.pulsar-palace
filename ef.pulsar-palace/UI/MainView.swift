@@ -115,48 +115,57 @@ struct MainView: View {
     }
     
     func parsePlayerCharacterData(data: Data!){
-        //MARK: Parse player character data from server and then populate an environment variable for cross view reference
         if data == nil{
             self.mainStatusHelper.playerDataIsReady = false
         }else{
             do {
                 let json = try JSON(data:data)
                 var characterRoles: [CharacterRole] = []
-                if let roles: [Any] = json["character_roles"].array {
+                if let roles: Array = json[0]["character_roles"].array {
                     for role in roles {
-                        let aRole: CharacterRole = role as! CharacterRole
+                        let aRole: CharacterRole = CharacterRole(id: role["id"].intValue,
+                                                                 character_role:role["character_role"].stringValue)
                         characterRoles.append(aRole)
                     }
                     mainStatusHelper.roles = characterRoles
+                }else{
+                    print("error parsing player character data: roles")
                 }
                 var characterSettings: [CharacterSetting] = []
-                if let settings: [Any] = json["character_settings"].array {
+                if let settings: Array = json[0]["character_settings"].array {
                     for setting in settings{
-                        let aSetting: CharacterSetting = setting as! CharacterSetting
+                        let aSetting: CharacterSetting = CharacterSetting(id: setting["id"].intValue,
+                                                                           place: setting["place"].stringValue,
+                                                                           time: setting["time"].stringValue)
                         characterSettings.append(aSetting)
                     }
                     mainStatusHelper.settings = characterSettings
+                }else{
+                    print("error parsing player character data: settings")
                 }
                 var characterDescriptors: [CharacterDescriptor] = []
-                if let descriptors: [Any] = json["character_descriptors"].array {
+                if let descriptors: Array = json[0]["character_descriptors"].array {
                     for descriptor in descriptors{
-                        let aDescriptor: CharacterDescriptor = descriptor as! CharacterDescriptor
+                        let aDescriptor: CharacterDescriptor = CharacterDescriptor(id: descriptor["id"].intValue,
+                                                                                   descriptor: descriptor["descriptor"].stringValue)
                         characterDescriptors.append(aDescriptor)
                     }
                     mainStatusHelper.descriptors = characterDescriptors
+                }else{
+                    print("error parsing player character data: descriptors")
                 }
                 var characterBackgrounds: [CharacterBackground] = []
-                if let backgrounds: [Any] = json["character_backgrounds"].array{
+                if let backgrounds: Array = json[0]["character_backgrounds"].array{
                     for background in backgrounds{
-                        let aBackground: CharacterBackground = background as! CharacterBackground
+                        let aBackground: CharacterBackground = CharacterBackground(id: background["id"].intValue, background: background["background"].stringValue)
                         characterBackgrounds.append(aBackground)
                     }
                     mainStatusHelper.backgrounds = characterBackgrounds
+                }else{
+                    print("error parsing player character data")
                 }
                 initializeCharacters(backgrounds: characterBackgrounds, settings:characterSettings, descriptors: characterDescriptors, roles: characterRoles)
-                
                 self.mainStatusHelper.playerDataIsReady = true
-                
             }catch{
                 print("JSON parsing error: Player Character Data")
                 self.mainStatusHelper.playerDataIsReady = false
@@ -185,13 +194,22 @@ struct MainView: View {
                         }
                     } else {
                         Group{
-                            // MARK: If there's no active character, give the user a link to create one.
-                            NavigationLink(destination: CreateACharacterView(settings: mainStatusHelper.settings,
-                                                                             backgrounds:mainStatusHelper.backgrounds,
-                                                                             roles: mainStatusHelper.roles,
-                                                                             descriptors: mainStatusHelper.descriptors)){
-                                Text("Create a Character")
+                            if mainStatusHelper.settings.count > 0 && mainStatusHelper.backgrounds.count > 0 &&  mainStatusHelper.roles.count > 0 && mainStatusHelper.descriptors.count > 0{
+                                Group{
+                                    // MARK: If there's no active character, give the user a link to create one.
+                                    NavigationLink(destination: CreateACharacterView(settings: mainStatusHelper.settings,
+                                                                                     backgrounds:mainStatusHelper.backgrounds,
+                                                                                     roles: mainStatusHelper.roles,
+                                                                                     descriptors: mainStatusHelper.descriptors)){
+                                        Text("Create a Character")
+                                    }
+                                }
+                            }else{
+                                Group{
+                                    Text("Loading")
+                                }
                             }
+                            
                         }
                     }
                 }
@@ -207,7 +225,6 @@ struct MainView: View {
                 if error != nil{
                     print(error as Any)
                 }else{
-                    // MARK: All Player Character Data is loaded and parsed
                     parsePlayerCharacterData(data: response!.data)
                 }
             })

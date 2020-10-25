@@ -13,6 +13,7 @@ import SwiftyJSON
 
 class SignUpVersusSignInHelper: ObservableObject {
     @Published var signIn: Bool = true
+    @Published var showCanNotConnectAlert: Bool = false
 }
 
 struct SignInView: View {
@@ -41,6 +42,7 @@ struct SignInView: View {
     }
     
     func postSignIn(user: UserSignIn, postSignInCompletionHanlder: @escaping (Response?, Error?) -> Void){
+        print("postSignIn: \(user)")
         let networkManager = NetworkManager.provider
         networkManager.request(.signIn(user: user)){ result in
             switch result{
@@ -53,13 +55,16 @@ struct SignInView: View {
     }
     
     func setAccessToken(data: Data){
+        print("setAccessToken: \(data)")
         do{
             let json = try JSON(data:data)
             if let token:String = json["token"].string {
+                print("setting token: \(token)")
                 authenticationHelper.setToken(tokenData: token)
                 if let id:Int = json["id"].int{
                     if let email:String = json["email"].string{
                         let userData: User = User(id: id, first_name: json["first_name"].string, last_name: json["last_name"].string, email: email, password: "logged-in")
+                        print("setting user: \(userData)")
                         authenticationHelper.setCurrentUser(user: userData)
                     }
                 }
@@ -75,6 +80,9 @@ struct SignInView: View {
     var body: some View {
         Group{
             NavigationLink(destination: MainView(), isActive: $authenticationHelper.isLoggedIn){}
+                .alert(isPresented: $signInSignUpHelper.showCanNotConnectAlert){
+                    Alert(title: Text("Error"), message: Text("Can not connect to web service"), dismissButton: .default(Text("Ok")))
+                }
             if signInSignUpHelper.signIn{
                 Group{
                     Text("Sign In")
@@ -84,6 +92,7 @@ struct SignInView: View {
                         let userSignIn = UserSignIn(email: "example10@example.com", password: "password")
                         self.postSignIn(user: userSignIn, postSignInCompletionHanlder: { response, error in
                             if error != nil{
+                                signInSignUpHelper.showCanNotConnectAlert = true
                                 print(error as Any)
                             }else{
                                 if let data:Data = response?.data{
