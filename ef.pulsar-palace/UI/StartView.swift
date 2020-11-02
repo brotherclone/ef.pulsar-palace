@@ -22,14 +22,14 @@ struct StartView: View {
                             Group{
                                 SplashUIView()
                                 NavigationLink(destination: MainView()){
-                                    Text("Continue")
+                                    Text("Continue").pulsarFont(style: .primaryButton).foregroundColor(Color.pink)
                                 }
                             }
                         }else{
                             Group{
                                 SplashUIView()
                                 NavigationLink(destination: SignInView()){
-                                    Text("Sign In")
+                                    Text("Sign In").pulsarFont(style: .primaryButton).foregroundColor(Color.pink)
                                 }
                             }
                         }

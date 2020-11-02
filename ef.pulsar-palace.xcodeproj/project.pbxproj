@@ -18,7 +18,6 @@
 		DA29997C250BD9E300A67035 /* AuthenticationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29997B250BD9E300A67035 /* AuthenticationHelper.swift */; };
 		DA3833C02523B0CE00C3937E /* PulsarErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3833BF2523B0CE00C3937E /* PulsarErrors.swift */; };
 		DA426D232520EFD9005E7B98 /* revealConsequences.json in Resources */ = {isa = PBXBuildFile; fileRef = DA426D222520EFD9005E7B98 /* revealConsequences.json */; };
-		DA58E98A254614430048CC84 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DA58E989254614430048CC84 /* .gitignore */; };
 		DA87074F24EADD9600CF7B62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87074E24EADD9600CF7B62 /* AppDelegate.swift */; };
 		DA87075124EADD9600CF7B62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87075024EADD9600CF7B62 /* SceneDelegate.swift */; };
 		DA87075324EADD9600CF7B62 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87075224EADD9600CF7B62 /* StartView.swift */; };
@@ -82,10 +81,21 @@
 		DAC2B0BD24F96DE600FF2F9E /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC2B0BC24F96DE600FF2F9E /* Characters.swift */; };
 		DAC2B0BF24F96DF400FF2F9E /* Prompts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC2B0BE24F96DF400FF2F9E /* Prompts.swift */; };
 		DAC2B0C424FA8D8900FF2F9E /* SongPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC2B0C324FA8D8900FF2F9E /* SongPlayerViewController.swift */; };
-		DAC2B0C624FA908E00FF2F9E /* example.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DAC2B0C524FA908E00FF2F9E /* example.mp3 */; };
 		DAC2B0C924FA93FF00FF2F9E /* SongPlayerViewRepresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC2B0C824FA93FF00FF2F9E /* SongPlayerViewRepresent.swift */; };
 		DAC2B0CB24FA953200FF2F9E /* SongPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC2B0CA24FA953200FF2F9E /* SongPlayerView.swift */; };
 		DACB717325152C3B006BA73E /* entriesByCharacter.json in Resources */ = {isa = PBXBuildFile; fileRef = DACB717225152C3B006BA73E /* entriesByCharacter.json */; };
+		DAE8BC6B255062870003B49C /* SourceSansPro-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAE8BC612550626B0003B49C /* SourceSansPro-SemiBoldItalic.ttf */; };
+		DAE8BC6C255062870003B49C /* SourceSansPro-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAE8BC602550626B0003B49C /* SourceSansPro-LightItalic.ttf */; };
+		DAE8BC6E255062870003B49C /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAE8BC682550626C0003B49C /* SourceSansPro-Regular.ttf */; };
+		DAE8BC71255062870003B49C /* SourceSansPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAE8BC632550626B0003B49C /* SourceSansPro-Light.ttf */; };
+		DAE8BC73255062870003B49C /* SourceSansPro-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAE8BC662550626C0003B49C /* SourceSansPro-BlackItalic.ttf */; };
+		DAE8BC75255062870003B49C /* SourceSansPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAE8BC652550626B0003B49C /* SourceSansPro-Black.ttf */; };
+		DAE8BC76255062870003B49C /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAE8BC692550626C0003B49C /* SourceSansPro-SemiBold.ttf */; };
+		DAE8BC8A255071BD0003B49C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE8BC89255071BD0003B49C /* Colors.xcassets */; };
+		DAE8BC9125507B0D0003B49C /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8BC9025507B0D0003B49C /* ColorExtensions.swift */; };
+		DAE8BC9425507BBA0003B49C /* FontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8BC9325507BBA0003B49C /* FontExtensions.swift */; };
+		DAE8BC992550880F0003B49C /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAE8BC972550880F0003B49C /* SourceSansPro-Bold.ttf */; };
+		DAE8BC9A2550880F0003B49C /* SourceSansPro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAE8BC982550880F0003B49C /* SourceSansPro-Italic.ttf */; };
 		DAFD9DA4250AAC5000116198 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFD9DA3250AAC5000116198 /* ArrayExtensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -173,6 +183,18 @@
 		DAC2B0C824FA93FF00FF2F9E /* SongPlayerViewRepresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPlayerViewRepresent.swift; sourceTree = "<group>"; };
 		DAC2B0CA24FA953200FF2F9E /* SongPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPlayerView.swift; sourceTree = "<group>"; };
 		DACB717225152C3B006BA73E /* entriesByCharacter.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = entriesByCharacter.json; sourceTree = "<group>"; };
+		DAE8BC602550626B0003B49C /* SourceSansPro-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-LightItalic.ttf"; sourceTree = "<group>"; };
+		DAE8BC612550626B0003B49C /* SourceSansPro-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		DAE8BC632550626B0003B49C /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
+		DAE8BC652550626B0003B49C /* SourceSansPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Black.ttf"; sourceTree = "<group>"; };
+		DAE8BC662550626C0003B49C /* SourceSansPro-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-BlackItalic.ttf"; sourceTree = "<group>"; };
+		DAE8BC682550626C0003B49C /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
+		DAE8BC692550626C0003B49C /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
+		DAE8BC89255071BD0003B49C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		DAE8BC9025507B0D0003B49C /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		DAE8BC9325507BBA0003B49C /* FontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtensions.swift; sourceTree = "<group>"; };
+		DAE8BC972550880F0003B49C /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSansPro-Bold.ttf"; path = "../../../../Downloads/Source_Sans_Pro/SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
+		DAE8BC982550880F0003B49C /* SourceSansPro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Italic.ttf"; sourceTree = "<group>"; };
 		DAFD9DA3250AAC5000116198 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		DD9A6DBED1C2B013E82AC4D6 /* Pods_ef_pulsar_palace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ef_pulsar_palace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -211,6 +233,8 @@
 			children = (
 				DA03A54E24FEEB9000E562E0 /* UserDefaultExtensions.swift */,
 				DAFD9DA3250AAC5000116198 /* ArrayExtensions.swift */,
+				DAE8BC9025507B0D0003B49C /* ColorExtensions.swift */,
+				DAE8BC9325507BBA0003B49C /* FontExtensions.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -265,6 +289,7 @@
 		DA87074D24EADD9600CF7B62 /* ef.pulsar-palace */ = {
 			isa = PBXGroup;
 			children = (
+				DAE8BC5A255062380003B49C /* fonts */,
 				DA03A54D24FEEB7C00E562E0 /* extensions */,
 				DAC2B0C724FA90AF00FF2F9E /* Media */,
 				DAB501F824F6E9B30048175E /* Models */,
@@ -274,6 +299,7 @@
 				DA87074E24EADD9600CF7B62 /* AppDelegate.swift */,
 				DA87075024EADD9600CF7B62 /* SceneDelegate.swift */,
 				DA87075424EADD9900CF7B62 /* Assets.xcassets */,
+				DAE8BC89255071BD0003B49C /* Colors.xcassets */,
 				DA87075924EADD9900CF7B62 /* LaunchScreen.storyboard */,
 				DA87075C24EADD9900CF7B62 /* Info.plist */,
 				DA87075624EADD9900CF7B62 /* Preview Content */,
@@ -368,6 +394,22 @@
 			path = Media;
 			sourceTree = "<group>";
 		};
+		DAE8BC5A255062380003B49C /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DAE8BC972550880F0003B49C /* SourceSansPro-Bold.ttf */,
+				DAE8BC982550880F0003B49C /* SourceSansPro-Italic.ttf */,
+				DAE8BC652550626B0003B49C /* SourceSansPro-Black.ttf */,
+				DAE8BC662550626C0003B49C /* SourceSansPro-BlackItalic.ttf */,
+				DAE8BC632550626B0003B49C /* SourceSansPro-Light.ttf */,
+				DAE8BC602550626B0003B49C /* SourceSansPro-LightItalic.ttf */,
+				DAE8BC682550626C0003B49C /* SourceSansPro-Regular.ttf */,
+				DAE8BC692550626C0003B49C /* SourceSansPro-SemiBold.ttf */,
+				DAE8BC612550626B0003B49C /* SourceSansPro-SemiBoldItalic.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -428,19 +470,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAE8BC73255062870003B49C /* SourceSansPro-BlackItalic.ttf in Resources */,
 				DA95EE4625124DC100AE4248 /* getCharacter.json in Resources */,
 				DA8A82FF252638D4003CC6A5 /* 09 Cloak Room.m4a in Resources */,
 				DA95EE3A25124D4C00AE4248 /* getEntry.json in Resources */,
 				DA87075B24EADD9900CF7B62 /* LaunchScreen.storyboard in Resources */,
 				DA8A8306252638D4003CC6A5 /* 07 Study.m4a in Resources */,
 				DA95EE3025124D0600AE4248 /* updateUser.json in Resources */,
+				DAE8BC71255062870003B49C /* SourceSansPro-Light.ttf in Resources */,
 				DA95EE4225124DA500AE4248 /* deleteCharacter.json in Resources */,
 				DA8A82FD252638D4003CC6A5 /* 04 Drawing Room.m4a in Resources */,
+				DAE8BC6E255062870003B49C /* SourceSansPro-Regular.ttf in Resources */,
 				DA95EE2C25124CDA00AE4248 /* getUsersCharacters.json in Resources */,
 				DACB717325152C3B006BA73E /* entriesByCharacter.json in Resources */,
 				DA8A8301252638D4003CC6A5 /* 06 Great Chamber.m4a in Resources */,
 				DA95EE5025124E0D00AE4248 /* getPrompt.json in Resources */,
 				DA95EE4425124DB200AE4248 /* getPlayerCharacterInfo.json in Resources */,
+				DAE8BC9A2550880F0003B49C /* SourceSansPro-Italic.ttf in Resources */,
+				DAE8BC75255062870003B49C /* SourceSansPro-Black.ttf in Resources */,
+				DAE8BC992550880F0003B49C /* SourceSansPro-Bold.ttf in Resources */,
 				DA8A8305252638D4003CC6A5 /* 03 Foyer.m4a in Resources */,
 				DA95EE4025124D9100AE4248 /* updateCharacter.json in Resources */,
 				DA8CA22A250BE65300A53D6B /* signIn.json in Resources */,
@@ -449,11 +497,15 @@
 				DA95EE4825124DCE00AE4248 /* invitePlayerToLog.json in Resources */,
 				DA95EE3425124D2600AE4248 /* createEntry.json in Resources */,
 				DA8A82FE252638D4003CC6A5 /* 08 Nursery.m4a in Resources */,
+				DAE8BC8A255071BD0003B49C /* Colors.xcassets in Resources */,
+				DAE8BC76255062870003B49C /* SourceSansPro-SemiBold.ttf in Resources */,
 				DA24006C24EB54F3009CCD22 /* Podfile in Resources */,
 				DA95EE2E25124CF000AE4248 /* getUserByEmail.json in Resources */,
 				DA95EE3E25124D7E00AE4248 /* createCharacter.json in Resources */,
 				DA426D232520EFD9005E7B98 /* revealConsequences.json in Resources */,
 				DA95EE3825124D4000AE4248 /* deleteEntry.json in Resources */,
+				DAE8BC6C255062870003B49C /* SourceSansPro-LightItalic.ttf in Resources */,
+				DAE8BC6B255062870003B49C /* SourceSansPro-SemiBoldItalic.ttf in Resources */,
 				DA95EE3625124D3200AE4248 /* updateEntry.json in Resources */,
 				DA95EE4A25124DE200AE4248 /* getLog.json in Resources */,
 				DA8A8300252638D4003CC6A5 /* 10 Back Gardens.m4a in Resources */,
@@ -463,9 +515,7 @@
 				DA95EE4C25124DF000AE4248 /* createLog.json in Resources */,
 				DA95EE3225124D1900AE4248 /* getUser.json in Resources */,
 				DA8A8303252638D4003CC6A5 /* 05 Guest Quarters.m4a in Resources */,
-				DAC2B0C624FA908E00FF2F9E /* example.mp3 in Resources */,
 				DA87075524EADD9900CF7B62 /* Assets.xcassets in Resources */,
-				DA58E98A254614430048CC84 /* .gitignore in Resources */,
 				DA8A8302252638D4003CC6A5 /* 02 Vestibule.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -552,6 +602,7 @@
 				DAC2B0B124F96D7400FF2F9E /* CharacterRoles.swift in Sources */,
 				DA8CA228250BDE0900A53D6B /* SplashUIView.swift in Sources */,
 				DAB501F424F6E7B60048175E /* MockResponses.swift in Sources */,
+				DAE8BC9425507BBA0003B49C /* FontExtensions.swift in Sources */,
 				DAC2B0BF24F96DF400FF2F9E /* Prompts.swift in Sources */,
 				DAA4C8F9251A7068000E15B7 /* AuthoringView.swift in Sources */,
 				DA19106724F03AB500C72477 /* CreateACharacterView.swift in Sources */,
@@ -559,6 +610,7 @@
 				DA19106324F0394400C72477 /* SignInView.swift in Sources */,
 				DA19106B24F03BDA00C72477 /* EntryView.swift in Sources */,
 				DAA4C8F2251A1359000E15B7 /* CharacterListRowView.swift in Sources */,
+				DAE8BC9125507B0D0003B49C /* ColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
