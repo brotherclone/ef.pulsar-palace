@@ -29,7 +29,7 @@ struct StartView: View {
                             Group{
                                 SplashUIView()
                                 NavigationLink(destination: SignInView()){
-                                    Text("Sign In").pulsarFont(style: .primaryButton).foregroundColor(Color.pink)
+                                    Text("Begin").pulsarFont(style: .primaryButton).foregroundColor(Color.pink)
                                 }
                             }
                         }

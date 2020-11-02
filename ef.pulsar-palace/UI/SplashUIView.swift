@@ -10,7 +10,7 @@ import SwiftUI
 
 struct TextOverlay: View{
     var body: some View{
-        Text("Pulsar\n Palace").pulsarFont(style: .h1).foregroundColor(Color.black)
+        Text("Pulsar Palace").pulsarFont(style: .h1).foregroundColor(Color.black)
     }
 }
 

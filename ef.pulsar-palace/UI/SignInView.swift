@@ -76,69 +76,83 @@ struct SignInView: View {
         }
     }
     
-    
     var body: some View {
-        Group{
-            NavigationLink(destination: MainView(), isActive: $authenticationHelper.isLoggedIn){}
-                .alert(isPresented: $signInSignUpHelper.showCanNotConnectAlert){
-                    Alert(title: Text("Error"), message: Text("Can not connect to web service"), dismissButton: .default(Text("Ok")))
-                }
-            if signInSignUpHelper.signIn{
-                Group{
-                    Text("Sign In")
-                    TextField("Email", text: $emailInput)
-                    TextField("Password", text: $passWordInput)
-                    Button(action: {
-                        let userSignIn = UserSignIn(email: "example10@example.com", password: "password")
-                        self.postSignIn(user: userSignIn, postSignInCompletionHanlder: { response, error in
-                            if error != nil{
-                                signInSignUpHelper.showCanNotConnectAlert = true
-                                print(error as Any)
-                            }else{
-                                if let data:Data = response?.data{
-                                    self.setAccessToken(data: data)
-                                }
+        ZStack{
+            Color.yellow
+                .ignoresSafeArea()
+            Group{
+                NavigationLink(destination: MainView(), isActive: $authenticationHelper.isLoggedIn){}
+                    .alert(isPresented: $signInSignUpHelper.showCanNotConnectAlert){
+                        Alert(title: Text("Error"), message: Text("Can not connect to web service"), dismissButton: .default(Text("Ok")))
+                    }
+                if signInSignUpHelper.signIn{
+                    Group{
+                        VStack{
+                            Image("temp")
+                                .resizable()
+                                .scaledToFit()
+                            Text("Sign In").pulsarFont(style: .h2)
+                            TextField("Email", text: $emailInput).textFieldStyle(PulsarTextFieldStyle())
+                            TextField("Password", text: $passWordInput).textFieldStyle(PulsarTextFieldStyle())
+                            Button(action: {
+                                let userSignIn = UserSignIn(email: self.emailInput, password: self.passWordInput)
+                                self.postSignIn(user: userSignIn, postSignInCompletionHanlder: { response, error in
+                                    if error != nil{
+                                        signInSignUpHelper.showCanNotConnectAlert = true
+                                        print(error as Any)
+                                    }else{
+                                        if let data:Data = response?.data{
+                                            self.setAccessToken(data: data)
+                                        }
+                                    }
+                                })
+                            }) {
+                                Text("Submit").pulsarFont(style: .primaryButton).foregroundColor(Color.pink)
                             }
-                        })
-                    }) {
-                        Text("Submit")
-                    }
-                    Button(action: {
-                        self.signInSignUpHelper.signIn.toggle()
-                    }) {
-                        Text("Create Account")
-                    }
-                }
-            }else{
-                Group{
-                    Text("Sign Up")
-                    TextField("First Name", text: $firstNameInput)
-                    TextField("Last Name", text: $lastNameInput)
-                    TextField("Email", text: $emailInput)
-                    TextField("Password", text: $passWordInput)
-                    TextField("Confirm Password", text: $confirmPassWordInput)
-                    Button(action: {
-                        let userSignUp: User = User(id:nil, first_name: "first", last_name:"last", email:self.emailInput, password: "password")
-                        self.postSignUp(user: userSignUp, postSignUpCompletionHandler: { response, error in
-                            if error != nil{
-                                print(error as Any)
-                            }else{
-                                if let data:Data = response?.data{
-                                    self.setAccessToken(data: data)
-                                }
+                            Button(action: {
+                                self.signInSignUpHelper.signIn.toggle()
+                            }) {
+                                Text("Create Account").pulsarFont(style: .secondaryButton).foregroundColor(Color.pink)
                             }
-                        })
-                    }) {
-                        Text("Submit")
+                        }
                     }
-                    Button(action: {
-                        self.signInSignUpHelper.signIn.toggle()
-                    }){
-                        Text("I have an account. Sign In.")
+                }else{
+                    Group{
+                        VStack{
+                            Image("temp")
+                                .resizable()
+                                .scaledToFit()
+                            Text("Sign Up").pulsarFont(style: .h2)
+                            TextField("First Name", text: $firstNameInput).textFieldStyle(PulsarTextFieldStyle())
+                            TextField("Last Name", text: $lastNameInput).textFieldStyle(PulsarTextFieldStyle())
+                            TextField("Email", text: $emailInput).textFieldStyle(PulsarTextFieldStyle())
+                            TextField("Password", text: $passWordInput).textFieldStyle(PulsarTextFieldStyle())
+                            TextField("Confirm Password", text: $confirmPassWordInput).textFieldStyle(PulsarTextFieldStyle())
+                            Button(action: {
+                                let userSignUp: User = User(id:nil, first_name:  self.firstNameInput, last_name: self.lastNameInput, email:self.emailInput, password: self.passWordInput)
+                                self.postSignUp(user: userSignUp, postSignUpCompletionHandler: { response, error in
+                                    if error != nil{
+                                        print(error as Any)
+                                    }else{
+                                        if let data:Data = response?.data{
+                                            self.setAccessToken(data: data)
+                                        }
+                                    }
+                                })
+                            }) {
+                                Text("Submit").pulsarFont(style: .primaryButton).foregroundColor(Color.pink)
+                            }
+                            Button(action: {
+                                self.signInSignUpHelper.signIn.toggle()
+                            }){
+                                Text("I have an account. Sign In.").pulsarFont(style: .secondaryButton).foregroundColor(Color.pink)
+                            }
+                        }
                     }
                 }
             }
-        }
+        }.navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 }
 
