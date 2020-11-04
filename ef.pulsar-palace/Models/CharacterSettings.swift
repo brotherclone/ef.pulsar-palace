@@ -12,6 +12,7 @@ public struct CharacterSetting {
     var id: Int
     var place: String
     var time: String
+    var imageURL: String
 }
 
 extension CharacterSetting: Encodable, Decodable {
@@ -20,6 +21,7 @@ extension CharacterSetting: Encodable, Decodable {
         case id
         case place
         case time
+        case imageURL
     }
     
     public init(from decoder: Decoder) throws {
@@ -30,7 +32,8 @@ extension CharacterSetting: Encodable, Decodable {
         place = try container.decode(String.self, forKey: .place)
         _ = try container.decode(CharacterSetting.self, forKey: .time)
         time = try container.decode(String.self, forKey: .time)
-        
+        _ = try container.decode(CharacterSetting.self, forKey: .imageURL)
+        imageURL = try container.decode(String.self, forKey: .imageURL)
         
     }
 }

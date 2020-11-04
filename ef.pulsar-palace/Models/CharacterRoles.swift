@@ -11,6 +11,8 @@ import Foundation
 public struct CharacterRole {
     var id: Int
     var character_role: String
+    var imageURL: String
+
 }
 
 extension CharacterRole: Encodable, Decodable {
@@ -18,6 +20,7 @@ extension CharacterRole: Encodable, Decodable {
     enum CharacterRoleKeys: String, CodingKey{
         case id
         case character_role
+        case imageURL
     }
     
     public init(from decoder: Decoder) throws {
@@ -26,5 +29,8 @@ extension CharacterRole: Encodable, Decodable {
         id = try container.decode(Int.self, forKey: .id)
         _ = try container.decode(CharacterRole.self, forKey: .character_role)
         character_role = try container.decode(String.self, forKey: .character_role)
+        _ = try container.decode(CharacterRole.self, forKey: .imageURL)
+        imageURL = try container.decode(String.self, forKey: .imageURL)
+        
     }
 }
