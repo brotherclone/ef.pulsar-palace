@@ -26,6 +26,5 @@ extension CharacterBackground: Encodable, Decodable {
         id = try container.decode(Int.self, forKey: .id)
         _ = try container.decode(CharacterBackground.self, forKey: .background)
         background = try container.decode(String.self, forKey: .background)
-        
     }
 }

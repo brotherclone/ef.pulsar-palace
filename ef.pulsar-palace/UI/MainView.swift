@@ -124,7 +124,7 @@ struct MainView: View {
                 if let roles: Array = json[0]["character_roles"].array {
                     for role in roles {
                         let aRole: CharacterRole = CharacterRole(id: role["id"].intValue,
-                                                                 character_role:role["character_role"].stringValue)
+                                                                 character_role:role["character_role"].stringValue, imageURL: role["image_url"].stringValue)
                         characterRoles.append(aRole)
                     }
                     mainStatusHelper.roles = characterRoles
@@ -136,7 +136,7 @@ struct MainView: View {
                     for setting in settings{
                         let aSetting: CharacterSetting = CharacterSetting(id: setting["id"].intValue,
                                                                            place: setting["place"].stringValue,
-                                                                           time: setting["time"].stringValue)
+                                                                           time: setting["time"].stringValue, imageURL: setting["image_url"].stringValue)
                         characterSettings.append(aSetting)
                     }
                     mainStatusHelper.settings = characterSettings
@@ -147,7 +147,8 @@ struct MainView: View {
                 if let descriptors: Array = json[0]["character_descriptors"].array {
                     for descriptor in descriptors{
                         let aDescriptor: CharacterDescriptor = CharacterDescriptor(id: descriptor["id"].intValue,
-                                                                                   descriptor: descriptor["descriptor"].stringValue)
+                                                                                   descriptor: descriptor["descriptor"].stringValue,
+                                                                                   imageURL: descriptor["image_url"].stringValue)
                         characterDescriptors.append(aDescriptor)
                     }
                     mainStatusHelper.descriptors = characterDescriptors

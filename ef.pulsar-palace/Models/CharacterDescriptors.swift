@@ -11,6 +11,7 @@ import Foundation
 public struct CharacterDescriptor {
     var id: Int
     var descriptor: String
+    var imageURL: String
 }
 
 extension CharacterDescriptor: Encodable, Decodable {
@@ -18,6 +19,7 @@ extension CharacterDescriptor: Encodable, Decodable {
     enum CharacterDescriptorKeys: String, CodingKey{
         case id
         case descriptor
+        case imageURL
     }
     
     public init(from decoder: Decoder) throws {
@@ -26,6 +28,7 @@ extension CharacterDescriptor: Encodable, Decodable {
         id = try container.decode(Int.self, forKey: .id)
         _ = try container.decode(CharacterDescriptor.self, forKey: .descriptor)
         descriptor = try container.decode(String.self, forKey: .descriptor)
-        
+        _ = try container.decode(CharacterDescriptor.self, forKey: .imageURL)
+        imageURL = try container.decode(String.self, forKey: .imageURL)
     }
 }

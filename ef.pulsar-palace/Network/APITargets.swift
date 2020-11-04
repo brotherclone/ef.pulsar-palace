@@ -53,7 +53,7 @@ extension APITargets: TargetType, AccessTokenAuthorizable {
         case .createEntry(_):
              return "entries/create.json"
         case .updateEntry(let entry):
-            return "entries/\(entry.id).json"
+            return "entries/\(String(describing: entry.id)).json"
         case .deleteEntry(let entryId, _, _):
              return "entries/\(entryId).json"
         case .getEntriesByCharacter(_):
