@@ -12,6 +12,7 @@
 		DA0EE4D1251E60D50026E4DF /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0EE4D0251E60D50026E4DF /* ResultsView.swift */; };
 		DA153EBA255313460009D21B /* SettingsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA153EB9255313460009D21B /* SettingsUIView.swift */; };
 		DA153EC225531B160009D21B /* SignInSignUpContainerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA153EC125531B160009D21B /* SignInSignUpContainerUIView.swift */; };
+		DA153EC625543C210009D21B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DA153EC525543C210009D21B /* README.md */; };
 		DA19106324F0394400C72477 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19106224F0394400C72477 /* SignInView.swift */; };
 		DA19106724F03AB500C72477 /* CreateACharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19106624F03AB500C72477 /* CreateACharacterView.swift */; };
 		DA19106924F03B3000C72477 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19106824F03B3000C72477 /* MainView.swift */; };
@@ -109,6 +110,7 @@
 		DA0EE4D0251E60D50026E4DF /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		DA153EB9255313460009D21B /* SettingsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUIView.swift; sourceTree = "<group>"; };
 		DA153EC125531B160009D21B /* SignInSignUpContainerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSignUpContainerUIView.swift; sourceTree = "<group>"; };
+		DA153EC525543C210009D21B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DA19106224F0394400C72477 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		DA19106624F03AB500C72477 /* CreateACharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateACharacterView.swift; sourceTree = "<group>"; };
 		DA19106824F03B3000C72477 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 		DA87074224EADD9600CF7B62 = {
 			isa = PBXGroup;
 			children = (
+				DA153EC525543C210009D21B /* README.md */,
 				DA58E989254614430048CC84 /* .gitignore */,
 				DA24006B24EB54F3009CCD22 /* Podfile */,
 				DA87074D24EADD9600CF7B62 /* ef.pulsar-palace */,
@@ -485,6 +488,7 @@
 				DA95EE3A25124D4C00AE4248 /* getEntry.json in Resources */,
 				DA87075B24EADD9900CF7B62 /* LaunchScreen.storyboard in Resources */,
 				DA8A8306252638D4003CC6A5 /* 07 Study.m4a in Resources */,
+				DA153EC625543C210009D21B /* README.md in Resources */,
 				DA95EE3025124D0600AE4248 /* updateUser.json in Resources */,
 				DAE8BC71255062870003B49C /* SourceSansPro-Light.ttf in Resources */,
 				DA95EE4225124DA500AE4248 /* deleteCharacter.json in Resources */,
