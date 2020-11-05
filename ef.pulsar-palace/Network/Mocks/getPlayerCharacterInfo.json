@@ -3,43 +3,209 @@
         "character_backgrounds": [
             {
                 "id": 1,
-                "background": "On a mission from God"
+                "background": "is on a mission from God"
             },
             {
                 "id": 2,
-                "background": "Secret society reject"
+                "background": "a secret society reject"
+            },
+            {
+                "id": 3,
+                "background": "knows the only way to stop the comet"
+            },
+            {
+                "id": 4,
+                "background": "can not remember their past"
+            },
+            {
+                "id": 5,
+                "background": "swore they were another person just yesterday"
+            },
+            {
+                "id": 6,
+                "background": "is a master of a game no longer played"
+            },
+            {
+                "id": 7,
+                "background": "lost something very important"
+            },
+            {
+                "id": 8,
+                "background": "can not figure out how to finish it"
+            },
+            {
+                "id": 9,
+                "background": "knows they day they will die"
+            },
+            {
+                "id": 10,
+                "background": "has just been released"
             }
         ],
         "character_descriptors": [
             {
                 "id": 1,
-                "descriptor": "happy"
+                "descriptor": "crazed",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/descriptor-temp_oskkj9.png"
             },
             {
                 "id": 2,
-                "descriptor": "sad"
+                "descriptor": "remorseful",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/descriptor-temp_oskkj9.png"
+            },
+            {
+                "id": 3,
+                "descriptor": "worried",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/descriptor-temp_oskkj9.png"
+            },
+            {
+                "id": 4,
+                "descriptor": "vengeful",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/descriptor-temp_oskkj9.png"
+            },
+            {
+                "id": 5,
+                "descriptor": "sick",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/descriptor-temp_oskkj9.png"
+            },
+            {
+                "id": 6,
+                "descriptor": "cursed",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/descriptor-temp_oskkj9.png"
+            },
+            {
+                "id": 7,
+                "descriptor": "clumsy",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/descriptor-temp_oskkj9.png"
+            },
+            {
+                "id": 8,
+                "descriptor": "misguided",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/descriptor-temp_oskkj9.png"
+            },
+            {
+                "id": 9,
+                "descriptor": "curious",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/descriptor-temp_oskkj9.png"
+            },
+            {
+                "id": 10,
+                "descriptor": "angry",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/descriptor-temp_oskkj9.png"
             }
         ],
         "character_roles": [
             {
                 "id": 1,
-                "character_role": "actor"
+                "character_role": "Doctor",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/role-temp_tidgxw.png"
             },
             {
                 "id": 2,
-                "character_role": "astronomer"
+                "character_role": "Sailor",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/role-temp_tidgxw.png"
+            },
+            {
+                "id": 3,
+                "character_role": "Breeder",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/role-temp_tidgxw.png"
+            },
+            {
+                "id": 4,
+                "character_role": "Detective",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/role-temp_tidgxw.png"
+            },
+            {
+                "id": 5,
+                "character_role": "Janitor",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/role-temp_tidgxw.png"
+            },
+            {
+                "id": 6,
+                "character_role": "Spy",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/role-temp_tidgxw.png"
+            },
+            {
+                "id": 7,
+                "character_role": "Librarian",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/role-temp_tidgxw.png"
+            },
+            {
+                "id": 8,
+                "character_role": "Inventor",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/role-temp_tidgxw.png"
+            },
+            {
+                "id": 9,
+                "character_role": "Tax Collector",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/role-temp_tidgxw.png"
+            },
+            {
+                "id": 10,
+                "character_role": "Partisan",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/role-temp_tidgxw.png"
             }
         ],
         "character_settings": [
             {
                 "id": 1,
-                "time": "1892",
-                "place": "Sweden"
+                "time": "2001",
+                "place": "New York",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/setting-temp_kim3hw.png"
             },
             {
                 "id": 2,
-                "time": "1893",
-                "place": "England"
+                "time": "1984",
+                "place": "Hollywood",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/setting-temp_kim3hw.png"
+            },
+            {
+                "id": 3,
+                "time": "2037",
+                "place": "Glasgow",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/setting-temp_kim3hw.png"
+            },
+            {
+                "id": 4,
+                "time": "1979",
+                "place": "London",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/setting-temp_kim3hw.png"
+            },
+            {
+                "id": 5,
+                "time": "1994",
+                "place": "Paris",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/setting-temp_kim3hw.png"
+            },
+            {
+                "id": 6,
+                "time": "1933",
+                "place": "Berlin",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/setting-temp_kim3hw.png"
+            },
+            {
+                "id": 7,
+                "time": "1946",
+                "place": "Milan",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/setting-temp_kim3hw.png"
+            },
+            {
+                "id": 8,
+                "time": "1921",
+                "place": "Mexico City",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/setting-temp_kim3hw.png"
+            },
+            {
+                "id": 9,
+                "time": "2054",
+                "place": "Hong Kong",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/setting-temp_kim3hw.png"
+            },
+            {
+                "id": 10,
+                "time": "2008",
+                "place": "Baghdad",
+                "image_url": "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/setting-temp_kim3hw.png"
             }
         ]
     }

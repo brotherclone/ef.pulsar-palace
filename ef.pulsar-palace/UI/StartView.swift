@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-
 struct StartView: View {
     
     @ObservedObject  var authtenticationHelper = AuthenticationHelper()
@@ -17,26 +16,30 @@ struct StartView: View {
         NavigationView{
             Color.yellow
                 .overlay(
-                    Group{
+                    VStack{
+                        SplashUIView()
+                        Spacer()
                         if authtenticationHelper.isLoggedIn {
                             Group{
-                                SplashUIView()
                                 NavigationLink(destination: MainView()){
                                     Text("Continue").pulsarFont(style: .primaryButton).foregroundColor(Color.pink)
                                 }
                             }
                         }else{
                             Group{
-                                SplashUIView()
-                                NavigationLink(destination: SignInView()){
+                                NavigationLink(destination: SignInSignUpContainerUIView()){
                                     Text("Begin").pulsarFont(style: .primaryButton).foregroundColor(Color.pink)
                                 }
                             }
                         }
+                        Spacer()
+                        Text("Code Owl Productions, 2020").pulsarFont(style: .lessEmphasis)
                     }
                 )
                 .edgesIgnoringSafeArea(.vertical)
-        }.onAppear( perform: {
+        }.navigationViewStyle(StackNavigationViewStyle())
+        .frame(alignment:.topLeading)
+        .onAppear( perform: {
             authtenticationHelper.refreshAutenticationInfo()
         })
     }
