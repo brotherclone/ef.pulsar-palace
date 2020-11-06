@@ -11,6 +11,7 @@ import SwiftUI
 struct StartView: View {
     
     @ObservedObject  var authtenticationHelper = AuthenticationHelper()
+    @State private var isPresented = false
     
     var body: some View {
         NavigationView{
@@ -18,6 +19,10 @@ struct StartView: View {
                 .overlay(
                     VStack{
                         SplashUIView()
+
+//                        Button("Present") {
+//                            isPresented.toggle()
+//                        }
                         Spacer()
                         if authtenticationHelper.isLoggedIn {
                             Group{
@@ -42,6 +47,9 @@ struct StartView: View {
         .onAppear( perform: {
             authtenticationHelper.refreshAutenticationInfo()
         })
+        .fullScreenCover(isPresented: $isPresented) {
+            LoadingUIView()
+        }
     }
 }
 
