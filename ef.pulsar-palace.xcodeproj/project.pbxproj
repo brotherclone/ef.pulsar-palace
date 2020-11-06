@@ -13,6 +13,8 @@
 		DA153EBA255313460009D21B /* SettingsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA153EB9255313460009D21B /* SettingsUIView.swift */; };
 		DA153EC225531B160009D21B /* SignInSignUpContainerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA153EC125531B160009D21B /* SignInSignUpContainerUIView.swift */; };
 		DA153EC625543C210009D21B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DA153EC525543C210009D21B /* README.md */; };
+		DA153ECB2555B2FA0009D21B /* LoadingCirclesUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA153ECA2555B2FA0009D21B /* LoadingCirclesUI.swift */; };
+		DA153ECE2555C1990009D21B /* LoadingUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA153ECD2555C1990009D21B /* LoadingUIView.swift */; };
 		DA19106324F0394400C72477 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19106224F0394400C72477 /* SignInView.swift */; };
 		DA19106724F03AB500C72477 /* CreateACharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19106624F03AB500C72477 /* CreateACharacterView.swift */; };
 		DA19106924F03B3000C72477 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19106824F03B3000C72477 /* MainView.swift */; };
@@ -111,6 +113,8 @@
 		DA153EB9255313460009D21B /* SettingsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUIView.swift; sourceTree = "<group>"; };
 		DA153EC125531B160009D21B /* SignInSignUpContainerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSignUpContainerUIView.swift; sourceTree = "<group>"; };
 		DA153EC525543C210009D21B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DA153ECA2555B2FA0009D21B /* LoadingCirclesUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCirclesUI.swift; sourceTree = "<group>"; };
+		DA153ECD2555C1990009D21B /* LoadingUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingUIView.swift; sourceTree = "<group>"; };
 		DA19106224F0394400C72477 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		DA19106624F03AB500C72477 /* CreateACharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateACharacterView.swift; sourceTree = "<group>"; };
 		DA19106824F03B3000C72477 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -248,9 +252,18 @@
 			path = extensions;
 			sourceTree = "<group>";
 		};
+		DA153EC92555B2CC0009D21B /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				DA153ECA2555B2FA0009D21B /* LoadingCirclesUI.swift */,
+			);
+			path = Graphics;
+			sourceTree = "<group>";
+		};
 		DA19105F24F0350600C72477 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				DA153EC92555B2CC0009D21B /* Graphics */,
 				DA87075224EADD9600CF7B62 /* StartView.swift */,
 				DA19106224F0394400C72477 /* SignInView.swift */,
 				DA19106624F03AB500C72477 /* CreateACharacterView.swift */,
@@ -273,6 +286,7 @@
 				DA0EE4D0251E60D50026E4DF /* ResultsView.swift */,
 				DA153EB9255313460009D21B /* SettingsUIView.swift */,
 				DA153EC125531B160009D21B /* SignInSignUpContainerUIView.swift */,
+				DA153ECD2555C1990009D21B /* LoadingUIView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -583,7 +597,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAC2B0C424FA8D8900FF2F9E /* SongPlayerViewController.swift in Sources */,
+				DA153ECE2555C1990009D21B /* LoadingUIView.swift in Sources */,
 				DA153EBA255313460009D21B /* SettingsUIView.swift in Sources */,
+				DA153ECB2555B2FA0009D21B /* LoadingCirclesUI.swift in Sources */,
 				DA87074F24EADD9600CF7B62 /* AppDelegate.swift in Sources */,
 				DAA4C8F5251A1371000E15B7 /* CharacterListView.swift in Sources */,
 				DA19106924F03B3000C72477 /* MainView.swift in Sources */,

@@ -13,12 +13,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-//        for fontFamily in UIFont.familyNames {
-//            print("Using fonts:")
-//            for fontName in UIFont.fontNames(forFamilyName: fontFamily) {
-//                print("\(fontName)")
-//            }
-//        }
         let contentView = StartView()
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
