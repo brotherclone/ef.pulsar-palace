@@ -53,7 +53,7 @@ extension View {
         case .moreEmphasis:
             return self.modifier(ScaledFont(name: "SourceSansPro-SemiBold", size: 20))
         case .primaryButton:
-            return self.modifier(ScaledFont(name: "SourceSansPro-Bold", size: 22))
+            return self.modifier(ScaledFont(name: "SourceSansPro-SemiBold", size: 22))
         case .secondaryButton:
             return self.modifier(ScaledFont(name: "SourceSansPro-Italic", size: 22))
         }

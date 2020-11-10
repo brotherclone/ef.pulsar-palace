@@ -23,6 +23,7 @@
 		DA29997C250BD9E300A67035 /* AuthenticationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29997B250BD9E300A67035 /* AuthenticationHelper.swift */; };
 		DA3833C02523B0CE00C3937E /* PulsarErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3833BF2523B0CE00C3937E /* PulsarErrors.swift */; };
 		DA426D232520EFD9005E7B98 /* revealConsequences.json in Resources */ = {isa = PBXBuildFile; fileRef = DA426D222520EFD9005E7B98 /* revealConsequences.json */; };
+		DA784FBA255ADB080019AD43 /* CharacterPortraitUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA784FB9255ADB080019AD43 /* CharacterPortraitUIView.swift */; };
 		DA87074F24EADD9600CF7B62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87074E24EADD9600CF7B62 /* AppDelegate.swift */; };
 		DA87075124EADD9600CF7B62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87075024EADD9600CF7B62 /* SceneDelegate.swift */; };
 		DA87075324EADD9600CF7B62 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87075224EADD9600CF7B62 /* StartView.swift */; };
@@ -99,7 +100,6 @@
 		DAE8BC8A255071BD0003B49C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE8BC89255071BD0003B49C /* Colors.xcassets */; };
 		DAE8BC9125507B0D0003B49C /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8BC9025507B0D0003B49C /* ColorExtensions.swift */; };
 		DAE8BC9425507BBA0003B49C /* FontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8BC9325507BBA0003B49C /* FontExtensions.swift */; };
-		DAE8BC992550880F0003B49C /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAE8BC972550880F0003B49C /* SourceSansPro-Bold.ttf */; };
 		DAE8BC9A2550880F0003B49C /* SourceSansPro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAE8BC982550880F0003B49C /* SourceSansPro-Italic.ttf */; };
 		DAE8BCA4255097D00003B49C /* TextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE8BCA3255097D00003B49C /* TextFieldExtensions.swift */; };
 		DAFD9DA4250AAC5000116198 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFD9DA3250AAC5000116198 /* ArrayExtensions.swift */; };
@@ -124,6 +124,7 @@
 		DA3833BF2523B0CE00C3937E /* PulsarErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulsarErrors.swift; sourceTree = "<group>"; };
 		DA426D222520EFD9005E7B98 /* revealConsequences.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = revealConsequences.json; sourceTree = "<group>"; };
 		DA58E989254614430048CC84 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		DA784FB9255ADB080019AD43 /* CharacterPortraitUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPortraitUIView.swift; sourceTree = "<group>"; };
 		DA87074B24EADD9600CF7B62 /* PulsarPalace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PulsarPalace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA87074E24EADD9600CF7B62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA87075024EADD9600CF7B62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -204,7 +205,6 @@
 		DAE8BC89255071BD0003B49C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		DAE8BC9025507B0D0003B49C /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		DAE8BC9325507BBA0003B49C /* FontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtensions.swift; sourceTree = "<group>"; };
-		DAE8BC972550880F0003B49C /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSansPro-Bold.ttf"; path = "../../../../Downloads/Source_Sans_Pro/SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
 		DAE8BC982550880F0003B49C /* SourceSansPro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Italic.ttf"; sourceTree = "<group>"; };
 		DAE8BCA3255097D00003B49C /* TextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtensions.swift; sourceTree = "<group>"; };
 		DAFD9DA3250AAC5000116198 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
@@ -287,6 +287,7 @@
 				DA153EB9255313460009D21B /* SettingsUIView.swift */,
 				DA153EC125531B160009D21B /* SignInSignUpContainerUIView.swift */,
 				DA153ECD2555C1990009D21B /* LoadingUIView.swift */,
+				DA784FB9255ADB080019AD43 /* CharacterPortraitUIView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -423,7 +424,6 @@
 		DAE8BC5A255062380003B49C /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				DAE8BC972550880F0003B49C /* SourceSansPro-Bold.ttf */,
 				DAE8BC982550880F0003B49C /* SourceSansPro-Italic.ttf */,
 				DAE8BC652550626B0003B49C /* SourceSansPro-Black.ttf */,
 				DAE8BC662550626C0003B49C /* SourceSansPro-BlackItalic.ttf */,
@@ -515,7 +515,6 @@
 				DA95EE4425124DB200AE4248 /* getPlayerCharacterInfo.json in Resources */,
 				DAE8BC9A2550880F0003B49C /* SourceSansPro-Italic.ttf in Resources */,
 				DAE8BC75255062870003B49C /* SourceSansPro-Black.ttf in Resources */,
-				DAE8BC992550880F0003B49C /* SourceSansPro-Bold.ttf in Resources */,
 				DA8A8305252638D4003CC6A5 /* 03 Foyer.m4a in Resources */,
 				DA95EE4025124D9100AE4248 /* updateCharacter.json in Resources */,
 				DA8CA22A250BE65300A53D6B /* signIn.json in Resources */,
@@ -615,6 +614,7 @@
 				DA87075124EADD9600CF7B62 /* SceneDelegate.swift in Sources */,
 				DAAD1C8324F6AE3000872B79 /* ScannerUIViewController.swift in Sources */,
 				DAC2B0CB24FA953200FF2F9E /* SongPlayerView.swift in Sources */,
+				DA784FBA255ADB080019AD43 /* CharacterPortraitUIView.swift in Sources */,
 				DAFD9DA4250AAC5000116198 /* ArrayExtensions.swift in Sources */,
 				DAC2B0B724F96DAD00FF2F9E /* Entries.swift in Sources */,
 				DAA4C8E6251A127C000E15B7 /* CharacterView.swift in Sources */,

@@ -32,7 +32,7 @@ struct StartView: View {
                             }
                         }else{
                             Group{
-                                NavigationLink(destination: SignInSignUpContainerUIView()){
+                                NavigationLink(destination: SignInView()){
                                     Text("Begin").pulsarFont(style: .primaryButton).foregroundColor(Color.pink)
                                 }
                             }
