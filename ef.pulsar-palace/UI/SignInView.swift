@@ -29,9 +29,7 @@ struct SignInView: View {
     @State private var confirmPassWordInput: String = ""
     @State private var firstNameInput: String = ""
     @State private var lastNameInput: String = ""
-    
-    //@Binding var showMenu: Bool
-    
+        
     func postSignUp(user: User, postSignUpCompletionHandler: @escaping (Response?, Error?) -> Void) {
         let networkManager = NetworkManager.provider
         networkManager.request(.signUp(user: user)){ result in
@@ -91,13 +89,7 @@ struct SignInView: View {
                 if signInSignUpHelper.signIn{
                     Group{
                         VStack{
-//                            Button(action: {
-//                                   withAnimation {
-//                                      self.showMenu = true
-//                                   }
-//                               }) {
-//                                   Text("🍔")
-//                               }
+                            SettingsButtonUIView()
                             Image("temp")
                                 .resizable()
                                 .scaledToFit()
@@ -129,13 +121,7 @@ struct SignInView: View {
                 }else{
                     Group{
                         VStack{
-//                            Button(action: {
-//                                   withAnimation {
-//                                      self.showMenu = true
-//                                   }
-//                               }) {
-//                                   Text("🍔")
-//                               }
+                            SettingsButtonUIView()
                             Image("temp")
                                 .resizable()
                                 .scaledToFit()
