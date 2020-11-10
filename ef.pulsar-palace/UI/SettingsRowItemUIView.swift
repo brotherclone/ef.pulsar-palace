@@ -18,7 +18,7 @@ struct SettingsRowItemUIView: View {
                 Text(self.buttonText).pulsarFont(style: .body).frame(alignment: .leading).foregroundColor(.black)
                 Spacer()
                 Image(systemName: "chevron.right").frame(alignment: .trailing)
-            }.padding(16)
+            }.padding(SpacingManager.edge.space)
         }.background(Color.yellow)
     }
 }
