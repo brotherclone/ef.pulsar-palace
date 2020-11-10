@@ -22,13 +22,15 @@ struct SignInView: View {
     @ObservedObject var authenticationHelper = AuthenticationHelper()
     
     @State private var usernameInput: String = ""
-    @State private var emailInput: String = ""
-    @State private var passWordInput: String = ""
+    // MARK: For Dev only
+    @State private var emailInput: String = "example1@example.com"
+    // MARK: For Dev only
+    @State private var passWordInput: String = "password"
     @State private var confirmPassWordInput: String = ""
     @State private var firstNameInput: String = ""
     @State private var lastNameInput: String = ""
     
-    @Binding var showMenu: Bool
+    //@Binding var showMenu: Bool
     
     func postSignUp(user: User, postSignUpCompletionHandler: @escaping (Response?, Error?) -> Void) {
         let networkManager = NetworkManager.provider
@@ -89,13 +91,13 @@ struct SignInView: View {
                 if signInSignUpHelper.signIn{
                     Group{
                         VStack{
-                            Button(action: {
-                                   withAnimation {
-                                      self.showMenu = true
-                                   }
-                               }) {
-                                   Text("🍔")
-                               }
+//                            Button(action: {
+//                                   withAnimation {
+//                                      self.showMenu = true
+//                                   }
+//                               }) {
+//                                   Text("🍔")
+//                               }
                             Image("temp")
                                 .resizable()
                                 .scaledToFit()
@@ -127,13 +129,13 @@ struct SignInView: View {
                 }else{
                     Group{
                         VStack{
-                            Button(action: {
-                                   withAnimation {
-                                      self.showMenu = true
-                                   }
-                               }) {
-                                   Text("🍔")
-                               }
+//                            Button(action: {
+//                                   withAnimation {
+//                                      self.showMenu = true
+//                                   }
+//                               }) {
+//                                   Text("🍔")
+//                               }
                             Image("temp")
                                 .resizable()
                                 .scaledToFit()

@@ -9,7 +9,7 @@
 import SwiftUI
 import Moya
 import SwiftyJSON
-import SDWebImageSwiftUI
+
 
 
 
@@ -111,25 +111,7 @@ struct CreateACharacterView: View {
         Group{
             NavigationLink(destination: MainView(), isActive: $characterCreationHelper.createdCharacter){}
             Text("Create a Character")
-            
-            WebImage(url: URL(string: "https://res.cloudinary.com/hobvqx95l/image/upload/v1604433170/setting-temp_kim3hw.png"))
-            // Supports options and context, like `.delayPlaceholder` to show placeholder only when error
-            .onSuccess { image, data, cacheType in
-                // Success
-                // Note: Data exist only when queried from disk cache or network. Use `.queryMemoryData` if you really need data
-            }
-            .resizable() // Resizable like SwiftUI.Image, you must use this modifier or the view will use the image bitmap size
-            .placeholder(Image(systemName: "temp")) // Placeholder Image
-            // Supports ViewBuilder as well
-            .placeholder {
-                Rectangle().foregroundColor(.gray)
-            }
-            .indicator(.activity) // Activity Indicator
-            .transition(.fade(duration: 0.5)) // Fade Transition with duration
-            .scaledToFit()
-            .frame(width: 300, height: 300, alignment: .center)
-            
-            
+            CharacterPortraitUIView()
             TextField("Character Name", text: $inputName)
             TextField("Bio", text: $inputBio)
             Group{
