@@ -30,7 +30,6 @@ struct WhyIsThisHappeningToMeUIView: View {
                 }.padding(SpacingManager.edge.space)
             }
         }
-       
     }
 }
 
