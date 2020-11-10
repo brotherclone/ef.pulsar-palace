@@ -11,7 +11,6 @@
 		DA03A54F24FEEB9000E562E0 /* UserDefaultExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03A54E24FEEB9000E562E0 /* UserDefaultExtensions.swift */; };
 		DA0EE4D1251E60D50026E4DF /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0EE4D0251E60D50026E4DF /* ResultsView.swift */; };
 		DA153EBA255313460009D21B /* SettingsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA153EB9255313460009D21B /* SettingsUIView.swift */; };
-		DA153EC225531B160009D21B /* SignInSignUpContainerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA153EC125531B160009D21B /* SignInSignUpContainerUIView.swift */; };
 		DA153EC625543C210009D21B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DA153EC525543C210009D21B /* README.md */; };
 		DA153ECB2555B2FA0009D21B /* LoadingCirclesUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA153ECA2555B2FA0009D21B /* LoadingCirclesUI.swift */; };
 		DA153ECE2555C1990009D21B /* LoadingUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA153ECD2555C1990009D21B /* LoadingUIView.swift */; };
@@ -24,6 +23,8 @@
 		DA3833C02523B0CE00C3937E /* PulsarErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3833BF2523B0CE00C3937E /* PulsarErrors.swift */; };
 		DA426D232520EFD9005E7B98 /* revealConsequences.json in Resources */ = {isa = PBXBuildFile; fileRef = DA426D222520EFD9005E7B98 /* revealConsequences.json */; };
 		DA784FBA255ADB080019AD43 /* CharacterPortraitUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA784FB9255ADB080019AD43 /* CharacterPortraitUIView.swift */; };
+		DA784FBF255ADDC60019AD43 /* SettingsButtonUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA784FBE255ADDC60019AD43 /* SettingsButtonUIView.swift */; };
+		DA784FC5255AF0410019AD43 /* SettingsRowItemUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA784FC4255AF0410019AD43 /* SettingsRowItemUIView.swift */; };
 		DA87074F24EADD9600CF7B62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87074E24EADD9600CF7B62 /* AppDelegate.swift */; };
 		DA87075124EADD9600CF7B62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87075024EADD9600CF7B62 /* SceneDelegate.swift */; };
 		DA87075324EADD9600CF7B62 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87075224EADD9600CF7B62 /* StartView.swift */; };
@@ -111,7 +112,6 @@
 		DA03A54E24FEEB9000E562E0 /* UserDefaultExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultExtensions.swift; sourceTree = "<group>"; };
 		DA0EE4D0251E60D50026E4DF /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		DA153EB9255313460009D21B /* SettingsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUIView.swift; sourceTree = "<group>"; };
-		DA153EC125531B160009D21B /* SignInSignUpContainerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSignUpContainerUIView.swift; sourceTree = "<group>"; };
 		DA153EC525543C210009D21B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DA153ECA2555B2FA0009D21B /* LoadingCirclesUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCirclesUI.swift; sourceTree = "<group>"; };
 		DA153ECD2555C1990009D21B /* LoadingUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingUIView.swift; sourceTree = "<group>"; };
@@ -125,6 +125,8 @@
 		DA426D222520EFD9005E7B98 /* revealConsequences.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = revealConsequences.json; sourceTree = "<group>"; };
 		DA58E989254614430048CC84 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		DA784FB9255ADB080019AD43 /* CharacterPortraitUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPortraitUIView.swift; sourceTree = "<group>"; };
+		DA784FBE255ADDC60019AD43 /* SettingsButtonUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButtonUIView.swift; sourceTree = "<group>"; };
+		DA784FC4255AF0410019AD43 /* SettingsRowItemUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowItemUIView.swift; sourceTree = "<group>"; };
 		DA87074B24EADD9600CF7B62 /* PulsarPalace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PulsarPalace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA87074E24EADD9600CF7B62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA87075024EADD9600CF7B62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -285,9 +287,10 @@
 				DAA4C8FE251A70D2000E15B7 /* EntryListRowView.swift */,
 				DA0EE4D0251E60D50026E4DF /* ResultsView.swift */,
 				DA153EB9255313460009D21B /* SettingsUIView.swift */,
-				DA153EC125531B160009D21B /* SignInSignUpContainerUIView.swift */,
 				DA153ECD2555C1990009D21B /* LoadingUIView.swift */,
 				DA784FB9255ADB080019AD43 /* CharacterPortraitUIView.swift */,
+				DA784FBE255ADDC60019AD43 /* SettingsButtonUIView.swift */,
+				DA784FC4255AF0410019AD43 /* SettingsRowItemUIView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA784FC5255AF0410019AD43 /* SettingsRowItemUIView.swift in Sources */,
 				DAC2B0C424FA8D8900FF2F9E /* SongPlayerViewController.swift in Sources */,
 				DA153ECE2555C1990009D21B /* LoadingUIView.swift in Sources */,
 				DA153EBA255313460009D21B /* SettingsUIView.swift in Sources */,
@@ -606,6 +610,7 @@
 				DA3833C02523B0CE00C3937E /* PulsarErrors.swift in Sources */,
 				DA29997C250BD9E300A67035 /* AuthenticationHelper.swift in Sources */,
 				DAC2B0B924F96DBD00FF2F9E /* Logs.swift in Sources */,
+				DA784FBF255ADDC60019AD43 /* SettingsButtonUIView.swift in Sources */,
 				DAB501FA24F6E9C40048175E /* CharacterBackgrounds.swift in Sources */,
 				DAC2B0AF24F96D6700FF2F9E /* CharacterSettings.swift in Sources */,
 				DAB501EE24F6E0E60048175E /* NetworkManager.swift in Sources */,
@@ -637,7 +642,6 @@
 				DAC2B0BF24F96DF400FF2F9E /* Prompts.swift in Sources */,
 				DAA4C8F9251A7068000E15B7 /* AuthoringView.swift in Sources */,
 				DA19106724F03AB500C72477 /* CreateACharacterView.swift in Sources */,
-				DA153EC225531B160009D21B /* SignInSignUpContainerUIView.swift in Sources */,
 				DA03A54F24FEEB9000E562E0 /* UserDefaultExtensions.swift in Sources */,
 				DA19106324F0394400C72477 /* SignInView.swift in Sources */,
 				DA19106B24F03BDA00C72477 /* EntryView.swift in Sources */,

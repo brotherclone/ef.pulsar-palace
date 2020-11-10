@@ -10,56 +10,64 @@ import SwiftUI
 
 struct SettingsUIView: View {
     
-    @Binding var showMenu: Bool
-
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
-        VStack(alignment: .leading) {
-            Button(action: {
-                   withAnimation {
-                      self.showMenu = false
-                   }
-               }) {
-                   Text("🍔")
-               }
-            HStack {
-                Image(systemName: "person")
-                    .foregroundColor(.gray)
-                    .imageScale(.large)
-                Text("Profile")
-                    .foregroundColor(.gray)
-                    .font(.headline)
+        VStack{
+            Button("Close"){
+                presentationMode.wrappedValue.dismiss()
             }
-            .padding(.top, 100)
-            HStack {
-                Image(systemName: "envelope")
-                    .foregroundColor(.gray)
-                    .imageScale(.large)
-                Text("Messages")
-                    .foregroundColor(.gray)
-                    .font(.headline)
+            VStack(spacing:1){
+                Text("Accounts").pulsarFont(style: .h2)
+                Button(action: {
+                    print("delete button")
+                }
+                ){
+                    SettingsRowItemUIView(buttonText: "Delete Everything! Salt the Earth!")
+                }
+                Button(action: {
+                    print("sign out button")
+                }
+                ){
+                    SettingsRowItemUIView(buttonText: "Sign Out")
+                }
             }
-            .padding(.top, 30)
-            HStack {
-                Image(systemName: "gear")
-                    .foregroundColor(.gray)
-                    .imageScale(.large)
-                Text("Settings")
-                    .foregroundColor(.gray)
-                    .font(.headline)
+            Divider()
+            VStack(spacing:1){
+                Text("About").pulsarFont(style: .h2)
+                Button(action: {
+                    print("What is it")
+                }
+                ){
+                    SettingsRowItemUIView(buttonText: "What is this?")
+                }
+                Button(action: {
+                    print("earthly button")
+                }
+                ){
+                    SettingsRowItemUIView(buttonText: "What is an Earthly Frame?")
+                }
+                Button(action: {
+                    print("why button")
+                }
+                ){
+                    SettingsRowItemUIView(buttonText: "Why is this happening to me?")
+                }
             }
-            .padding(.top, 30)
-            Spacer()
         }
-        .padding()
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.blue)
         .edgesIgnoringSafeArea(.all)
+        
     }
     
 }
 
-//struct SettingsUIView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SettingsUIView()
-//    }
-//}
+struct SettingsUIView_Previews: PreviewProvider {
+    static var previews: some View {
+        SettingsUIView()
+    }
+}
+
+
+
