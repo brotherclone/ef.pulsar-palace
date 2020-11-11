@@ -17,7 +17,7 @@ struct TextOverlay: View{
 struct SplashUIView: View {
     var body: some View {
         VStack(alignment: .leading){
-            Image("temp")
+            Image("palace")
                 .resizable()
                 .scaledToFit()
                 .overlay(TextOverlay(), alignment: .center)

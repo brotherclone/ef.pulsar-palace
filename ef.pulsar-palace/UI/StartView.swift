@@ -19,10 +19,6 @@ struct StartView: View {
                 .overlay(
                     VStack{
                         SplashUIView()
-
-//                        Button("Present") {
-//                            isPresented.toggle()
-//                        }
                         Spacer()
                         if authtenticationHelper.isLoggedIn {
                             Group{
