@@ -29,6 +29,7 @@
 		DA784FCB255AF8DD0019AD43 /* WhatIsAnEarthlyFrameUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA784FCA255AF8DD0019AD43 /* WhatIsAnEarthlyFrameUIView.swift */; };
 		DA784FCE255AF8F00019AD43 /* WhyIsThisHappeningToMeUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA784FCD255AF8F00019AD43 /* WhyIsThisHappeningToMeUIView.swift */; };
 		DA784FD1255B099A0019AD43 /* SpacingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA784FD0255B099A0019AD43 /* SpacingManager.swift */; };
+		DA784FD5255C55CA0019AD43 /* CharacterHealthUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA784FD4255C55CA0019AD43 /* CharacterHealthUIView.swift */; };
 		DA87074F24EADD9600CF7B62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87074E24EADD9600CF7B62 /* AppDelegate.swift */; };
 		DA87075124EADD9600CF7B62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87075024EADD9600CF7B62 /* SceneDelegate.swift */; };
 		DA87075324EADD9600CF7B62 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87075224EADD9600CF7B62 /* StartView.swift */; };
@@ -135,6 +136,7 @@
 		DA784FCA255AF8DD0019AD43 /* WhatIsAnEarthlyFrameUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatIsAnEarthlyFrameUIView.swift; sourceTree = "<group>"; };
 		DA784FCD255AF8F00019AD43 /* WhyIsThisHappeningToMeUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhyIsThisHappeningToMeUIView.swift; sourceTree = "<group>"; };
 		DA784FD0255B099A0019AD43 /* SpacingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacingManager.swift; sourceTree = "<group>"; };
+		DA784FD4255C55CA0019AD43 /* CharacterHealthUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterHealthUIView.swift; sourceTree = "<group>"; };
 		DA87074B24EADD9600CF7B62 /* PulsarPalace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PulsarPalace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA87074E24EADD9600CF7B62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA87075024EADD9600CF7B62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				DA784FCA255AF8DD0019AD43 /* WhatIsAnEarthlyFrameUIView.swift */,
 				DA784FCD255AF8F00019AD43 /* WhyIsThisHappeningToMeUIView.swift */,
 				DA784FD0255B099A0019AD43 /* SpacingManager.swift */,
+				DA784FD4255C55CA0019AD43 /* CharacterHealthUIView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -636,6 +639,7 @@
 				DAFD9DA4250AAC5000116198 /* ArrayExtensions.swift in Sources */,
 				DAC2B0B724F96DAD00FF2F9E /* Entries.swift in Sources */,
 				DAA4C8E6251A127C000E15B7 /* CharacterView.swift in Sources */,
+				DA784FD5255C55CA0019AD43 /* CharacterHealthUIView.swift in Sources */,
 				DAC2B0BD24F96DE600FF2F9E /* Characters.swift in Sources */,
 				DAA4C8EF251A132F000E15B7 /* ActiveCharacterCardView.swift in Sources */,
 				DA8A830925263903003CC6A5 /* MediaLookUpHelper.swift in Sources */,
