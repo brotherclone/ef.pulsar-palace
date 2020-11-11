@@ -22,6 +22,7 @@
 		DA29997C250BD9E300A67035 /* AuthenticationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29997B250BD9E300A67035 /* AuthenticationHelper.swift */; };
 		DA3833C02523B0CE00C3937E /* PulsarErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3833BF2523B0CE00C3937E /* PulsarErrors.swift */; };
 		DA426D232520EFD9005E7B98 /* revealConsequences.json in Resources */ = {isa = PBXBuildFile; fileRef = DA426D222520EFD9005E7B98 /* revealConsequences.json */; };
+		DA439F12255C9F0400ED3F5A /* RollButtonUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA439F11255C9F0400ED3F5A /* RollButtonUIView.swift */; };
 		DA784FBA255ADB080019AD43 /* CharacterPortraitUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA784FB9255ADB080019AD43 /* CharacterPortraitUIView.swift */; };
 		DA784FBF255ADDC60019AD43 /* SettingsButtonUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA784FBE255ADDC60019AD43 /* SettingsButtonUIView.swift */; };
 		DA784FC5255AF0410019AD43 /* SettingsRowItemUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA784FC4255AF0410019AD43 /* SettingsRowItemUIView.swift */; };
@@ -79,6 +80,7 @@
 		DAAD1C8324F6AE3000872B79 /* ScannerUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD1C8224F6AE3000872B79 /* ScannerUIViewController.swift */; };
 		DAAD1C8524F6B0E000872B79 /* ScannerViewRepresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD1C8424F6B0E000872B79 /* ScannerViewRepresent.swift */; };
 		DAAD1C8724F6B24600872B79 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD1C8624F6B24600872B79 /* ScannerView.swift */; };
+		DAB14C4C255CA2C100C1B351 /* CharacterAtributesUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB14C4B255CA2C100C1B351 /* CharacterAtributesUIView.swift */; };
 		DAB501EE24F6E0E60048175E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB501ED24F6E0E60048175E /* NetworkManager.swift */; };
 		DAB501F024F6E1490048175E /* APITargets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB501EF24F6E1490048175E /* APITargets.swift */; };
 		DAB501F424F6E7B60048175E /* MockResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB501F324F6E7B60048175E /* MockResponses.swift */; };
@@ -128,6 +130,7 @@
 		DA29997B250BD9E300A67035 /* AuthenticationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationHelper.swift; sourceTree = "<group>"; };
 		DA3833BF2523B0CE00C3937E /* PulsarErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulsarErrors.swift; sourceTree = "<group>"; };
 		DA426D222520EFD9005E7B98 /* revealConsequences.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = revealConsequences.json; sourceTree = "<group>"; };
+		DA439F11255C9F0400ED3F5A /* RollButtonUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollButtonUIView.swift; sourceTree = "<group>"; };
 		DA58E989254614430048CC84 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		DA784FB9255ADB080019AD43 /* CharacterPortraitUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPortraitUIView.swift; sourceTree = "<group>"; };
 		DA784FBE255ADDC60019AD43 /* SettingsButtonUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButtonUIView.swift; sourceTree = "<group>"; };
@@ -188,6 +191,7 @@
 		DAAD1C8224F6AE3000872B79 /* ScannerUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerUIViewController.swift; sourceTree = "<group>"; };
 		DAAD1C8424F6B0E000872B79 /* ScannerViewRepresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewRepresent.swift; sourceTree = "<group>"; };
 		DAAD1C8624F6B24600872B79 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		DAB14C4B255CA2C100C1B351 /* CharacterAtributesUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAtributesUIView.swift; sourceTree = "<group>"; };
 		DAB501EB24F6E0740048175E /* PulsarPalace.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PulsarPalace.entitlements; sourceTree = "<group>"; };
 		DAB501ED24F6E0E60048175E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DAB501EF24F6E1490048175E /* APITargets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITargets.swift; sourceTree = "<group>"; };
@@ -306,6 +310,8 @@
 				DA784FCD255AF8F00019AD43 /* WhyIsThisHappeningToMeUIView.swift */,
 				DA784FD0255B099A0019AD43 /* SpacingManager.swift */,
 				DA784FD4255C55CA0019AD43 /* CharacterHealthUIView.swift */,
+				DA439F11255C9F0400ED3F5A /* RollButtonUIView.swift */,
+				DAB14C4B255CA2C100C1B351 /* CharacterAtributesUIView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -623,6 +629,7 @@
 				DA19106924F03B3000C72477 /* MainView.swift in Sources */,
 				DAB501F024F6E1490048175E /* APITargets.swift in Sources */,
 				DA3833C02523B0CE00C3937E /* PulsarErrors.swift in Sources */,
+				DAB14C4C255CA2C100C1B351 /* CharacterAtributesUIView.swift in Sources */,
 				DA29997C250BD9E300A67035 /* AuthenticationHelper.swift in Sources */,
 				DAC2B0B924F96DBD00FF2F9E /* Logs.swift in Sources */,
 				DA784FBF255ADDC60019AD43 /* SettingsButtonUIView.swift in Sources */,
@@ -651,6 +658,7 @@
 				DAA4C8FC251A70C0000E15B7 /* EntryListView.swift in Sources */,
 				DAC2B0AD24F96D5300FF2F9E /* CharacterDescriptors.swift in Sources */,
 				DAC2B0B524F96D9C00FF2F9E /* Users.swift in Sources */,
+				DA439F12255C9F0400ED3F5A /* RollButtonUIView.swift in Sources */,
 				DA0EE4D1251E60D50026E4DF /* ResultsView.swift in Sources */,
 				DAC2B0B124F96D7400FF2F9E /* CharacterRoles.swift in Sources */,
 				DA784FD1255B099A0019AD43 /* SpacingManager.swift in Sources */,

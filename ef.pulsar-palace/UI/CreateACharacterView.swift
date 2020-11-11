@@ -10,9 +10,6 @@ import SwiftUI
 import Moya
 import SwiftyJSON
 
-
-
-
 class CharacterCreationHelper: ObservableObject {
     @Published var createdCharacter: Bool = false
     @Published var currentSetting: CharacterSetting? = nil
@@ -21,7 +18,7 @@ class CharacterCreationHelper: ObservableObject {
     @Published var currentRole: CharacterRole? = nil
     @Published var currentCharacter: Character? = nil
     @Published var defaultAttributesContainer: AttributesContainer? = nil
-    
+    @Published var characterInitialized: Bool = false
 }
 
 struct AttributeContainer {
@@ -77,6 +74,7 @@ struct CreateACharacterView: View {
     }
     
     func updateCharacter(name: String, bio: String) -> Character{
+        print("updating character")
         characterCreationHelper.currentCharacter?.name = name
         characterCreationHelper.currentCharacter?.additional_bio = bio
         characterCreationHelper.currentCharacter?.characterBackground = characterCreationHelper.currentBackground
@@ -109,105 +107,66 @@ struct CreateACharacterView: View {
     }
     
     var body: some View {
-        Group{
-            NavigationLink(destination: MainView(), isActive: $characterCreationHelper.createdCharacter){}
-            Text("Create a Character").pulsarFont(style: .h3).foregroundColor(.black)
-            if characterCreationHelper.currentDescriptor != nil{
-                Group{
-                    CharacterPortraitUIView(descriptor: characterCreationHelper.currentDescriptor!, role: characterCreationHelper.currentRole!, setting: characterCreationHelper.currentSetting!, height: 242, width:375)
-                }
-            }
-            Group{
-                if characterCreationHelper.currentDescriptor != nil{
-                    Group{
-                        Text("Descriptor:")
-                        HStack{
-                            Text(characterCreationHelper.currentDescriptor!.descriptor)
-                            Button(action: {
-                                let descriptorRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
-                                characterCreationHelper.currentDescriptor = descriptorRoll.descriptor
-                            }){
-                                Text("Re-Roll")
-                            }
+        ZStack{
+            Color.yellow
+                .ignoresSafeArea()
+        
+                    VStack{
+                        //NavigationLink(destination: MainView(), isActive: $characterCreationHelper.createdCharacter){}
+                        
+                        
+                        SettingsButtonUIView()
+                        
+                        Text("Create a Character").pulsarFont(style: .h3).foregroundColor(.black)
+                        
+                        if characterCreationHelper.characterInitialized{
+                            Group{
+
+                                CharacterPortraitUIView(descriptor: characterCreationHelper.currentDescriptor!, role: characterCreationHelper.currentRole!, setting: characterCreationHelper.currentSetting!, height: 242, width:375)
+             
+                        
+                        CharacterAtributesUIView(descriptor: characterCreationHelper.currentDescriptor!, role: characterCreationHelper.currentRole!, setting: characterCreationHelper.currentSetting!, background: characterCreationHelper.currentBackground!)
+                        
+                        Button(action:{
+                            let reRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
+                            characterCreationHelper.currentDescriptor = reRoll.descriptor
+                            characterCreationHelper.currentRole = reRoll.role
+                            characterCreationHelper.currentSetting = reRoll.setting
+                            characterCreationHelper.currentBackground = reRoll.background
+                        }){
+                            Text("Re-Roll All").pulsarFont(style: .primaryButton).foregroundColor(Color.pink)
                         }
+                        
+                        
+                        Button(action:{
+                            let postCharacter: Character = updateCharacter(name: self.inputName, bio: self.inputBio)
+                            self.postACharacter(character: postCharacter, postACharacterCompletionHandler: { response, error in
+                                if error != nil{
+                                    print(error as Any)
+                                }else{
+                                    characterCreationHelper.createdCharacter = true
+                                }
+                            })
+                        }){
+                            Text("Looks Good!").pulsarFont(style: .primaryButton).foregroundColor(Color.pink)
+                        }
+                        
                     }
                 }
             }
-            Group{
-                if characterCreationHelper.currentRole != nil{
-                    Group{
-                        Text("Role:")
-                        HStack{
-                            Text(characterCreationHelper.currentRole!.character_role)
-                            Button(action: {
-                                let roleRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
-                                characterCreationHelper.currentRole = roleRoll.role
-                            }){
-                                Text("Re-Roll")
-                            }
-                        }
-                    }
-                }
-            }
-            Group{
-                if characterCreationHelper.currentSetting != nil {
-                    Group{
-                        Text("Setting:")
-                        HStack{
-                            Text("\(characterCreationHelper.currentSetting!.time),\(characterCreationHelper.currentSetting!.place)")
-                            Button(action: {
-                                let settingRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
-                                characterCreationHelper.currentSetting = settingRoll.setting
-                            }){
-                                Text("Re-Roll")
-                            }
-                        }
-                    }
-                }
-            }
-            Group{
-                if characterCreationHelper.currentBackground != nil{
-                    Group{
-                        Text("Background:")
-                        HStack{
-                            Text(characterCreationHelper.currentBackground!.background)
-                            Button(action: {
-                                let backgroundRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
-                                characterCreationHelper.currentBackground = backgroundRoll.background
-                            }){
-                                Text("Re-Roll")
-                            }
-                        }
-                    }
-                }
-            }
-            Group{
-                Button(action:{
-                    let reRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
-                    characterCreationHelper.currentDescriptor = reRoll.descriptor
-                    characterCreationHelper.currentRole = reRoll.role
-                    characterCreationHelper.currentSetting = reRoll.setting
-                    characterCreationHelper.currentBackground = reRoll.background
-                }){
-                    Text("Re-Roll All Attributes")
-                }
-                Button(action:{
-                    let postCharacter: Character = updateCharacter(name: self.inputName, bio: self.inputBio)
-                    self.postACharacter(character: postCharacter, postACharacterCompletionHandler: { response, error in
-                        if error != nil{
-                            print(error as Any)
-                        }else{
-                            characterCreationHelper.createdCharacter = true
-                        }
-                    })
-                }){
-                    Text("Begin Exploring with this Character")
-                }
-            }
+        
         }.onAppear( perform: {
+            print("performing on appear")
             characterCreationHelper.defaultAttributesContainer = AttributesContainer(settings: self.settings, backgrounds: self.backgrounds, descriptors: self.descriptors, roles: self.roles)
+            
             authenticationHelper.refreshAutenticationInfo()
+            
+            //MARK: Refactor so that a blank character is rendered and the user id is added durring post
+            
+            
             if let currentUser: User = authenticationHelper.currentUser{
+                print("current User")
+                print(currentUser)
                 if currentUser.id! > 0 {
                     let userId = currentUser.id
                     characterCreationHelper.currentCharacter = createBlankCharacter(userId: userId!)
@@ -216,7 +175,9 @@ struct CreateACharacterView: View {
                     characterCreationHelper.currentRole = initRoll.role
                     characterCreationHelper.currentSetting = initRoll.setting
                     characterCreationHelper.currentBackground = initRoll.background
+                    characterCreationHelper.characterInitialized = true
                 }else{
+                    // MARK: Replace with error
                     print("rut roh")
                 }
             }
