@@ -203,6 +203,7 @@ struct MainView: View {
                                                                                      roles: mainStatusHelper.roles,
                                                                                      descriptors: mainStatusHelper.descriptors)){
                                         Text("Create a Character")
+                                        CharacterHealthUIView(health: 2)
                                     }
                                 }
                             }else{
