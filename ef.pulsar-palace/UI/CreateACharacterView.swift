@@ -21,6 +21,7 @@ class CharacterCreationHelper: ObservableObject {
     @Published var currentRole: CharacterRole? = nil
     @Published var currentCharacter: Character? = nil
     @Published var defaultAttributesContainer: AttributesContainer? = nil
+    
 }
 
 struct AttributeContainer {
@@ -110,10 +111,12 @@ struct CreateACharacterView: View {
     var body: some View {
         Group{
             NavigationLink(destination: MainView(), isActive: $characterCreationHelper.createdCharacter){}
-            Text("Create a Character")
-            CharacterPortraitUIView()
-            TextField("Character Name", text: $inputName)
-            TextField("Bio", text: $inputBio)
+            Text("Create a Character").pulsarFont(style: .h3).foregroundColor(.black)
+            if characterCreationHelper.currentDescriptor != nil{
+                Group{
+                    CharacterPortraitUIView(descriptor: characterCreationHelper.currentDescriptor!, role: characterCreationHelper.currentRole!, setting: characterCreationHelper.currentSetting!, height: 242, width:375)
+                }
+            }
             Group{
                 if characterCreationHelper.currentDescriptor != nil{
                     Group{
@@ -217,16 +220,7 @@ struct CreateACharacterView: View {
                     print("rut roh")
                 }
             }
-        
+            
         })
     }
-    
 }
-
-//struct CreateACharacterView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CreateACharacterView()
-//    }
-//}
-
-// MARK: Fix with mocks
