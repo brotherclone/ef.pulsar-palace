@@ -167,7 +167,7 @@ struct CreateACharacterView: View {
             
             
             if let currentUserId: Int = authenticationHelper.currentUserId{
-                if currentUserId! > 0 {
+                if currentUserId > 0 {
                     characterCreationHelper.currentCharacter = createBlankCharacter(userId: currentUserId)
                     let initRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
                     characterCreationHelper.currentDescriptor = initRoll.descriptor

@@ -11,7 +11,7 @@ import Moya
 
 enum APITargets {
     case signIn(user: UserSignIn)
-    case signUp(user: User)
+    case signUp(user: UserSignUp)
     case getUsersCharacters(userId:Int)
     case getUserByEmail(email: String)
     case updateUser(userId:Int, username:String, password: String, firstName: String, lastName: String, email: String)
