@@ -17,7 +17,7 @@ extension UserDefaults {
 extension UserDefaults{
     public struct Keys{
         static let token = "Token"
-        static let currentUser = "CurrentUser"
+        static let currentUserId = "CurrentUserId"
         static let isLoggedIn = "IsLoggedIn"
     }
 }

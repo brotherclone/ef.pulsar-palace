@@ -124,8 +124,10 @@ struct CreateACharacterView: View {
 
                                 CharacterPortraitUIView(descriptor: characterCreationHelper.currentDescriptor!, role: characterCreationHelper.currentRole!, setting: characterCreationHelper.currentSetting!, height: 242, width:375)
              
+                                
+                                
                         
-                        CharacterAtributesUIView(descriptor: characterCreationHelper.currentDescriptor!, role: characterCreationHelper.currentRole!, setting: characterCreationHelper.currentSetting!, background: characterCreationHelper.currentBackground!)
+//                        CharacterAtributesUIView(descriptor: characterCreationHelper.currentDescriptor!, role: characterCreationHelper.currentRole!, setting: characterCreationHelper.currentSetting!, background: characterCreationHelper.currentBackground!)
                         
                         Button(action:{
                             let reRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
@@ -164,12 +166,9 @@ struct CreateACharacterView: View {
             //MARK: Refactor so that a blank character is rendered and the user id is added durring post
             
             
-            if let currentUser: User = authenticationHelper.currentUser{
-                print("current User")
-                print(currentUser)
-                if currentUser.id! > 0 {
-                    let userId = currentUser.id
-                    characterCreationHelper.currentCharacter = createBlankCharacter(userId: userId!)
+            if let currentUserId: Int = authenticationHelper.currentUserId{
+                if currentUserId! > 0 {
+                    characterCreationHelper.currentCharacter = createBlankCharacter(userId: currentUserId)
                     let initRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
                     characterCreationHelper.currentDescriptor = initRoll.descriptor
                     characterCreationHelper.currentRole = initRoll.role

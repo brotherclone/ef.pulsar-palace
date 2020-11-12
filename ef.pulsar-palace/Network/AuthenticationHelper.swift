@@ -12,7 +12,7 @@ class AuthenticationHelper: ObservableObject {
     
     @Published var isLoggedIn: Bool = false
     @Published var token: String? = nil
-    @Published var currentUser: User? = nil
+    @Published var currentUserId: Int? = nil
     
     func setToken(tokenData: String){
         let defaults = UserDefaults.standard
@@ -21,16 +21,13 @@ class AuthenticationHelper: ObservableObject {
     }
     
     func setCurrentUser(user: User){
-        let encoder = JSONEncoder()
-        if let encodedUser = try? encoder.encode(user){
-            let defaults = UserDefaults.standard
-            defaults.setValue(encodedUser, forKey:  UserDefaults.Keys.currentUser)
-            isLoggedIn = true
-            currentUser = user
-        }
+        let defaults = UserDefaults.standard
+        defaults.setValue(user.id, forKey: UserDefaults.Keys.currentUserId)
+        currentUserId = defaults.integer(forKey: UserDefaults.Keys.currentUserId)
+  
     }
     
-    func getAutenticationInfo() -> (Bool,String?, User?){
+    func getAutenticationInfo() -> (Bool,String?, Int?){
         
         let defaults = UserDefaults.standard
         
@@ -44,19 +41,14 @@ class AuthenticationHelper: ObservableObject {
             token = defaults.string(forKey: UserDefaults.Keys.token)
         }
         
-        if UserDefaults.contains(UserDefaults.Keys.currentUser){
-            if let encodedUser = defaults.object(forKey: UserDefaults.Keys.currentUser) as? Data {
-                let decoder = JSONDecoder()
-                if let storedUser = try? decoder.decode(User.self, from: encodedUser){
-                    currentUser = storedUser
-                }
-            }
+        if UserDefaults.contains(UserDefaults.Keys.currentUserId){
+            currentUserId = defaults.integer(forKey: UserDefaults.Keys.currentUserId)
         }
         
-        return (isLoggedIn, token, currentUser)
+        return (isLoggedIn, token, currentUserId)
     }
     
     func refreshAutenticationInfo(){
-        let _: (Bool, String?, User?) = self.getAutenticationInfo()
+        let _: (Bool, String?, Int?) = self.getAutenticationInfo()
     }
 }
