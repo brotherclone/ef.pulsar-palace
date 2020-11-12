@@ -110,24 +110,30 @@ struct CreateACharacterView: View {
         ZStack{
             Color.yellow
                 .ignoresSafeArea()
-        
-                    VStack{
-                        //NavigationLink(destination: MainView(), isActive: $characterCreationHelper.createdCharacter){}
+            
+            VStack{
+                //NavigationLink(destination: MainView(), isActive: $characterCreationHelper.createdCharacter){}
+                
+                
+                SettingsButtonUIView()
+                
+                Text("Create a Character").pulsarFont(style: .h3).foregroundColor(.black)
+                
+                if characterCreationHelper.characterInitialized{
+                    Group{
+                        
+                        CharacterPortraitUIView(descriptor: characterCreationHelper.currentDescriptor!, role: characterCreationHelper.currentRole!, setting: characterCreationHelper.currentSetting!, height: 242, width:375)
+                        
+                        Text("I am a").pulsarFont(style: .lessEmphasis).foregroundColor(Color.black)
                         
                         
-                        SettingsButtonUIView()
-                        
-                        Text("Create a Character").pulsarFont(style: .h3).foregroundColor(.black)
-                        
-                        if characterCreationHelper.characterInitialized{
-                            Group{
+                        Button(action: {
+                            let descriptorRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
+                            characterCreationHelper.currentDescriptor = descriptorRoll.descriptor
+                        }){
+                            RollButtonUIView(text: characterCreationHelper.currentDescriptor!.descriptor)
+                        }
 
-                                CharacterPortraitUIView(descriptor: characterCreationHelper.currentDescriptor!, role: characterCreationHelper.currentRole!, setting: characterCreationHelper.currentSetting!, height: 242, width:375)
-             
-                                
-                                
-                        
-//                        CharacterAtributesUIView(descriptor: characterCreationHelper.currentDescriptor!, role: characterCreationHelper.currentRole!, setting: characterCreationHelper.currentSetting!, background: characterCreationHelper.currentBackground!)
                         
                         Button(action:{
                             let reRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
@@ -156,7 +162,7 @@ struct CreateACharacterView: View {
                     }
                 }
             }
-        
+            
         }.onAppear( perform: {
             print("performing on appear")
             characterCreationHelper.defaultAttributesContainer = AttributesContainer(settings: self.settings, backgrounds: self.backgrounds, descriptors: self.descriptors, roles: self.roles)
