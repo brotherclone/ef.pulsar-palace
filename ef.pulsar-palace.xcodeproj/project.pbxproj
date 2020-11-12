@@ -23,6 +23,7 @@
 		DA3833C02523B0CE00C3937E /* PulsarErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3833BF2523B0CE00C3937E /* PulsarErrors.swift */; };
 		DA426D232520EFD9005E7B98 /* revealConsequences.json in Resources */ = {isa = PBXBuildFile; fileRef = DA426D222520EFD9005E7B98 /* revealConsequences.json */; };
 		DA439F12255C9F0400ED3F5A /* RollButtonUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA439F11255C9F0400ED3F5A /* RollButtonUIView.swift */; };
+		DA454777255E015F00F94E51 /* signOut.json in Resources */ = {isa = PBXBuildFile; fileRef = DA454776255E015F00F94E51 /* signOut.json */; };
 		DA784FBA255ADB080019AD43 /* CharacterPortraitUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA784FB9255ADB080019AD43 /* CharacterPortraitUIView.swift */; };
 		DA784FBF255ADDC60019AD43 /* SettingsButtonUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA784FBE255ADDC60019AD43 /* SettingsButtonUIView.swift */; };
 		DA784FC5255AF0410019AD43 /* SettingsRowItemUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA784FC4255AF0410019AD43 /* SettingsRowItemUIView.swift */; };
@@ -80,7 +81,6 @@
 		DAAD1C8324F6AE3000872B79 /* ScannerUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD1C8224F6AE3000872B79 /* ScannerUIViewController.swift */; };
 		DAAD1C8524F6B0E000872B79 /* ScannerViewRepresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD1C8424F6B0E000872B79 /* ScannerViewRepresent.swift */; };
 		DAAD1C8724F6B24600872B79 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD1C8624F6B24600872B79 /* ScannerView.swift */; };
-		DAB14C4C255CA2C100C1B351 /* CharacterAtributesUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB14C4B255CA2C100C1B351 /* CharacterAtributesUIView.swift */; };
 		DAB501EE24F6E0E60048175E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB501ED24F6E0E60048175E /* NetworkManager.swift */; };
 		DAB501F024F6E1490048175E /* APITargets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB501EF24F6E1490048175E /* APITargets.swift */; };
 		DAB501F424F6E7B60048175E /* MockResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB501F324F6E7B60048175E /* MockResponses.swift */; };
@@ -131,6 +131,7 @@
 		DA3833BF2523B0CE00C3937E /* PulsarErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulsarErrors.swift; sourceTree = "<group>"; };
 		DA426D222520EFD9005E7B98 /* revealConsequences.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = revealConsequences.json; sourceTree = "<group>"; };
 		DA439F11255C9F0400ED3F5A /* RollButtonUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollButtonUIView.swift; sourceTree = "<group>"; };
+		DA454776255E015F00F94E51 /* signOut.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = signOut.json; sourceTree = "<group>"; };
 		DA58E989254614430048CC84 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		DA784FB9255ADB080019AD43 /* CharacterPortraitUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPortraitUIView.swift; sourceTree = "<group>"; };
 		DA784FBE255ADDC60019AD43 /* SettingsButtonUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButtonUIView.swift; sourceTree = "<group>"; };
@@ -191,7 +192,6 @@
 		DAAD1C8224F6AE3000872B79 /* ScannerUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerUIViewController.swift; sourceTree = "<group>"; };
 		DAAD1C8424F6B0E000872B79 /* ScannerViewRepresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewRepresent.swift; sourceTree = "<group>"; };
 		DAAD1C8624F6B24600872B79 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
-		DAB14C4B255CA2C100C1B351 /* CharacterAtributesUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAtributesUIView.swift; sourceTree = "<group>"; };
 		DAB501EB24F6E0740048175E /* PulsarPalace.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PulsarPalace.entitlements; sourceTree = "<group>"; };
 		DAB501ED24F6E0E60048175E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DAB501EF24F6E1490048175E /* APITargets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITargets.swift; sourceTree = "<group>"; };
@@ -271,6 +271,7 @@
 		DA153EC92555B2CC0009D21B /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				DA784FD0255B099A0019AD43 /* SpacingManager.swift */,
 				DA153ECA2555B2FA0009D21B /* LoadingCirclesUI.swift */,
 			);
 			path = Graphics;
@@ -279,11 +280,13 @@
 		DA19105F24F0350600C72477 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				DA454774255DFFB000F94E51 /* Common */,
+				DA454773255DFF9700F94E51 /* Settings */,
+				DA454772255DFF5F00F94E51 /* Character Creator */,
+				DA454771255DFF5100F94E51 /* Start */,
+				DA454770255DFF4200F94E51 /* Sign In Up */,
+				DA45476F255DFF3A00F94E51 /* Main */,
 				DA153EC92555B2CC0009D21B /* Graphics */,
-				DA87075224EADD9600CF7B62 /* StartView.swift */,
-				DA19106224F0394400C72477 /* SignInView.swift */,
-				DA19106624F03AB500C72477 /* CreateACharacterView.swift */,
-				DA19106824F03B3000C72477 /* MainView.swift */,
 				DA19106A24F03BDA00C72477 /* EntryView.swift */,
 				DAAD1C8224F6AE3000872B79 /* ScannerUIViewController.swift */,
 				DAAD1C8424F6B0E000872B79 /* ScannerViewRepresent.swift */,
@@ -291,7 +294,6 @@
 				DAC2B0C324FA8D8900FF2F9E /* SongPlayerViewController.swift */,
 				DAC2B0C824FA93FF00FF2F9E /* SongPlayerViewRepresent.swift */,
 				DAC2B0CA24FA953200FF2F9E /* SongPlayerView.swift */,
-				DA8CA227250BDE0900A53D6B /* SplashUIView.swift */,
 				DAA4C8EE251A132F000E15B7 /* ActiveCharacterCardView.swift */,
 				DAA4C8E5251A127C000E15B7 /* CharacterView.swift */,
 				DAA4C8F1251A1359000E15B7 /* CharacterListRowView.swift */,
@@ -300,20 +302,65 @@
 				DAA4C8FB251A70C0000E15B7 /* EntryListView.swift */,
 				DAA4C8FE251A70D2000E15B7 /* EntryListRowView.swift */,
 				DA0EE4D0251E60D50026E4DF /* ResultsView.swift */,
-				DA153EB9255313460009D21B /* SettingsUIView.swift */,
-				DA153ECD2555C1990009D21B /* LoadingUIView.swift */,
 				DA784FB9255ADB080019AD43 /* CharacterPortraitUIView.swift */,
-				DA784FBE255ADDC60019AD43 /* SettingsButtonUIView.swift */,
-				DA784FC4255AF0410019AD43 /* SettingsRowItemUIView.swift */,
-				DA784FC7255AF7540019AD43 /* WhatIsItSwiftUIView.swift */,
-				DA784FCA255AF8DD0019AD43 /* WhatIsAnEarthlyFrameUIView.swift */,
-				DA784FCD255AF8F00019AD43 /* WhyIsThisHappeningToMeUIView.swift */,
-				DA784FD0255B099A0019AD43 /* SpacingManager.swift */,
 				DA784FD4255C55CA0019AD43 /* CharacterHealthUIView.swift */,
-				DA439F11255C9F0400ED3F5A /* RollButtonUIView.swift */,
-				DAB14C4B255CA2C100C1B351 /* CharacterAtributesUIView.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		DA45476F255DFF3A00F94E51 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DA19106824F03B3000C72477 /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DA454770255DFF4200F94E51 /* Sign In Up */ = {
+			isa = PBXGroup;
+			children = (
+				DA19106224F0394400C72477 /* SignInView.swift */,
+			);
+			path = "Sign In Up";
+			sourceTree = "<group>";
+		};
+		DA454771255DFF5100F94E51 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				DA8CA227250BDE0900A53D6B /* SplashUIView.swift */,
+				DA87075224EADD9600CF7B62 /* StartView.swift */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		DA454772255DFF5F00F94E51 /* Character Creator */ = {
+			isa = PBXGroup;
+			children = (
+				DA19106624F03AB500C72477 /* CreateACharacterView.swift */,
+				DA439F11255C9F0400ED3F5A /* RollButtonUIView.swift */,
+			);
+			path = "Character Creator";
+			sourceTree = "<group>";
+		};
+		DA454773255DFF9700F94E51 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DA784FC7255AF7540019AD43 /* WhatIsItSwiftUIView.swift */,
+				DA784FCD255AF8F00019AD43 /* WhyIsThisHappeningToMeUIView.swift */,
+				DA784FCA255AF8DD0019AD43 /* WhatIsAnEarthlyFrameUIView.swift */,
+				DA784FBE255ADDC60019AD43 /* SettingsButtonUIView.swift */,
+				DA784FC4255AF0410019AD43 /* SettingsRowItemUIView.swift */,
+				DA153EB9255313460009D21B /* SettingsUIView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		DA454774255DFFB000F94E51 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DA153ECD2555C1990009D21B /* LoadingUIView.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		DA87074224EADD9600CF7B62 = {
@@ -404,6 +451,7 @@
 				DA95EE4F25124E0D00AE4248 /* getPrompt.json */,
 				DACB717225152C3B006BA73E /* entriesByCharacter.json */,
 				DA426D222520EFD9005E7B98 /* revealConsequences.json */,
+				DA454776255E015F00F94E51 /* signOut.json */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -533,6 +581,7 @@
 				DA8A82FD252638D4003CC6A5 /* 04 Drawing Room.m4a in Resources */,
 				DAE8BC6E255062870003B49C /* SourceSansPro-Regular.ttf in Resources */,
 				DA95EE2C25124CDA00AE4248 /* getUsersCharacters.json in Resources */,
+				DA454777255E015F00F94E51 /* signOut.json in Resources */,
 				DACB717325152C3B006BA73E /* entriesByCharacter.json in Resources */,
 				DA8A8301252638D4003CC6A5 /* 06 Great Chamber.m4a in Resources */,
 				DA95EE5025124E0D00AE4248 /* getPrompt.json in Resources */,
@@ -629,7 +678,6 @@
 				DA19106924F03B3000C72477 /* MainView.swift in Sources */,
 				DAB501F024F6E1490048175E /* APITargets.swift in Sources */,
 				DA3833C02523B0CE00C3937E /* PulsarErrors.swift in Sources */,
-				DAB14C4C255CA2C100C1B351 /* CharacterAtributesUIView.swift in Sources */,
 				DA29997C250BD9E300A67035 /* AuthenticationHelper.swift in Sources */,
 				DAC2B0B924F96DBD00FF2F9E /* Logs.swift in Sources */,
 				DA784FBF255ADDC60019AD43 /* SettingsButtonUIView.swift in Sources */,

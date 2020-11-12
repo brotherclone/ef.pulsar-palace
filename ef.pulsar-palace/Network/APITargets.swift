@@ -12,6 +12,7 @@ import Moya
 enum APITargets {
     case signIn(user: UserSignIn)
     case signUp(user: UserSignUp)
+    case signOut
     case getUsersCharacters(userId:Int)
     case getUserByEmail(email: String)
     case updateUser(userId:Int, username:String, password: String, firstName: String, lastName: String, email: String)
@@ -42,6 +43,8 @@ extension APITargets: TargetType, AccessTokenAuthorizable {
             return "/users/login"
         case .signUp:
             return "/users/create"
+        case .signOut:
+            return "/users/logout"
         case .getUsersCharacters(let userId):
             return "users/\(userId)/characters.json"
         case .getUserByEmail(let email):
@@ -93,6 +96,8 @@ extension APITargets: TargetType, AccessTokenAuthorizable {
             return .post
         case .signUp:
             return .post
+        case .signOut:
+            return .delete
         case .getUsersCharacters:
             return .get
         case .getUserByEmail:
@@ -144,6 +149,8 @@ extension APITargets: TargetType, AccessTokenAuthorizable {
             return .requestJSONEncodable(["user" : user])
         case .signUp(let user):
             return .requestJSONEncodable(["user" : user])
+        case .signOut:
+            return .requestPlain
         case .getUsersCharacters(_):
             return .requestPlain
         case .getUserByEmail(email: let email):
@@ -203,6 +210,8 @@ extension APITargets: TargetType, AccessTokenAuthorizable {
              return nil
          case .signUp:
              return nil
+         case .signOut:
+            return .bearer
          case .getUsersCharacters:
              return .bearer
          case .getUserByEmail:
