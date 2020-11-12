@@ -134,6 +134,31 @@ struct CreateACharacterView: View {
                             RollButtonUIView(text: characterCreationHelper.currentDescriptor!.descriptor)
                         }
 
+                        Button(action: {
+                            let roleRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
+                            characterCreationHelper.currentRole = roleRoll.role
+                        }){
+                            RollButtonUIView(text: characterCreationHelper.currentRole!.character_role)
+                        }
+                        
+                        Text("from").pulsarFont(style: .lessEmphasis).foregroundColor(Color.black)
+
+                        
+                        Button(action: {
+                            let settingRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
+                            characterCreationHelper.currentSetting = settingRoll.setting
+                        }){
+                            RollButtonUIView(text: "\(characterCreationHelper.currentSetting!.time),\(characterCreationHelper.currentSetting!.place)")
+                        }
+                        
+                        Text("who").pulsarFont(style: .lessEmphasis).foregroundColor(Color.black)
+                        
+                        Button(action: {
+                            let backgroundRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
+                            characterCreationHelper.currentBackground = backgroundRoll.background
+                        }){
+                            RollButtonUIView(text:characterCreationHelper.currentBackground!.background)
+                        }
                         
                         Button(action:{
                             let reRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
