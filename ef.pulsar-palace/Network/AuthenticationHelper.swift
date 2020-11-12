@@ -20,11 +20,27 @@ class AuthenticationHelper: ObservableObject {
         token = defaults.string(forKey: UserDefaults.Keys.token)
     }
     
+    func deleteAll(){
+        signOut()
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: key)
+        }
+    }
+    
+    func signOut(){
+        let defaults = UserDefaults.standard
+        defaults.setValue(nil, forKey: UserDefaults.Keys.currentUserId)
+        defaults.setValue(nil, forKey: UserDefaults.Keys.token)
+        isLoggedIn = false
+    }
+    
     func setCurrentUser(user: User){
         let defaults = UserDefaults.standard
         defaults.setValue(user.id, forKey: UserDefaults.Keys.currentUserId)
         currentUserId = defaults.integer(forKey: UserDefaults.Keys.currentUserId)
-  
+        isLoggedIn = true
     }
     
     func getAutenticationInfo() -> (Bool,String?, Int?){
