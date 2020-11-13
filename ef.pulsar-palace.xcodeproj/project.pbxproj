@@ -21,6 +21,7 @@
 		DA24006C24EB54F3009CCD22 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = DA24006B24EB54F3009CCD22 /* Podfile */; };
 		DA29997C250BD9E300A67035 /* AuthenticationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29997B250BD9E300A67035 /* AuthenticationHelper.swift */; };
 		DA2F75E7255EE78A0069FF81 /* NameACharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2F75E6255EE78A0069FF81 /* NameACharacterView.swift */; };
+		DA2F75EB255EF76D0069FF81 /* AlertUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2F75EA255EF76D0069FF81 /* AlertUIView.swift */; };
 		DA3833C02523B0CE00C3937E /* PulsarErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3833BF2523B0CE00C3937E /* PulsarErrors.swift */; };
 		DA426D232520EFD9005E7B98 /* revealConsequences.json in Resources */ = {isa = PBXBuildFile; fileRef = DA426D222520EFD9005E7B98 /* revealConsequences.json */; };
 		DA439F12255C9F0400ED3F5A /* RollButtonUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA439F11255C9F0400ED3F5A /* RollButtonUIView.swift */; };
@@ -130,6 +131,7 @@
 		DA24006B24EB54F3009CCD22 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DA29997B250BD9E300A67035 /* AuthenticationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationHelper.swift; sourceTree = "<group>"; };
 		DA2F75E6255EE78A0069FF81 /* NameACharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameACharacterView.swift; sourceTree = "<group>"; };
+		DA2F75EA255EF76D0069FF81 /* AlertUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUIView.swift; sourceTree = "<group>"; };
 		DA3833BF2523B0CE00C3937E /* PulsarErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulsarErrors.swift; sourceTree = "<group>"; };
 		DA426D222520EFD9005E7B98 /* revealConsequences.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = revealConsequences.json; sourceTree = "<group>"; };
 		DA439F11255C9F0400ED3F5A /* RollButtonUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollButtonUIView.swift; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				DA153ECD2555C1990009D21B /* LoadingUIView.swift */,
+				DA2F75EA255EF76D0069FF81 /* AlertUIView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -675,6 +678,7 @@
 				DAC2B0C424FA8D8900FF2F9E /* SongPlayerViewController.swift in Sources */,
 				DA153ECE2555C1990009D21B /* LoadingUIView.swift in Sources */,
 				DA153EBA255313460009D21B /* SettingsUIView.swift in Sources */,
+				DA2F75EB255EF76D0069FF81 /* AlertUIView.swift in Sources */,
 				DA153ECB2555B2FA0009D21B /* LoadingCirclesUI.swift in Sources */,
 				DA87074F24EADD9600CF7B62 /* AppDelegate.swift in Sources */,
 				DAA4C8F5251A1371000E15B7 /* CharacterListView.swift in Sources */,

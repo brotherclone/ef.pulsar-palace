@@ -70,10 +70,12 @@ struct SignInView: View {
                     }
                 }
             }else{
-                print("can not set token")
+                let error: Error = PulsarError.unableToSetToken
+                print(error.localizedDescription)
             }
         }catch{
-            print("parsing error")
+            let error: Error = PulsarError.parsingError
+            print(error.localizedDescription)
         }
     }
     
@@ -102,6 +104,8 @@ struct SignInView: View {
                                     if error != nil{
                                         signInSignUpHelper.showCanNotConnectAlert = true
                                         print(error as Any)
+                                        let connectionError: Error = PulsarError.connectionError
+                                        print(connectionError.localizedDescription)
                                     }else{
                                         if let data:Data = response?.data{
                                             self.setAccessToken(data: data)
@@ -136,6 +140,8 @@ struct SignInView: View {
                                 self.postSignUp(user: userSignUp, postSignUpCompletionHandler: { response, error in
                                     if error != nil{
                                         print(error as Any)
+                                        let connectionError: Error = PulsarError.connectionError
+                                        print(connectionError.localizedDescription)
                                     }else{
                                         if let data:Data = response?.data{
                                             self.setAccessToken(data: data)

@@ -59,6 +59,8 @@ struct ActiveCharacterCardView: View {
                 self.getEntries(characterId: characterId, getEntriesCompletionHandler: { response, error in
                     if error != nil{
                         print(error as Any)
+                        let connectionError: Error = PulsarError.connectionError
+                        print(connectionError.localizedDescription)
                     }else{
                         do{
                             let json = try JSON(data:response!.data)
@@ -72,6 +74,8 @@ struct ActiveCharacterCardView: View {
                             }
                         }catch{
                             print("Error Parsing")
+                            let error: Error = PulsarError.parsingError
+                            print(error.localizedDescription)
                         }
                         
                     }
@@ -80,11 +84,3 @@ struct ActiveCharacterCardView: View {
         })
     }
 }
-
-//struct ActiveCharacterCardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ActiveCharacterCardView()
-//    }
-//}
-
-// MARK: Show preview with mocks

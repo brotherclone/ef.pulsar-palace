@@ -17,10 +17,3 @@ struct CharacterListRowView: View {
     }
 }
 
-//struct CharacterListRowView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CharacterListRowView()
-//    }
-//}
-
-// MARK: Show preview with mocks

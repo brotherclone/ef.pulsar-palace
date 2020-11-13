@@ -25,9 +25,3 @@ struct ResultsView: View {
         }
     }
 }
-
-//struct ResultsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ResultsView()
-//    }
-//}

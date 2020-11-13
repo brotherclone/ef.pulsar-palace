@@ -108,7 +108,8 @@ struct MainView: View {
                         mainStatusHelper.nonActiveCharacters = nonActivePlayerCharacters
                     }
                 }catch{
-                    print("Error Parsing JSON")
+                    let error: Error = PulsarError.parsingError
+                    print(error.localizedDescription)
                 }
             }
         })
@@ -141,7 +142,8 @@ struct MainView: View {
                     }
                     mainStatusHelper.settings = characterSettings
                 }else{
-                    print("error parsing player character data: settings")
+                    let error: Error = PulsarError.parsingError
+                    print(error.localizedDescription)
                 }
                 var characterDescriptors: [CharacterDescriptor] = []
                 if let descriptors: Array = json[0]["character_descriptors"].array {
@@ -153,7 +155,8 @@ struct MainView: View {
                     }
                     mainStatusHelper.descriptors = characterDescriptors
                 }else{
-                    print("error parsing player character data: descriptors")
+                    let error: Error = PulsarError.parsingError
+                    print(error.localizedDescription)
                 }
                 var characterBackgrounds: [CharacterBackground] = []
                 if let backgrounds: Array = json[0]["character_backgrounds"].array{
@@ -163,7 +166,8 @@ struct MainView: View {
                     }
                     mainStatusHelper.backgrounds = characterBackgrounds
                 }else{
-                    print("error parsing player character data")
+                    let error: Error = PulsarError.parsingError
+                    print(error.localizedDescription)
                 }
                 initializeCharacters(backgrounds: characterBackgrounds, settings:characterSettings, descriptors: characterDescriptors, roles: characterRoles)
                 self.mainStatusHelper.playerDataIsReady = true
@@ -226,6 +230,8 @@ struct MainView: View {
             self.getPlayerCharacterData(getPlayerCharacterDataCompletionHandler: { response, error in
                 if error != nil{
                     print(error as Any)
+                    let connectionError: Error = PulsarError.connectionError
+                    print(connectionError.localizedDescription)
                 }else{
                     parsePlayerCharacterData(data: response!.data)
                 }

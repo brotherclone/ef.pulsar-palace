@@ -14,6 +14,12 @@ enum PulsarError: Error {
     case parsingError
     case connectionError
     case invalidCredentials
+    case lostUser
+    case unableToSetToken
+    case unknownKey
+    case tagUserMismatch
+    case musicPlayerSessionError
+    case musicPlayerPlaybackError
 }
 
 
@@ -30,6 +36,18 @@ extension PulsarError: LocalizedError {
             return NSLocalizedString("Calling earthlyframes.com... Hello?", comment: "Connection Error")
         case .invalidCredentials:
             return NSLocalizedString("Wanna try that email and password again? I don't recognize them.", comment: "Invalid Credentials")
+        case .lostUser:
+            return NSLocalizedString("Forgive me. I've forgotten your name.", comment: "Lost Credentials")
+        case .unableToSetToken:
+            return NSLocalizedString("I'm not good with faces so I need something on your phone to know it's you.", comment: "Unable to Set Token")
+        case .unknownKey:
+            return NSLocalizedString("I thought it said Nitche.", comment: "Unknown Key")
+        case .tagUserMismatch:
+            return  NSLocalizedString("That doesn't appear to belong to you.", comment: "User Tag mismatch")
+        case .musicPlayerSessionError:
+            return NSLocalizedString("I can't play that. Sorry.", comment: "Player Session Error")
+        case .musicPlayerPlaybackError:
+            return NSLocalizedString("I can't play that. Sorry.", comment: "Playerback Error")
         }
     }
 }
