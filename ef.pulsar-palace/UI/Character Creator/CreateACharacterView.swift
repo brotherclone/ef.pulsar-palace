@@ -73,10 +73,10 @@ struct CreateACharacterView: View {
                          archived: false)
     }
     
-    func updateCharacter(name: String, bio: String) -> Character{
+    func updateCharacter() -> Character {
         print("updating character")
-        characterCreationHelper.currentCharacter?.name = name
-        characterCreationHelper.currentCharacter?.additional_bio = bio
+        characterCreationHelper.currentCharacter?.name = "name"
+        characterCreationHelper.currentCharacter?.additional_bio = "bio"
         characterCreationHelper.currentCharacter?.characterBackground = characterCreationHelper.currentBackground
         characterCreationHelper.currentCharacter?.characterSetting = characterCreationHelper.currentSetting
         characterCreationHelper.currentCharacter?.characterDescriptor = characterCreationHelper.currentDescriptor
@@ -112,8 +112,7 @@ struct CreateACharacterView: View {
                 .ignoresSafeArea()
             ScrollView{
                 VStack{
-                    //NavigationLink(destination: MainView(), isActive: $characterCreationHelper.createdCharacter){}
-                    
+                    NavigationLink(destination: NameACharacterView(), isActive: $characterCreationHelper.createdCharacter){}
                     
                     SettingsButtonUIView()
                     
@@ -172,7 +171,7 @@ struct CreateACharacterView: View {
                             
                             
                             Button(action:{
-                                let postCharacter: Character = updateCharacter(name: self.inputName, bio: self.inputBio)
+                                let postCharacter: Character = updateCharacter()
                                 self.postACharacter(character: postCharacter, postACharacterCompletionHandler: { response, error in
                                     if error != nil{
                                         print(error as Any)
