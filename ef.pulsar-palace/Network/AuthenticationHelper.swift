@@ -12,7 +12,7 @@ class AuthenticationHelper: ObservableObject {
     
     @Published var isLoggedIn: Bool = false
     @Published var token: String? = nil
-    @Published var currentUser: User? = nil
+    @Published var currentUserId: Int? = nil
     
     func setToken(tokenData: String){
         let defaults = UserDefaults.standard
@@ -20,17 +20,30 @@ class AuthenticationHelper: ObservableObject {
         token = defaults.string(forKey: UserDefaults.Keys.token)
     }
     
-    func setCurrentUser(user: User){
-        let encoder = JSONEncoder()
-        if let encodedUser = try? encoder.encode(user){
-            let defaults = UserDefaults.standard
-            defaults.setValue(encodedUser, forKey:  UserDefaults.Keys.currentUser)
-            isLoggedIn = true
-            currentUser = user
+    func deleteAll(){
+        signOut()
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: key)
         }
     }
     
-    func getAutenticationInfo() -> (Bool,String?, User?){
+    func signOut(){
+        let defaults = UserDefaults.standard
+        defaults.setValue(nil, forKey: UserDefaults.Keys.currentUserId)
+        defaults.setValue(nil, forKey: UserDefaults.Keys.token)
+        isLoggedIn = false
+    }
+    
+    func setCurrentUser(user: User){
+        let defaults = UserDefaults.standard
+        defaults.setValue(user.id, forKey: UserDefaults.Keys.currentUserId)
+        currentUserId = defaults.integer(forKey: UserDefaults.Keys.currentUserId)
+        isLoggedIn = true
+    }
+    
+    func getAutenticationInfo() -> (Bool,String?, Int?){
         
         let defaults = UserDefaults.standard
         
@@ -44,19 +57,14 @@ class AuthenticationHelper: ObservableObject {
             token = defaults.string(forKey: UserDefaults.Keys.token)
         }
         
-        if UserDefaults.contains(UserDefaults.Keys.currentUser){
-            if let encodedUser = defaults.object(forKey: UserDefaults.Keys.currentUser) as? Data {
-                let decoder = JSONDecoder()
-                if let storedUser = try? decoder.decode(User.self, from: encodedUser){
-                    currentUser = storedUser
-                }
-            }
+        if UserDefaults.contains(UserDefaults.Keys.currentUserId){
+            currentUserId = defaults.integer(forKey: UserDefaults.Keys.currentUserId)
         }
         
-        return (isLoggedIn, token, currentUser)
+        return (isLoggedIn, token, currentUserId)
     }
     
     func refreshAutenticationInfo(){
-        let _: (Bool, String?, User?) = self.getAutenticationInfo()
+        let _: (Bool, String?, Int?) = self.getAutenticationInfo()
     }
 }

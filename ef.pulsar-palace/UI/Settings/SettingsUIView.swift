@@ -8,9 +8,17 @@
 
 import SwiftUI
 
+
+class SettingsViewStatusHelper: ObservableObject {
+    @Published var doLogOut: Bool = false
+}
+
 struct SettingsUIView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    
+    @ObservedObject var authtenticationHelper = AuthenticationHelper()
+    @ObservedObject var settingsViewStatusHelper = SettingsViewStatusHelper()
     
     @State private var whatIsItPresented = false
     @State private var whatIsAnEarthlyFramePresented = false
@@ -18,19 +26,22 @@ struct SettingsUIView: View {
     
     var body: some View {
         VStack{
+            NavigationLink(destination: StartView(), isActive: $settingsViewStatusHelper.doLogOut){}
             Button("Close"){
                 presentationMode.wrappedValue.dismiss()
             }
             VStack(spacing:SpacingManager.barely.space){
                 Text("Accounts").pulsarFont(style: .h2)
                 Button(action: {
-                    print("delete button")
+                    self.authtenticationHelper.deleteAll()
+                    self.settingsViewStatusHelper.doLogOut = true
                 }
                 ){
                     SettingsRowItemUIView(buttonText: "Delete Everything! Salt the Earth!")
                 }
                 Button(action: {
-                    print("sign out button")
+                    self.authtenticationHelper.signOut()
+                    self.settingsViewStatusHelper.doLogOut = true
                 }
                 ){
                     SettingsRowItemUIView(buttonText: "Sign Out")

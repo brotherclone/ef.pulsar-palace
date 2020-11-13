@@ -28,13 +28,46 @@ extension UserSignIn: Encodable, Decodable{
 }
 
 
-public struct User {
+
+public struct UserSignUp {
     var id: Int?
     var first_name: String?
     var last_name: String?
     var email: String
     var password: String
+}
+
+extension UserSignUp: Encodable, Decodable {
     
+    enum UserSingUpKeys: String, CodingKey{
+        case id
+        case first_name
+        case last_name
+        case email
+        case password
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: UserSingUpKeys.self)
+        _ = try container.decode(UserSignUp.self, forKey: .id)
+        id = try container.decode(Int?.self, forKey: .id)
+        _ = try container.decode(UserSignUp.self, forKey: .first_name)
+        first_name = try container.decode(String?.self, forKey: .first_name)
+        _ = try container.decode(UserSignUp.self, forKey: .last_name)
+        last_name = try container.decode(String?.self, forKey: .last_name)
+        _ = try container.decode(UserSignUp.self, forKey: .email)
+        email = try container.decode(String.self, forKey: .email)
+        _ = try container.decode(UserSignUp.self, forKey: .password)
+        password = try container.decode(String.self, forKey: .password)
+    }
+}
+
+
+public struct User {
+    var id: Int?
+    var first_name: String?
+    var last_name: String?
+    var email: String
 }
 
 extension User: Encodable, Decodable {
@@ -44,7 +77,6 @@ extension User: Encodable, Decodable {
         case first_name
         case last_name
         case email
-        case password
     }
     
     public init(from decoder: Decoder) throws {
@@ -57,8 +89,5 @@ extension User: Encodable, Decodable {
         last_name = try container.decode(String?.self, forKey: .last_name)
         _ = try container.decode(User.self, forKey: .email)
         email = try container.decode(String.self, forKey: .email)
-        _ = try container.decode(User.self, forKey: .password)
-        password = try container.decode(String.self, forKey: .password)
     }
 }
-

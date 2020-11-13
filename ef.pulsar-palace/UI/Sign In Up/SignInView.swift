@@ -30,7 +30,7 @@ struct SignInView: View {
     @State private var firstNameInput: String = ""
     @State private var lastNameInput: String = ""
         
-    func postSignUp(user: User, postSignUpCompletionHandler: @escaping (Response?, Error?) -> Void) {
+    func postSignUp(user: UserSignUp, postSignUpCompletionHandler: @escaping (Response?, Error?) -> Void) {
         let networkManager = NetworkManager.provider
         networkManager.request(.signUp(user: user)){ result in
             switch result{
@@ -64,7 +64,7 @@ struct SignInView: View {
                 authenticationHelper.setToken(tokenData: token)
                 if let id:Int = json["id"].int{
                     if let email:String = json["email"].string{
-                        let userData: User = User(id: id, first_name: json["first_name"].string, last_name: json["last_name"].string, email: email, password: "logged-in")
+                        let userData: User = User(id: id, first_name: json["first_name"].string, last_name: json["last_name"].string, email: email)
                         print("setting user: \(userData)")
                         authenticationHelper.setCurrentUser(user: userData)
                     }
@@ -132,7 +132,7 @@ struct SignInView: View {
                             TextField("Password", text: $passWordInput).textFieldStyle(PulsarTextFieldStyle())
                             TextField("Confirm Password", text: $confirmPassWordInput).textFieldStyle(PulsarTextFieldStyle())
                             Button(action: {
-                                let userSignUp: User = User(id:nil, first_name:  self.firstNameInput, last_name: self.lastNameInput, email:self.emailInput, password: self.passWordInput)
+                                let userSignUp: UserSignUp = UserSignUp(id:nil, first_name:  self.firstNameInput, last_name: self.lastNameInput, email:self.emailInput, password: self.passWordInput)
                                 self.postSignUp(user: userSignUp, postSignUpCompletionHandler: { response, error in
                                     if error != nil{
                                         print(error as Any)
@@ -158,9 +158,3 @@ struct SignInView: View {
         .navigationBarBackButtonHidden(true)
     }
 }
-
-//struct SignInView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SignInView()
-//    }
-//}

@@ -23,6 +23,8 @@ extension APITargets{
             return stubbedResponse("signIn")
         case .signUp:
             return stubbedResponse("signUp")
+        case .signOut:
+            return stubbedResponse("signOut")
         case .getUsersCharacters:
             return stubbedResponse("getUserCharacters")
         case .getUserByEmail:
