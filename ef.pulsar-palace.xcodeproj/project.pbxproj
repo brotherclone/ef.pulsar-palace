@@ -20,8 +20,11 @@
 		DA19106B24F03BDA00C72477 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19106A24F03BDA00C72477 /* EntryView.swift */; };
 		DA24006C24EB54F3009CCD22 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = DA24006B24EB54F3009CCD22 /* Podfile */; };
 		DA29997C250BD9E300A67035 /* AuthenticationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29997B250BD9E300A67035 /* AuthenticationHelper.swift */; };
+		DA2F75E7255EE78A0069FF81 /* NameACharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2F75E6255EE78A0069FF81 /* NameACharacterView.swift */; };
 		DA3833C02523B0CE00C3937E /* PulsarErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3833BF2523B0CE00C3937E /* PulsarErrors.swift */; };
 		DA426D232520EFD9005E7B98 /* revealConsequences.json in Resources */ = {isa = PBXBuildFile; fileRef = DA426D222520EFD9005E7B98 /* revealConsequences.json */; };
+		DA439F12255C9F0400ED3F5A /* RollButtonUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA439F11255C9F0400ED3F5A /* RollButtonUIView.swift */; };
+		DA454777255E015F00F94E51 /* signOut.json in Resources */ = {isa = PBXBuildFile; fileRef = DA454776255E015F00F94E51 /* signOut.json */; };
 		DA784FBA255ADB080019AD43 /* CharacterPortraitUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA784FB9255ADB080019AD43 /* CharacterPortraitUIView.swift */; };
 		DA784FBF255ADDC60019AD43 /* SettingsButtonUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA784FBE255ADDC60019AD43 /* SettingsButtonUIView.swift */; };
 		DA784FC5255AF0410019AD43 /* SettingsRowItemUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA784FC4255AF0410019AD43 /* SettingsRowItemUIView.swift */; };
@@ -126,8 +129,11 @@
 		DA19106A24F03BDA00C72477 /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
 		DA24006B24EB54F3009CCD22 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DA29997B250BD9E300A67035 /* AuthenticationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationHelper.swift; sourceTree = "<group>"; };
+		DA2F75E6255EE78A0069FF81 /* NameACharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameACharacterView.swift; sourceTree = "<group>"; };
 		DA3833BF2523B0CE00C3937E /* PulsarErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulsarErrors.swift; sourceTree = "<group>"; };
 		DA426D222520EFD9005E7B98 /* revealConsequences.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = revealConsequences.json; sourceTree = "<group>"; };
+		DA439F11255C9F0400ED3F5A /* RollButtonUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollButtonUIView.swift; sourceTree = "<group>"; };
+		DA454776255E015F00F94E51 /* signOut.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = signOut.json; sourceTree = "<group>"; };
 		DA58E989254614430048CC84 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		DA784FB9255ADB080019AD43 /* CharacterPortraitUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPortraitUIView.swift; sourceTree = "<group>"; };
 		DA784FBE255ADDC60019AD43 /* SettingsButtonUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButtonUIView.swift; sourceTree = "<group>"; };
@@ -267,6 +273,7 @@
 		DA153EC92555B2CC0009D21B /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				DA784FD0255B099A0019AD43 /* SpacingManager.swift */,
 				DA153ECA2555B2FA0009D21B /* LoadingCirclesUI.swift */,
 			);
 			path = Graphics;
@@ -275,11 +282,13 @@
 		DA19105F24F0350600C72477 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				DA454774255DFFB000F94E51 /* Common */,
+				DA454773255DFF9700F94E51 /* Settings */,
+				DA454772255DFF5F00F94E51 /* Character Creator */,
+				DA454771255DFF5100F94E51 /* Start */,
+				DA454770255DFF4200F94E51 /* Sign In Up */,
+				DA45476F255DFF3A00F94E51 /* Main */,
 				DA153EC92555B2CC0009D21B /* Graphics */,
-				DA87075224EADD9600CF7B62 /* StartView.swift */,
-				DA19106224F0394400C72477 /* SignInView.swift */,
-				DA19106624F03AB500C72477 /* CreateACharacterView.swift */,
-				DA19106824F03B3000C72477 /* MainView.swift */,
 				DA19106A24F03BDA00C72477 /* EntryView.swift */,
 				DAAD1C8224F6AE3000872B79 /* ScannerUIViewController.swift */,
 				DAAD1C8424F6B0E000872B79 /* ScannerViewRepresent.swift */,
@@ -287,7 +296,6 @@
 				DAC2B0C324FA8D8900FF2F9E /* SongPlayerViewController.swift */,
 				DAC2B0C824FA93FF00FF2F9E /* SongPlayerViewRepresent.swift */,
 				DAC2B0CA24FA953200FF2F9E /* SongPlayerView.swift */,
-				DA8CA227250BDE0900A53D6B /* SplashUIView.swift */,
 				DAA4C8EE251A132F000E15B7 /* ActiveCharacterCardView.swift */,
 				DAA4C8E5251A127C000E15B7 /* CharacterView.swift */,
 				DAA4C8F1251A1359000E15B7 /* CharacterListRowView.swift */,
@@ -296,18 +304,66 @@
 				DAA4C8FB251A70C0000E15B7 /* EntryListView.swift */,
 				DAA4C8FE251A70D2000E15B7 /* EntryListRowView.swift */,
 				DA0EE4D0251E60D50026E4DF /* ResultsView.swift */,
-				DA153EB9255313460009D21B /* SettingsUIView.swift */,
-				DA153ECD2555C1990009D21B /* LoadingUIView.swift */,
 				DA784FB9255ADB080019AD43 /* CharacterPortraitUIView.swift */,
-				DA784FBE255ADDC60019AD43 /* SettingsButtonUIView.swift */,
-				DA784FC4255AF0410019AD43 /* SettingsRowItemUIView.swift */,
-				DA784FC7255AF7540019AD43 /* WhatIsItSwiftUIView.swift */,
-				DA784FCA255AF8DD0019AD43 /* WhatIsAnEarthlyFrameUIView.swift */,
-				DA784FCD255AF8F00019AD43 /* WhyIsThisHappeningToMeUIView.swift */,
-				DA784FD0255B099A0019AD43 /* SpacingManager.swift */,
 				DA784FD4255C55CA0019AD43 /* CharacterHealthUIView.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		DA45476F255DFF3A00F94E51 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DA19106824F03B3000C72477 /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DA454770255DFF4200F94E51 /* Sign In Up */ = {
+			isa = PBXGroup;
+			children = (
+				DA19106224F0394400C72477 /* SignInView.swift */,
+			);
+			path = "Sign In Up";
+			sourceTree = "<group>";
+		};
+		DA454771255DFF5100F94E51 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				DA8CA227250BDE0900A53D6B /* SplashUIView.swift */,
+				DA87075224EADD9600CF7B62 /* StartView.swift */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		DA454772255DFF5F00F94E51 /* Character Creator */ = {
+			isa = PBXGroup;
+			children = (
+				DA19106624F03AB500C72477 /* CreateACharacterView.swift */,
+				DA439F11255C9F0400ED3F5A /* RollButtonUIView.swift */,
+				DA2F75E6255EE78A0069FF81 /* NameACharacterView.swift */,
+			);
+			path = "Character Creator";
+			sourceTree = "<group>";
+		};
+		DA454773255DFF9700F94E51 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DA784FC7255AF7540019AD43 /* WhatIsItSwiftUIView.swift */,
+				DA784FCD255AF8F00019AD43 /* WhyIsThisHappeningToMeUIView.swift */,
+				DA784FCA255AF8DD0019AD43 /* WhatIsAnEarthlyFrameUIView.swift */,
+				DA784FBE255ADDC60019AD43 /* SettingsButtonUIView.swift */,
+				DA784FC4255AF0410019AD43 /* SettingsRowItemUIView.swift */,
+				DA153EB9255313460009D21B /* SettingsUIView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		DA454774255DFFB000F94E51 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DA153ECD2555C1990009D21B /* LoadingUIView.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		DA87074224EADD9600CF7B62 = {
@@ -398,6 +454,7 @@
 				DA95EE4F25124E0D00AE4248 /* getPrompt.json */,
 				DACB717225152C3B006BA73E /* entriesByCharacter.json */,
 				DA426D222520EFD9005E7B98 /* revealConsequences.json */,
+				DA454776255E015F00F94E51 /* signOut.json */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -527,6 +584,7 @@
 				DA8A82FD252638D4003CC6A5 /* 04 Drawing Room.m4a in Resources */,
 				DAE8BC6E255062870003B49C /* SourceSansPro-Regular.ttf in Resources */,
 				DA95EE2C25124CDA00AE4248 /* getUsersCharacters.json in Resources */,
+				DA454777255E015F00F94E51 /* signOut.json in Resources */,
 				DACB717325152C3B006BA73E /* entriesByCharacter.json in Resources */,
 				DA8A8301252638D4003CC6A5 /* 06 Great Chamber.m4a in Resources */,
 				DA95EE5025124E0D00AE4248 /* getPrompt.json in Resources */,
@@ -634,6 +692,7 @@
 				DAAD1C8524F6B0E000872B79 /* ScannerViewRepresent.swift in Sources */,
 				DA87075124EADD9600CF7B62 /* SceneDelegate.swift in Sources */,
 				DAAD1C8324F6AE3000872B79 /* ScannerUIViewController.swift in Sources */,
+				DA2F75E7255EE78A0069FF81 /* NameACharacterView.swift in Sources */,
 				DAC2B0CB24FA953200FF2F9E /* SongPlayerView.swift in Sources */,
 				DA784FBA255ADB080019AD43 /* CharacterPortraitUIView.swift in Sources */,
 				DAFD9DA4250AAC5000116198 /* ArrayExtensions.swift in Sources */,
@@ -651,6 +710,7 @@
 				DAA4C8FC251A70C0000E15B7 /* EntryListView.swift in Sources */,
 				DAC2B0AD24F96D5300FF2F9E /* CharacterDescriptors.swift in Sources */,
 				DAC2B0B524F96D9C00FF2F9E /* Users.swift in Sources */,
+				DA439F12255C9F0400ED3F5A /* RollButtonUIView.swift in Sources */,
 				DA0EE4D1251E60D50026E4DF /* ResultsView.swift in Sources */,
 				DAC2B0B124F96D7400FF2F9E /* CharacterRoles.swift in Sources */,
 				DA784FD1255B099A0019AD43 /* SpacingManager.swift in Sources */,
