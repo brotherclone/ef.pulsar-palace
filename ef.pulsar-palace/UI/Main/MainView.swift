@@ -28,6 +28,10 @@ struct MainView: View {
     @ObservedObject var mainStatusHelper = MainViewStatusHelper()
     @ObservedObject var authtenticationHelper = AuthenticationHelper()
     
+    @State private var isAlerting = true
+    
+    @State private var currentError: PulsarError? = nil
+    
     func getUsersCharacters(userId:Int, getUsersCharactersCompletionHanlder: @escaping (Response?, Error?) -> Void){
         if UserDefaults.contains(UserDefaults.Keys.token){
             let defaults = UserDefaults.standard
@@ -63,6 +67,8 @@ struct MainView: View {
         getPlayerCharacterData(getPlayerCharacterDataCompletionHandler: { response, error in
             if error != nil{
                 print(error as Any)
+                self.currentError = PulsarError.connectionError
+                self.isAlerting = true
             }else{
                 var nonActivePlayerCharacters: [Character] = []
                 do{
@@ -108,8 +114,8 @@ struct MainView: View {
                         mainStatusHelper.nonActiveCharacters = nonActivePlayerCharacters
                     }
                 }catch{
-                    let error: Error = PulsarError.parsingError
-                    print(error.localizedDescription)
+                    self.currentError = PulsarError.parsingError
+                    self.isAlerting = true
                 }
             }
         })
@@ -142,8 +148,8 @@ struct MainView: View {
                     }
                     mainStatusHelper.settings = characterSettings
                 }else{
-                    let error: Error = PulsarError.parsingError
-                    print(error.localizedDescription)
+                    self.currentError = PulsarError.parsingError
+                    self.isAlerting = true
                 }
                 var characterDescriptors: [CharacterDescriptor] = []
                 if let descriptors: Array = json[0]["character_descriptors"].array {
@@ -166,13 +172,14 @@ struct MainView: View {
                     }
                     mainStatusHelper.backgrounds = characterBackgrounds
                 }else{
-                    let error: Error = PulsarError.parsingError
-                    print(error.localizedDescription)
+                    self.currentError = PulsarError.parsingError
+                    self.isAlerting = true
                 }
                 initializeCharacters(backgrounds: characterBackgrounds, settings:characterSettings, descriptors: characterDescriptors, roles: characterRoles)
                 self.mainStatusHelper.playerDataIsReady = true
             }catch{
-                print("JSON parsing error: Player Character Data")
+                self.currentError = PulsarError.parsingError
+                self.isAlerting = true
                 self.mainStatusHelper.playerDataIsReady = false
             }
         }
@@ -185,8 +192,7 @@ struct MainView: View {
                 Group{
                     if mainStatusHelper.playerDataIsReady == false{
                         Group{
-                            // MARK: Replace with animation
-                            Text("Loading")
+                            LoadingUIView()
                         }
                     }
                 }
@@ -212,7 +218,7 @@ struct MainView: View {
                                 }
                             }else{
                                 Group{
-                                    Text("Loading")
+                                   LoadingUIView()
                                 }
                             }
                             
@@ -236,6 +242,8 @@ struct MainView: View {
                     parsePlayerCharacterData(data: response!.data)
                 }
             })
-        })
+        }).fullScreenCover(isPresented: $isAlerting){
+            AlertUIView(pulsarError: PulsarError.connectionError)
+        }
     }
 }

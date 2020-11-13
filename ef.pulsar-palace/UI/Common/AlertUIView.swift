@@ -10,15 +10,31 @@ import SwiftUI
 
 struct AlertUIView: View {
     
-    @State var isPresented: Bool = false
+    @Environment(\.presentationMode) var presentationMode
+
     @State var pulsarError: PulsarError! = nil
-    
+    @State var additionalMessage: String?
+    @State var buttonText: String?
     
     var body: some View {
         
-        Group {
-            Text(pulsarError.localizedDescription)
-        }
+        VStack {
+            Text(pulsarError.localizedDescription).pulsarFont(style: .h3).foregroundColor(Color.blue)
+            Text(pulsarError.failureReason ?? "").pulsarFont(style: .moreEmphasis)
+                .padding(SpacingManager.oddOne.space)
+            Text(pulsarError.recoverySuggestion ?? "").pulsarFont(style: .lessEmphasis)
+                .padding(SpacingManager.oddOne.space)
+            if additionalMessage != nil {
+                Text(additionalMessage ?? "")
+            }
+            Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }) {
+                Text(buttonText ?? "Ok").pulsarFont(style: .body).foregroundColor(Color.blue)
+            }
+        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.pink)
+        .edgesIgnoringSafeArea(.all)
         
     }
 }

@@ -29,6 +29,9 @@ struct SignInView: View {
     @State private var confirmPassWordInput: String = ""
     @State private var firstNameInput: String = ""
     @State private var lastNameInput: String = ""
+    @State var isAlerting: Bool = false
+    
+    var currentError: PulsarError? = nil
         
     func postSignUp(user: UserSignUp, postSignUpCompletionHandler: @escaping (Response?, Error?) -> Void) {
         let networkManager = NetworkManager.provider
@@ -162,5 +165,8 @@ struct SignInView: View {
             }
         }.navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
+        .fullScreenCover(isPresented: $isAlerting){
+            AlertUIView(pulsarError: PulsarError.connectionError)
+        }
     }
 }
