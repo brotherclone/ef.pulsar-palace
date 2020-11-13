@@ -17,7 +17,7 @@ struct WhyIsThisHappeningToMeUIView: View {
             Color.yellow
                 .ignoresSafeArea()
             Group{
-                VStack(spacing: SpacingManager.verticalPace.space){
+                VStack(spacing: SpacingManager.oddTwo.space){
                     Spacer()
                     Text("Why is this happening to me?").pulsarFont(style: .h1).foregroundColor(.black)
                     Text("Your characters in Pulsar Palace come from turbulent settings and possess a unique combination of skills and demeanors. Maybe they come to Pulsar Palace in a trance, a skyship, or a dream? It's up to you. Oh, I'm sorry, did you mean something is happening to you in real life? The answer to that will come in two days.").pulsarFont(style: .body).foregroundColor(.black)
@@ -27,7 +27,7 @@ struct WhyIsThisHappeningToMeUIView: View {
                         Text("Umm... Okay").pulsarFont(style: .primaryButton).foregroundColor(.pink)
                     }
                     Spacer()
-                }.padding(SpacingManager.edge.space)
+                }.padding(SpacingManager.oddOne.space)
             }
         }
     }

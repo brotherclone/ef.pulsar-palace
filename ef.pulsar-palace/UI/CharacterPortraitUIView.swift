@@ -18,37 +18,42 @@ struct CharacterPortraitUIView: View {
     var width: CGFloat
     
     var body: some View {
-        ZStack{
-            // MARK: Setting
-            WebImage(url: URL(string: setting.imageURL))
-                .resizable()
-                .placeholder {
-                    Rectangle().foregroundColor(.blue)
-                }
-                .indicator(.activity)
-                .transition(.fade(duration: 0.5))
-                .scaledToFit()
-                .frame(width: width, height: height, alignment: .center)
-            // MARK: Role
-            WebImage(url: URL(string: role.imageURL))
-                .resizable()
-                .placeholder {
-                    Rectangle().foregroundColor(.blue)
-                }
-                .indicator(.activity)
-                .transition(.fade(duration: 0.5))
-                .scaledToFit()
-                .frame(width: width, height: height, alignment: .center)
-            // MARK: Descriptor
-            WebImage(url: URL(string: descriptor.imageURL))
-                .resizable()
-                .placeholder {
-                    Rectangle().foregroundColor(.blue)
-                }
-                .indicator(.activity) // Activity Indicator
-                .transition(.fade(duration: 0.5)) // Fade Transition with duration
-                .scaledToFit()
-                .frame(width: width, height: height, alignment: .center)
+        Group{
+            ZStack{
+                // MARK: Setting
+                WebImage(url: URL(string: setting.imageURL))
+                    .resizable()
+                    .placeholder {
+                        Rectangle().foregroundColor(.blue)
+                    }
+                    .indicator(.activity)
+                    .transition(.fade(duration: 0.5))
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: width, height: height, alignment: .center)
+                    .clipped()
+                // MARK: Role
+                WebImage(url: URL(string: role.imageURL))
+                    .resizable()
+                    .placeholder {
+                        Rectangle().foregroundColor(.blue)
+                    }
+                    .indicator(.activity)
+                    .transition(.fade(duration: 0.5))
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: width, height: height, alignment: .center)
+                    .clipped()
+                // MARK: Descriptor
+                WebImage(url: URL(string: descriptor.imageURL))
+                    .resizable()
+                    .placeholder {
+                        Rectangle().foregroundColor(.blue)
+                    }
+                    .indicator(.activity) // Activity Indicator
+                    .transition(.fade(duration: 0.5)) // Fade Transition with duration
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: width, height: height, alignment: .center)
+                    .clipped()
+            }
         }
     }
 }

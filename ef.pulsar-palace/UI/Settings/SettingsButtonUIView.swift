@@ -23,7 +23,7 @@ struct SettingsButtonUIView: View {
                 }
                 .fullScreenCover(isPresented: $isPresented, content: SettingsUIView.init)
                 
-            }.padding(SpacingManager.edge.space)
+            }.padding(SpacingManager.oddOne.space)
         }
     }
 }

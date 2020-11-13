@@ -110,79 +110,81 @@ struct CreateACharacterView: View {
         ZStack{
             Color.yellow
                 .ignoresSafeArea()
-            ScrollView{
-                VStack{
+            
+            VStack{
+                GeometryReader { geo in
                     NavigationLink(destination: NameACharacterView(), isActive: $characterCreationHelper.createdCharacter){}
                     
                     SettingsButtonUIView()
                     
-                    Text("Create a Character").pulsarFont(style: .h3).foregroundColor(.black)
-                    
-                    if characterCreationHelper.characterInitialized{
-                        Group{
-                            
-                            CharacterPortraitUIView(descriptor: characterCreationHelper.currentDescriptor!, role: characterCreationHelper.currentRole!, setting: characterCreationHelper.currentSetting!, height: 242, width:375)
-                            
-                            Text("I am a").pulsarFont(style: .lessEmphasis).foregroundColor(Color.black)
-                            
-                            
-                            Button(action: {
-                                let descriptorRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
-                                characterCreationHelper.currentDescriptor = descriptorRoll.descriptor
-                            }){
-                                RollButtonUIView(text: characterCreationHelper.currentDescriptor!.descriptor)
+                    ScrollView{
+                        
+                        Text("Create a Character").pulsarFont(style: .h3).foregroundColor(.black).offset(y: SpacingManager.evenTwo.space)
+                        
+                        if characterCreationHelper.characterInitialized{
+                            Group{
+                                Group{
+                                CharacterPortraitUIView(descriptor: characterCreationHelper.currentDescriptor!, role: characterCreationHelper.currentRole!, setting: characterCreationHelper.currentSetting!, height: 200, width: geo.size.width)
+                                }.offset(y: SpacingManager.evenOne.space)
+                                
+                                Text("I am a").pulsarFont(style: .lessEmphasis).foregroundColor(Color.black).offset(y: SpacingManager.oddOne.space)
+                                
+                                Button(action: {
+                                    let descriptorRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
+                                    characterCreationHelper.currentDescriptor = descriptorRoll.descriptor
+                                }){
+                                    RollButtonUIView(text: characterCreationHelper.currentDescriptor!.descriptor)
+                                }
+                                
+                                Button(action: {
+                                    let roleRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
+                                    characterCreationHelper.currentRole = roleRoll.role
+                                }){
+                                    RollButtonUIView(text: characterCreationHelper.currentRole!.character_role)
+                                }
+                                
+                                Text("from").pulsarFont(style: .lessEmphasis).foregroundColor(Color.black)
+                                
+                                
+                                Button(action: {
+                                    let settingRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
+                                    characterCreationHelper.currentSetting = settingRoll.setting
+                                }){
+                                    RollButtonUIView(text: "\(characterCreationHelper.currentSetting!.time),\(characterCreationHelper.currentSetting!.place)")
+                                }
+                                
+                                Text("who").pulsarFont(style: .lessEmphasis).foregroundColor(Color.black)
+                                
+                                Button(action: {
+                                    let backgroundRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
+                                    characterCreationHelper.currentBackground = backgroundRoll.background
+                                }){
+                                    RollButtonUIView(text:characterCreationHelper.currentBackground!.background)
+                                }
+                                
+                                Button(action:{
+                                    let reRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
+                                    characterCreationHelper.currentDescriptor = reRoll.descriptor
+                                    characterCreationHelper.currentRole = reRoll.role
+                                    characterCreationHelper.currentSetting = reRoll.setting
+                                    characterCreationHelper.currentBackground = reRoll.background
+                                }){
+                                    Text("Re-Roll All").pulsarFont(style: .primaryButton).foregroundColor(Color.pink)
+                                }
+                                
+                                Button(action:{
+                                    let postCharacter: Character = updateCharacter()
+                                    self.postACharacter(character: postCharacter, postACharacterCompletionHandler: { response, error in
+                                        if error != nil{
+                                            print(error as Any)
+                                        }else{
+                                            characterCreationHelper.createdCharacter = true
+                                        }
+                                    })
+                                }){
+                                    Text("Looks Good!").pulsarFont(style: .primaryButton).foregroundColor(Color.pink)
+                                }.offset(y: SpacingManager.oddOne.space)
                             }
-                            
-                            Button(action: {
-                                let roleRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
-                                characterCreationHelper.currentRole = roleRoll.role
-                            }){
-                                RollButtonUIView(text: characterCreationHelper.currentRole!.character_role)
-                            }
-                            
-                            Text("from").pulsarFont(style: .lessEmphasis).foregroundColor(Color.black)
-                            
-                            
-                            Button(action: {
-                                let settingRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
-                                characterCreationHelper.currentSetting = settingRoll.setting
-                            }){
-                                RollButtonUIView(text: "\(characterCreationHelper.currentSetting!.time),\(characterCreationHelper.currentSetting!.place)")
-                            }
-                            
-                            Text("who").pulsarFont(style: .lessEmphasis).foregroundColor(Color.black)
-                            
-                            Button(action: {
-                                let backgroundRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
-                                characterCreationHelper.currentBackground = backgroundRoll.background
-                            }){
-                                RollButtonUIView(text:characterCreationHelper.currentBackground!.background)
-                            }
-                            
-                            Button(action:{
-                                let reRoll: AttributeContainer = rollAttributes(attributes: characterCreationHelper.defaultAttributesContainer!)
-                                characterCreationHelper.currentDescriptor = reRoll.descriptor
-                                characterCreationHelper.currentRole = reRoll.role
-                                characterCreationHelper.currentSetting = reRoll.setting
-                                characterCreationHelper.currentBackground = reRoll.background
-                            }){
-                                Text("Re-Roll All").pulsarFont(style: .primaryButton).foregroundColor(Color.pink)
-                            }
-                            
-                            
-                            Button(action:{
-                                let postCharacter: Character = updateCharacter()
-                                self.postACharacter(character: postCharacter, postACharacterCompletionHandler: { response, error in
-                                    if error != nil{
-                                        print(error as Any)
-                                    }else{
-                                        characterCreationHelper.createdCharacter = true
-                                    }
-                                })
-                            }){
-                                Text("Looks Good!").pulsarFont(style: .primaryButton).foregroundColor(Color.pink)
-                            }
-                            
                         }
                     }
                 }
@@ -191,9 +193,7 @@ struct CreateACharacterView: View {
         }.onAppear( perform: {
             print("performing on appear")
             characterCreationHelper.defaultAttributesContainer = AttributesContainer(settings: self.settings, backgrounds: self.backgrounds, descriptors: self.descriptors, roles: self.roles)
-            
             authenticationHelper.refreshAutenticationInfo()
-         
             if let currentUserId: Int = authenticationHelper.currentUserId{
                 if currentUserId > 0 {
                     characterCreationHelper.currentCharacter = createBlankCharacter(userId: currentUserId)
@@ -208,7 +208,7 @@ struct CreateACharacterView: View {
                     print("rut roh")
                 }
             }
-            
-        })
+        }).navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 }

@@ -17,7 +17,7 @@ struct WhatIsItSwiftUIView: View {
             Color.yellow
                 .ignoresSafeArea()
             Group{
-                VStack(spacing: SpacingManager.verticalPace.space){
+                VStack(spacing: SpacingManager.oddTwo.space){
                     Spacer()
                     Text("What is it?").pulsarFont(style: .h1).foregroundColor(.black)
                     Text("Pulsar Palace is a single-player role-playing game in which you explore an extra-dimensional setting. You play by authoring entries in a log that document each room you encounter in the Pulsar Palace. This place is unforgiving, and your character is likely to perish. When this happens, you can create another character, try again, or send your journey with a friend. You'll be able to see their character's entries and monitor the stories as pas along. This App also works with a physical key-card, which allows you to pass your story along in person and grants you access to some surprises within the palace.").pulsarFont(style: .body).foregroundColor(.black)
@@ -27,7 +27,7 @@ struct WhatIsItSwiftUIView: View {
                         Text("I think I get it").pulsarFont(style: .primaryButton).foregroundColor(.pink)
                     }
                     Spacer()
-                }.padding(SpacingManager.edge.space)
+                }.padding(SpacingManager.oddOne.space)
             }
         }
     }

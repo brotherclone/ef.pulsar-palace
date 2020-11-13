@@ -17,7 +17,7 @@ struct RollButtonUIView: View {
             Image("roll")
                 .resizable()
                 .frame(width: 40, height: 45, alignment: .leading)
-            Text(self.text).pulsarFont(style: .h3).foregroundColor(Color.black)
+            Text(self.text).pulsarFont(style: .moreEmphasis).foregroundColor(Color.black)
         }
     }
 }
