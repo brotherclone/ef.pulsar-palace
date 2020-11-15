@@ -19,10 +19,3 @@ struct EntryListRowView: View {
         }
     }
 }
-
-//struct EntryListRowView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EntryListRowView()
-//    }
-//}
-// MARK: Show preview with mocks

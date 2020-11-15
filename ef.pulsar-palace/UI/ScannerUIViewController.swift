@@ -40,6 +40,8 @@ class ScannerUIViewController: UIViewController, NFCNDEFReaderSessionDelegate {
         self.requestTagValidation(uuid: result, requestTagValidationCompletionHandler: { response, error in
             if error != nil{
                 print(error as Any)
+                let connectionError: Error = PulsarError.connectionError
+                print(connectionError.localizedDescription)
             } else {
                 print(response as Any)
                 do {
@@ -49,7 +51,8 @@ class ScannerUIViewController: UIViewController, NFCNDEFReaderSessionDelegate {
                     self.checkTagAgainstUser(tagUserId: userId)
                     
                 } catch  {
-                    print("error")
+                    let error: Error = PulsarError.parsingError
+                    print(error.localizedDescription)
                 }
             }
         })
@@ -64,11 +67,13 @@ class ScannerUIViewController: UIViewController, NFCNDEFReaderSessionDelegate {
                 if userId == tagUserId {
                     print("match")
                 }else{
-                    print("double nope")
+                    let error: Error = PulsarError.tagUserMismatch
+                    print(error.localizedDescription)
                 }
             }
         }else{
-            print("nope")
+            let error: Error = PulsarError.unknownKey
+            print(error.localizedDescription)
         }
     }
     

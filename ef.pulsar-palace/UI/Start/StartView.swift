@@ -11,8 +11,9 @@ import SwiftUI
 struct StartView: View {
     
     @ObservedObject  var authtenticationHelper = AuthenticationHelper()
-    @State private var isPresented = false
     
+    @State private var isPresented = false
+
     var body: some View {
         NavigationView{
             Color.yellow
@@ -46,11 +47,5 @@ struct StartView: View {
         .fullScreenCover(isPresented: $isPresented) {
             LoadingUIView()
         }
-    }
-}
-
-struct StartView_Previews: PreviewProvider {
-    static var previews: some View {
-        StartView()
     }
 }

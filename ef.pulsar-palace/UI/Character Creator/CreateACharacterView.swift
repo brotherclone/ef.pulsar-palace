@@ -110,7 +110,6 @@ struct CreateACharacterView: View {
         ZStack{
             Color.yellow
                 .ignoresSafeArea()
-            
             VStack{
                 GeometryReader { geo in
                     NavigationLink(destination: NameACharacterView(), isActive: $characterCreationHelper.createdCharacter){}
@@ -177,6 +176,8 @@ struct CreateACharacterView: View {
                                     self.postACharacter(character: postCharacter, postACharacterCompletionHandler: { response, error in
                                         if error != nil{
                                             print(error as Any)
+                                            let connectionError: Error = PulsarError.connectionError
+                                            print(connectionError)
                                         }else{
                                             characterCreationHelper.createdCharacter = true
                                         }
@@ -204,8 +205,8 @@ struct CreateACharacterView: View {
                     characterCreationHelper.currentBackground = initRoll.background
                     characterCreationHelper.characterInitialized = true
                 }else{
-                    // MARK: Replace with error
-                    print("rut roh")
+                    let error:Error = PulsarError.lostUser
+                    print(error.localizedDescription)
                 }
             }
         }).navigationBarHidden(true)

@@ -22,9 +22,3 @@ struct EntryListView: View {
     }
 }
 
-//struct EntryListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EntryListView()
-//    }
-//}
-// MARK: Show preview with mocks

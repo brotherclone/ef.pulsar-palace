@@ -20,6 +20,8 @@ class MainViewStatusHelper: ObservableObject {
     @Published var backgrounds: [CharacterBackground] = []
     @Published var roles: [CharacterRole] = []
     @Published var descriptors: [CharacterDescriptor]=[]
+    @Published var showError: Bool = false
+    @Published var currentErrror: PulsarError? = nil
     
 }
 
@@ -27,6 +29,9 @@ struct MainView: View {
     
     @ObservedObject var mainStatusHelper = MainViewStatusHelper()
     @ObservedObject var authtenticationHelper = AuthenticationHelper()
+    
+    @State private var isAlerting = false
+    @State private var currentError: PulsarError? = nil
     
     func getUsersCharacters(userId:Int, getUsersCharactersCompletionHanlder: @escaping (Response?, Error?) -> Void){
         if UserDefaults.contains(UserDefaults.Keys.token){
@@ -62,7 +67,8 @@ struct MainView: View {
         //MARK: Takes the info from the Player Character data, now in environment data, and comebines combines it with individual characters to create character data.
         getPlayerCharacterData(getPlayerCharacterDataCompletionHandler: { response, error in
             if error != nil{
-                print(error as Any)
+                mainStatusHelper.currentErrror = PulsarError.connectionError
+                mainStatusHelper.showError = true
             }else{
                 var nonActivePlayerCharacters: [Character] = []
                 do{
@@ -108,7 +114,8 @@ struct MainView: View {
                         mainStatusHelper.nonActiveCharacters = nonActivePlayerCharacters
                     }
                 }catch{
-                    print("Error Parsing JSON")
+                    mainStatusHelper.currentErrror = PulsarError.parsingError
+                    mainStatusHelper.showError = true
                 }
             }
         })
@@ -135,13 +142,14 @@ struct MainView: View {
                 if let settings: Array = json[0]["character_settings"].array {
                     for setting in settings{
                         let aSetting: CharacterSetting = CharacterSetting(id: setting["id"].intValue,
-                                                                           place: setting["place"].stringValue,
-                                                                           time: setting["time"].stringValue, imageURL: setting["image_url"].stringValue)
+                                                                          place: setting["place"].stringValue,
+                                                                          time: setting["time"].stringValue, imageURL: setting["image_url"].stringValue)
                         characterSettings.append(aSetting)
                     }
                     mainStatusHelper.settings = characterSettings
                 }else{
-                    print("error parsing player character data: settings")
+                    self.currentError = PulsarError.parsingError
+                    self.isAlerting = true
                 }
                 var characterDescriptors: [CharacterDescriptor] = []
                 if let descriptors: Array = json[0]["character_descriptors"].array {
@@ -153,7 +161,8 @@ struct MainView: View {
                     }
                     mainStatusHelper.descriptors = characterDescriptors
                 }else{
-                    print("error parsing player character data: descriptors")
+                    let error: Error = PulsarError.parsingError
+                    print(error.localizedDescription)
                 }
                 var characterBackgrounds: [CharacterBackground] = []
                 if let backgrounds: Array = json[0]["character_backgrounds"].array{
@@ -163,60 +172,69 @@ struct MainView: View {
                     }
                     mainStatusHelper.backgrounds = characterBackgrounds
                 }else{
-                    print("error parsing player character data")
+                    self.currentError = PulsarError.parsingError
+                    self.isAlerting = true
                 }
                 initializeCharacters(backgrounds: characterBackgrounds, settings:characterSettings, descriptors: characterDescriptors, roles: characterRoles)
                 self.mainStatusHelper.playerDataIsReady = true
             }catch{
-                print("JSON parsing error: Player Character Data")
-                self.mainStatusHelper.playerDataIsReady = false
+                mainStatusHelper.currentErrror = PulsarError.parsingError
+                mainStatusHelper.showError = true
+                mainStatusHelper.playerDataIsReady = false
             }
         }
     }
     
     var body: some View {
         NavigationView{
-            Group{
-                // MARK: If there's an active character display that view...
+            ZStack{
+                Color.yellow
+                    .ignoresSafeArea()
                 Group{
-                    if mainStatusHelper.playerDataIsReady == false{
-                        Group{
-                            // MARK: Replace with animation
-                            Text("Loading")
+                    // MARK: If there's an active character display that view...
+                    Group{
+                        if mainStatusHelper.playerDataIsReady == false{
+                            Group{
+                                LoadingUIView()
+                            }
                         }
                     }
-                }
-                Group{
-                    if mainStatusHelper.activeCharacter != nil {
-                        Group{
-                            ActiveCharacterCardView(character: mainStatusHelper.activeCharacter!)
-                            // MARK: And offer the user the ability to add a new entry with that character.
-                            // MARK: Or, if previous entries exists, display a means to see that view.
-                        }
-                    } else {
-                        Group{
-                            if mainStatusHelper.settings.count > 0 && mainStatusHelper.backgrounds.count > 0 &&  mainStatusHelper.roles.count > 0 && mainStatusHelper.descriptors.count > 0{
-                                Group{
-                                    // MARK: If there's no active character, give the user a link to create one.
-                                    NavigationLink(destination: CreateACharacterView(settings: mainStatusHelper.settings,
-                                                                                     backgrounds:mainStatusHelper.backgrounds,
-                                                                                     roles: mainStatusHelper.roles,
-                                                                                     descriptors: mainStatusHelper.descriptors)){
-                                        Text("Create a Character")
-                                        CharacterHealthUIView(health: 2)
+                    Group{
+                        if mainStatusHelper.activeCharacter != nil {
+                            Group{
+                                ActiveCharacterCardView(character: mainStatusHelper.activeCharacter!)
+                                // MARK: And offer the user the ability to add a new entry with that character.
+                                // MARK: Or, if previous entries exists, display a means to see that view.
+                            }
+                        } else {
+                            Group{
+                                if mainStatusHelper.settings.count > 0 && mainStatusHelper.backgrounds.count > 0 &&  mainStatusHelper.roles.count > 0 && mainStatusHelper.descriptors.count > 0{
+                                    Group{
+                                        VStack{
+                                            SettingsButtonUIView()
+                                            // MARK: If there's no active character, give the user a link to create one.
+                                            NavigationLink(destination: CreateACharacterView(settings: mainStatusHelper.settings,
+                                                                                             backgrounds:mainStatusHelper.backgrounds,
+                                                                                             roles: mainStatusHelper.roles,
+                                                                                             descriptors: mainStatusHelper.descriptors)){
+                                                Text("Create a Character").pulsarFont(style: .primaryButton).foregroundColor(Color.pink)
+                                            }
+                                        }
+                                    }
+                                }else{
+                                    Group{
+                                        LoadingUIView()
                                     }
                                 }
-                            }else{
-                                Group{
-                                    Text("Loading")
-                                }
+                                
                             }
-                            
                         }
                     }
-                }
-                Group{
-                    CharacterListView(characters: mainStatusHelper.nonActiveCharacters)
+                    Group{
+                        CharacterListView(characters: mainStatusHelper.nonActiveCharacters)
+                    }
+                }.alert(isPresented: $mainStatusHelper.showError) {
+                    return Alert(title: Text((mainStatusHelper.currentErrror?.errorDescription)!), message: Text((mainStatusHelper.currentErrror?.failureReason)!), dismissButton: .default(Text("Ok")))
                 }
             }
         }.navigationBarHidden(true)
@@ -226,6 +244,8 @@ struct MainView: View {
             self.getPlayerCharacterData(getPlayerCharacterDataCompletionHandler: { response, error in
                 if error != nil{
                     print(error as Any)
+                    let connectionError: Error = PulsarError.connectionError
+                    print(connectionError.localizedDescription)
                 }else{
                     parsePlayerCharacterData(data: response!.data)
                 }

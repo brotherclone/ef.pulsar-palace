@@ -49,7 +49,8 @@ struct AuthoringView: View {
                 lastEntryForPrompts(entries: characterEntries)
             }
         } catch {
-            print("parsing error")
+            let error: Error = PulsarError.parsingError
+            print(error.localizedDescription)
         }
     }
     
@@ -59,6 +60,8 @@ struct AuthoringView: View {
         getPrompt(lastEntryId: lastEntry!.id!, getPromptCompletionHandler: { response, error in
             if error != nil{
                 print(error as Any)
+                let connectionError: Error = PulsarError.connectionError
+                print( connectionError.localizedDescription)
             }else{
                 do{
                     let json = try JSON(data: response!.data)
@@ -68,7 +71,8 @@ struct AuthoringView: View {
                         }
                     }
                 }catch{
-                    print("parse error")
+                    let error: Error = PulsarError.parsingError
+                    print(error.localizedDescription)
                 }
             }
         })
@@ -135,6 +139,8 @@ struct AuthoringView: View {
                             self.postEntry(entry: anEntry, postEntryCompletionHandler:{ response, error in
                                 if error == nil{
                                     print(error as Any)
+                                    let connectionError: Error = PulsarError.connectionError
+                                    print( connectionError.localizedDescription)
                                 }else{
                                     promptForEntryHelper.entrySubmitted = true
                                 }
@@ -151,6 +157,8 @@ struct AuthoringView: View {
             self.getEntriesForCharacter(characterId: character.id!, getEntriesForCharacterCompletionHander: { response, error in
                 if error != nil{
                     print(error as Any)
+                    let connectionError: Error = PulsarError.connectionError
+                    print( connectionError.localizedDescription)
                 }else{
                     self.parseEntries(data: response!.data)
                 }
@@ -158,11 +166,3 @@ struct AuthoringView: View {
         })
     }
 }
-
-//struct AuthoringView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AuthoringView()
-//    }
-//}
-
-//MARK: Update with Mocks
