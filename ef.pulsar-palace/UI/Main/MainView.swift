@@ -20,6 +20,8 @@ class MainViewStatusHelper: ObservableObject {
     @Published var backgrounds: [CharacterBackground] = []
     @Published var roles: [CharacterRole] = []
     @Published var descriptors: [CharacterDescriptor]=[]
+    @Published var showError: Bool = false
+    @Published var currentErrror: PulsarError? = nil
     
 }
 
@@ -29,7 +31,6 @@ struct MainView: View {
     @ObservedObject var authtenticationHelper = AuthenticationHelper()
     
     @State private var isAlerting = false
-    
     @State private var currentError: PulsarError? = nil
     
     func getUsersCharacters(userId:Int, getUsersCharactersCompletionHanlder: @escaping (Response?, Error?) -> Void){
@@ -66,9 +67,8 @@ struct MainView: View {
         //MARK: Takes the info from the Player Character data, now in environment data, and comebines combines it with individual characters to create character data.
         getPlayerCharacterData(getPlayerCharacterDataCompletionHandler: { response, error in
             if error != nil{
-                print(error as Any)
-                self.currentError = PulsarError.connectionError
-                self.isAlerting = true
+                mainStatusHelper.currentErrror = PulsarError.connectionError
+                mainStatusHelper.showError = true
             }else{
                 var nonActivePlayerCharacters: [Character] = []
                 do{
@@ -114,8 +114,8 @@ struct MainView: View {
                         mainStatusHelper.nonActiveCharacters = nonActivePlayerCharacters
                     }
                 }catch{
-                    self.currentError = PulsarError.parsingError
-                    self.isAlerting = true
+                    mainStatusHelper.currentErrror = PulsarError.parsingError
+                    mainStatusHelper.showError = true
                 }
             }
         })
@@ -142,8 +142,8 @@ struct MainView: View {
                 if let settings: Array = json[0]["character_settings"].array {
                     for setting in settings{
                         let aSetting: CharacterSetting = CharacterSetting(id: setting["id"].intValue,
-                                                                           place: setting["place"].stringValue,
-                                                                           time: setting["time"].stringValue, imageURL: setting["image_url"].stringValue)
+                                                                          place: setting["place"].stringValue,
+                                                                          time: setting["time"].stringValue, imageURL: setting["image_url"].stringValue)
                         characterSettings.append(aSetting)
                     }
                     mainStatusHelper.settings = characterSettings
@@ -178,57 +178,63 @@ struct MainView: View {
                 initializeCharacters(backgrounds: characterBackgrounds, settings:characterSettings, descriptors: characterDescriptors, roles: characterRoles)
                 self.mainStatusHelper.playerDataIsReady = true
             }catch{
-                self.currentError = PulsarError.parsingError
-                self.isAlerting = true
-                self.mainStatusHelper.playerDataIsReady = false
+                mainStatusHelper.currentErrror = PulsarError.parsingError
+                mainStatusHelper.showError = true
+                mainStatusHelper.playerDataIsReady = false
             }
         }
     }
     
     var body: some View {
         NavigationView{
-            Group{
-                // MARK: If there's an active character display that view...
+            ZStack{
+                Color.yellow
+                    .ignoresSafeArea()
                 Group{
-                    if mainStatusHelper.playerDataIsReady == false{
-                        Group{
-                            LoadingUIView()
-                        }
-                    }
-                }
-                Group{
-                    if mainStatusHelper.activeCharacter != nil {
-                        Group{
-                            ActiveCharacterCardView(character: mainStatusHelper.activeCharacter!)
-                            // MARK: And offer the user the ability to add a new entry with that character.
-                            // MARK: Or, if previous entries exists, display a means to see that view.
-                        }
-                    } else {
-                        Group{
-                            if mainStatusHelper.settings.count > 0 && mainStatusHelper.backgrounds.count > 0 &&  mainStatusHelper.roles.count > 0 && mainStatusHelper.descriptors.count > 0{
-                                Group{
-                                    VStack{
-                                        SettingsButtonUIView()
-                                    // MARK: If there's no active character, give the user a link to create one.
-                                    NavigationLink(destination: CreateACharacterView(settings: mainStatusHelper.settings,
-                                                                                     backgrounds:mainStatusHelper.backgrounds,
-                                                                                     roles: mainStatusHelper.roles,
-                                                                                     descriptors: mainStatusHelper.descriptors)){
-                                        Text("Create a Character").pulsarFont(style: .primaryButton).foregroundColor(Color.pink)
-                                    }
-                                    }
-                                }
-                            }else{
-                                Group{
-                                   LoadingUIView()
-                                }
+                    // MARK: If there's an active character display that view...
+                    Group{
+                        if mainStatusHelper.playerDataIsReady == false{
+                            Group{
+                                LoadingUIView()
                             }
-                            
                         }
                     }
-                }
-                Group{
-                    CharacterListView(characters: mainStatusHelper.nonActiveCharacters)
+                    Group{
+                        if mainStatusHelper.activeCharacter != nil {
+                            Group{
+                                ActiveCharacterCardView(character: mainStatusHelper.activeCharacter!)
+                                // MARK: And offer the user the ability to add a new entry with that character.
+                                // MARK: Or, if previous entries exists, display a means to see that view.
+                            }
+                        } else {
+                            Group{
+                                if mainStatusHelper.settings.count > 0 && mainStatusHelper.backgrounds.count > 0 &&  mainStatusHelper.roles.count > 0 && mainStatusHelper.descriptors.count > 0{
+                                    Group{
+                                        VStack{
+                                            SettingsButtonUIView()
+                                            // MARK: If there's no active character, give the user a link to create one.
+                                            NavigationLink(destination: CreateACharacterView(settings: mainStatusHelper.settings,
+                                                                                             backgrounds:mainStatusHelper.backgrounds,
+                                                                                             roles: mainStatusHelper.roles,
+                                                                                             descriptors: mainStatusHelper.descriptors)){
+                                                Text("Create a Character").pulsarFont(style: .primaryButton).foregroundColor(Color.pink)
+                                            }
+                                        }
+                                    }
+                                }else{
+                                    Group{
+                                        LoadingUIView()
+                                    }
+                                }
+                                
+                            }
+                        }
+                    }
+                    Group{
+                        CharacterListView(characters: mainStatusHelper.nonActiveCharacters)
+                    }
+                }.alert(isPresented: $mainStatusHelper.showError) {
+                    return Alert(title: Text((mainStatusHelper.currentErrror?.errorDescription)!), message: Text((mainStatusHelper.currentErrror?.failureReason)!), dismissButton: .default(Text("Ok")))
                 }
             }
         }.navigationBarHidden(true)
