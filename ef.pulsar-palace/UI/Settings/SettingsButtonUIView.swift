@@ -13,18 +13,20 @@ struct SettingsButtonUIView: View {
     @State private var isPresented = false
     
     var body: some View {
-        HStack{
+        ZStack{
             HStack{
-                Spacer()
-                Button(action: {
-                    self.isPresented.toggle()
-                }){
-                    Image("menu").resizable().frame(width: 32, height: 24, alignment: .topTrailing)
-                }
-                .fullScreenCover(isPresented: $isPresented, content: SettingsUIView.init)
-                
-            }.padding(SpacingManager.oddOne.space)
-        }
+                HStack{
+                    Spacer()
+                    Button(action: {
+                        self.isPresented.toggle()
+                    }){
+                        Image("menu").resizable().frame(width: 32, height: 24, alignment: .topTrailing)
+                    }
+                    .fullScreenCover(isPresented: $isPresented, content: SettingsUIView.init)
+                    
+                }.padding(SpacingManager.oddOne.space)
+            }
+        }.zIndex(1)
     }
 }
 

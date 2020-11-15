@@ -16,9 +16,6 @@ class SongPlayerViewController: UIViewController {
     
     func prepareSong(){
         do {
-            
-            // MARK: Change to remote audio loading
-            
             songPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "example", ofType: "mp3")!))
             
             songPlayer.prepareToPlay()
@@ -29,9 +26,13 @@ class SongPlayerViewController: UIViewController {
                 
             } catch let sessionError {
                 print (sessionError)
+                let error: Error = PulsarError.musicPlayerSessionError
+                print(error.localizedDescription)
             }
         } catch let playerError {
             print(playerError)
+            let error: Error = PulsarError.musicPlayerPlaybackError
+            print(error.localizedDescription)
         }
     }
     

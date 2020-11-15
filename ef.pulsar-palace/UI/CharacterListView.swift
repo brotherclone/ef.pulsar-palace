@@ -22,10 +22,3 @@ struct CharacterListView: View {
     }
 }
 
-//struct CharacterListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CharacterListView()
-//    }
-//}
-
-// MARK: Show preview with mocks
