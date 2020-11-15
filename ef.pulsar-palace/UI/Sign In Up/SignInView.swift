@@ -13,7 +13,8 @@ import SwiftyJSON
 
 class SignUpVersusSignInHelper: ObservableObject {
     @Published var signIn: Bool = true
-    @Published var showCanNotConnectAlert: Bool = false
+    @Published var showError: Bool = false
+    @Published var currentErrror: PulsarError? = nil
 }
 
 struct SignInView: View {
@@ -29,6 +30,7 @@ struct SignInView: View {
     @State private var confirmPassWordInput: String = ""
     @State private var firstNameInput: String = ""
     @State private var lastNameInput: String = ""
+    
     @State var isAlerting: Bool = false
     
     var currentError: PulsarError? = nil
@@ -88,8 +90,8 @@ struct SignInView: View {
                 .ignoresSafeArea()
             Group{
                 NavigationLink(destination: MainView(), isActive: $authenticationHelper.isLoggedIn){}
-                    .alert(isPresented: $signInSignUpHelper.showCanNotConnectAlert){
-                        Alert(title: Text("Error"), message: Text("Can not connect to web service"), dismissButton: .default(Text("Ok")))
+                    .alert(isPresented: $signInSignUpHelper.showError){
+                        return Alert(title: Text((signInSignUpHelper.currentErrror?.errorDescription)!), message: Text((signInSignUpHelper.currentErrror?.failureReason)!), dismissButton: .default(Text("Ok")))
                     }
                 if signInSignUpHelper.signIn{
                     Group{
@@ -105,10 +107,8 @@ struct SignInView: View {
                                 let userSignIn = UserSignIn(email: self.emailInput, password: self.passWordInput)
                                 self.postSignIn(user: userSignIn, postSignInCompletionHanlder: { response, error in
                                     if error != nil{
-                                        signInSignUpHelper.showCanNotConnectAlert = true
-                                        print(error as Any)
-                                        let connectionError: Error = PulsarError.connectionError
-                                        print(connectionError.localizedDescription)
+                                        signInSignUpHelper.currentErrror = PulsarError.connectionError
+                                        signInSignUpHelper.showError = true
                                     }else{
                                         if let data:Data = response?.data{
                                             self.setAccessToken(data: data)
@@ -142,9 +142,8 @@ struct SignInView: View {
                                 let userSignUp: UserSignUp = UserSignUp(id:nil, first_name:  self.firstNameInput, last_name: self.lastNameInput, email:self.emailInput, password: self.passWordInput)
                                 self.postSignUp(user: userSignUp, postSignUpCompletionHandler: { response, error in
                                     if error != nil{
-                                        print(error as Any)
-                                        let connectionError: Error = PulsarError.connectionError
-                                        print(connectionError.localizedDescription)
+                                        signInSignUpHelper.currentErrror = PulsarError.connectionError
+                                        signInSignUpHelper.showError = true
                                     }else{
                                         if let data:Data = response?.data{
                                             self.setAccessToken(data: data)
@@ -165,8 +164,5 @@ struct SignInView: View {
             }
         }.navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
-        .fullScreenCover(isPresented: $isAlerting){
-            AlertUIView(pulsarError: PulsarError.connectionError)
-        }
     }
 }

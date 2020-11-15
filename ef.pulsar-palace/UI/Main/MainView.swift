@@ -28,7 +28,7 @@ struct MainView: View {
     @ObservedObject var mainStatusHelper = MainViewStatusHelper()
     @ObservedObject var authtenticationHelper = AuthenticationHelper()
     
-    @State private var isAlerting = true
+    @State private var isAlerting = false
     
     @State private var currentError: PulsarError? = nil
     
@@ -207,13 +207,15 @@ struct MainView: View {
                         Group{
                             if mainStatusHelper.settings.count > 0 && mainStatusHelper.backgrounds.count > 0 &&  mainStatusHelper.roles.count > 0 && mainStatusHelper.descriptors.count > 0{
                                 Group{
+                                    VStack{
+                                        SettingsButtonUIView()
                                     // MARK: If there's no active character, give the user a link to create one.
                                     NavigationLink(destination: CreateACharacterView(settings: mainStatusHelper.settings,
                                                                                      backgrounds:mainStatusHelper.backgrounds,
                                                                                      roles: mainStatusHelper.roles,
                                                                                      descriptors: mainStatusHelper.descriptors)){
-                                        Text("Create a Character")
-                                        CharacterHealthUIView(health: 2)
+                                        Text("Create a Character").pulsarFont(style: .primaryButton).foregroundColor(Color.pink)
+                                    }
                                     }
                                 }
                             }else{
@@ -242,8 +244,6 @@ struct MainView: View {
                     parsePlayerCharacterData(data: response!.data)
                 }
             })
-        }).fullScreenCover(isPresented: $isAlerting){
-            AlertUIView(pulsarError: PulsarError.connectionError)
-        }
+        })
     }
 }
