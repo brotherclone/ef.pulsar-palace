@@ -186,58 +186,22 @@ struct MainView: View {
     }
     
     var body: some View {
-        NavigationView{
-            ZStack{
-                Color.yellow
-                    .ignoresSafeArea()
-                Group{
-                    // MARK: If there's an active character display that view...
-                    Group{
-                        if mainStatusHelper.playerDataIsReady == false{
-                            Group{
-                                LoadingUIView()
-                            }
-                        }
-                    }
-                    Group{
-                        if mainStatusHelper.activeCharacter != nil {
-                            Group{
-                                ActiveCharacterCardView(character: mainStatusHelper.activeCharacter!)
-                                // MARK: And offer the user the ability to add a new entry with that character.
-                                // MARK: Or, if previous entries exists, display a means to see that view.
-                            }
-                        } else {
-                            Group{
-                                if mainStatusHelper.settings.count > 0 && mainStatusHelper.backgrounds.count > 0 &&  mainStatusHelper.roles.count > 0 && mainStatusHelper.descriptors.count > 0{
-                                    Group{
-                                        VStack{
-                                            SettingsButtonUIView()
-                                            // MARK: If there's no active character, give the user a link to create one.
-                                            NavigationLink(destination: CreateACharacterView(settings: mainStatusHelper.settings,
-                                                                                             backgrounds:mainStatusHelper.backgrounds,
-                                                                                             roles: mainStatusHelper.roles,
-                                                                                             descriptors: mainStatusHelper.descriptors)){
-                                                Text("Create a Character").pulsarFont(style: .primaryButton).foregroundColor(Color.pink)
-                                            }
-                                        }
-                                    }
-                                }else{
-                                    Group{
-                                        LoadingUIView()
-                                    }
-                                }
-                                
-                            }
-                        }
-                    }
-                    Group{
-                        CharacterListView(characters: mainStatusHelper.nonActiveCharacters)
-                    }
-                }.alert(isPresented: $mainStatusHelper.showError) {
-                    return Alert(title: Text((mainStatusHelper.currentErrror?.errorDescription)!), message: Text((mainStatusHelper.currentErrror?.failureReason)!), dismissButton: .default(Text("Ok")))
+        ZStack{
+            Color.yellow
+                .ignoresSafeArea()
+            VStack{
+                SettingsButtonUIView()
+                NavigationLink(destination: CreateACharacterView(settings: mainStatusHelper.settings,
+                                                                 backgrounds:mainStatusHelper.backgrounds,
+                                                                 roles: mainStatusHelper.roles,
+                                                                 descriptors: mainStatusHelper.descriptors)){
+                    Text("Create a Character").pulsarFont(style: .primaryButton).foregroundColor(Color.pink)
                 }
             }
-        }.navigationBarHidden(true)
+        }.alert(isPresented: $mainStatusHelper.showError){
+            return Alert(title: Text((mainStatusHelper.currentErrror?.errorDescription)!), message: Text((mainStatusHelper.currentErrror?.failureReason)!), dismissButton: .default(Text("Ok")))
+        }
+        .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
         .onAppear( perform: {
             authtenticationHelper.refreshAutenticationInfo()

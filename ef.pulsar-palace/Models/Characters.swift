@@ -15,7 +15,7 @@ enum DefaultCharacterAttributes{
 }
 
 public struct Character {
-    var id: Int?
+    var id: Int
     var user_id: Int
     var name: String
     var additional_bio: String?

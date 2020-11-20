@@ -29,7 +29,7 @@ struct StartView: View {
                             }
                         }else{
                             Group{
-                                NavigationLink(destination: SignInView()){
+                                NavigationLink(destination: GotACardUIView()){
                                     Text("Begin").pulsarFont(style: .primaryButton).foregroundColor(Color.pink)
                                 }
                             }

@@ -11,14 +11,14 @@ import SwiftUI
 struct ScannerView: View {
     var body: some View {
         VStack{
-            Text("a scanner")
+            //Settings Button
+            // Scan a card image
+            // Instructions
+            // Ready to Scan button
+            // Changed my mind
+            // I don't know what this is
             ScannerViewRepresent()
         }
     }
 }
 
-struct ScannerView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScannerView()
-    }
-}
