@@ -46,8 +46,6 @@ struct CreateACharacterView: View {
     var roles: [CharacterRole]
     var descriptors:[CharacterDescriptor]
     
-    @State var inputName: String = ""
-    @State var inputBio: String = ""
     
     func rollAttributes(attributes: AttributesContainer) -> AttributeContainer {
         print("rollAttributes \(attributes)")
@@ -62,7 +60,8 @@ struct CreateACharacterView: View {
     
     func createBlankCharacter(userId:Int)-> Character {
         print("creating character for userId: \(userId)")
-        return Character(user_id: userId,
+        return Character(id:0,
+                         user_id: userId,
                          name: "",
                          character_background_id: 1,
                          character_setting_id: 1,
@@ -74,7 +73,6 @@ struct CreateACharacterView: View {
     }
     
     func updateCharacter() -> Character {
-        print("updating character")
         characterCreationHelper.currentCharacter?.name = "name"
         characterCreationHelper.currentCharacter?.additional_bio = "bio"
         characterCreationHelper.currentCharacter?.characterBackground = characterCreationHelper.currentBackground
@@ -82,7 +80,8 @@ struct CreateACharacterView: View {
         characterCreationHelper.currentCharacter?.characterDescriptor = characterCreationHelper.currentDescriptor
         characterCreationHelper.currentCharacter?.characterRole = characterCreationHelper.currentRole
         // MARK: Clean up object relations for posting.
-        return Character(user_id: characterCreationHelper.currentCharacter!.user_id,
+        return Character(id:characterCreationHelper.currentCharacter!.id,
+                         user_id: characterCreationHelper.currentCharacter!.user_id,
                          name: characterCreationHelper.currentCharacter!.name,
                          additional_bio: characterCreationHelper.currentCharacter!.additional_bio,
                          character_background_id: characterCreationHelper.currentCharacter!.characterBackground!.id,
@@ -106,20 +105,33 @@ struct CreateACharacterView: View {
         }
     }
     
+    func updateFromPost(data: Data){
+        do{
+            let json = try JSON(data:data)
+            if let characterId:Int = json["id"].int {
+                self.characterCreationHelper.currentCharacter!.id = characterId
+                characterCreationHelper.createdCharacter = true
+            }
+        }catch{
+            let error: Error = PulsarError.parsingError
+            print(error.localizedDescription)
+        }
+    }
+    
     var body: some View {
         ZStack{
             Color.yellow
                 .ignoresSafeArea()
             VStack{
+                if characterCreationHelper.currentCharacter != nil{
+                    Group{
+                        NavigationLink(destination: NameACharacterView(character: characterCreationHelper.currentCharacter!), isActive: $characterCreationHelper.createdCharacter){}
+                    }
+                }
                 GeometryReader { geo in
-                    NavigationLink(destination: NameACharacterView(), isActive: $characterCreationHelper.createdCharacter){}
-                    
                     SettingsButtonUIView()
-                    
                     ScrollView{
-                        
                         Text("Create a Character").pulsarFont(style: .h3).foregroundColor(.black).offset(y: SpacingManager.evenTwo.space)
-                        
                         if characterCreationHelper.characterInitialized{
                             Group{
                                 Group{
@@ -179,7 +191,9 @@ struct CreateACharacterView: View {
                                             let connectionError: Error = PulsarError.connectionError
                                             print(connectionError)
                                         }else{
-                                            characterCreationHelper.createdCharacter = true
+                                            if let data:Data = response?.data{
+                                                self.updateFromPost(data: data)
+                                            }
                                         }
                                     })
                                 }){

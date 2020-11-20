@@ -10,10 +10,10 @@ import SwiftUI
 
 struct CharacterView: View {
     
-    var character: Character
+    var character: Character?
     
     var body: some View {
-        Text(character.name)
+        Text(character!.name)
     }
 }
 

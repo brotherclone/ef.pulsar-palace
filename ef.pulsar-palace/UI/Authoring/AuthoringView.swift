@@ -82,7 +82,7 @@ struct AuthoringView: View {
         
         return Entry(entry_text: entryText,
                      prompt_id: promptForEntryHelper.prompt!.id,
-                     character_id: character.id!)
+                     character_id: character.id)
     }
     
     
@@ -154,7 +154,7 @@ struct AuthoringView: View {
                 }
             }
         }.onAppear(perform: {
-            self.getEntriesForCharacter(characterId: character.id!, getEntriesForCharacterCompletionHander: { response, error in
+            self.getEntriesForCharacter(characterId: character.id, getEntriesForCharacterCompletionHander: { response, error in
                 if error != nil{
                     print(error as Any)
                     let connectionError: Error = PulsarError.connectionError
