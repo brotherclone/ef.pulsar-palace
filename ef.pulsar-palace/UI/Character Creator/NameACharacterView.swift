@@ -9,8 +9,21 @@
 import SwiftUI
 
 struct NameACharacterView: View {
+    
+    @State var character: Character? = nil
+    
     var body: some View {
-        Text("Name a character")
+        ZStack{
+            VStack{
+                SettingsButtonUIView()
+                Text("Name Your Character")
+                // Portrait
+                Text("Instructions")
+                //Input - Name
+                //Inpu - Bio
+                // Button Create (updates the record with name and bio
+            }
+        }
     }
 }
 

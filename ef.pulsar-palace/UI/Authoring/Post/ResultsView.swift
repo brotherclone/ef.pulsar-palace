@@ -21,7 +21,17 @@ struct ResultsView: View {
     
     var body: some View {
         Group{
+            //Settings button
+            // Out come Art Image
+            // Character Portrait
+            // Character health
+            // Outcome text
+            // I understand button
             
+            // if death
+            // main menu
+            // create anothe character
+            // Share
         }
     }
 }

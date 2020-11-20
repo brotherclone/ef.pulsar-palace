@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		94CD35DC1E237C30D32E8865 /* Pods_ef_pulsar_palace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD9A6DBED1C2B013E82AC4D6 /* Pods_ef_pulsar_palace.framework */; };
 		DA03A54F24FEEB9000E562E0 /* UserDefaultExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03A54E24FEEB9000E562E0 /* UserDefaultExtensions.swift */; };
+		DA0BBC8E2561E7180073D56A /* GotACardUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0BBC8D2561E7180073D56A /* GotACardUIView.swift */; };
 		DA0EE4D1251E60D50026E4DF /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0EE4D0251E60D50026E4DF /* ResultsView.swift */; };
 		DA153EBA255313460009D21B /* SettingsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA153EB9255313460009D21B /* SettingsUIView.swift */; };
 		DA153EC625543C210009D21B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DA153EC525543C210009D21B /* README.md */; };
@@ -21,6 +22,10 @@
 		DA24006C24EB54F3009CCD22 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = DA24006B24EB54F3009CCD22 /* Podfile */; };
 		DA29997C250BD9E300A67035 /* AuthenticationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29997B250BD9E300A67035 /* AuthenticationHelper.swift */; };
 		DA2F75E7255EE78A0069FF81 /* NameACharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2F75E6255EE78A0069FF81 /* NameACharacterView.swift */; };
+		DA3462D22567F7830070F2BA /* CardRecognizedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3462D12567F7830070F2BA /* CardRecognizedUIView.swift */; };
+		DA3462D62567F7B40070F2BA /* NewAccountUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3462D52567F7B40070F2BA /* NewAccountUIView.swift */; };
+		DA3462DA2567F7FA0070F2BA /* ForgotUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3462D92567F7FA0070F2BA /* ForgotUIView.swift */; };
+		DA3462E02567F88F0070F2BA /* PreEncounterUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3462DF2567F88E0070F2BA /* PreEncounterUIView.swift */; };
 		DA3833C02523B0CE00C3937E /* PulsarErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3833BF2523B0CE00C3937E /* PulsarErrors.swift */; };
 		DA426D232520EFD9005E7B98 /* revealConsequences.json in Resources */ = {isa = PBXBuildFile; fileRef = DA426D222520EFD9005E7B98 /* revealConsequences.json */; };
 		DA439F12255C9F0400ED3F5A /* RollButtonUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA439F11255C9F0400ED3F5A /* RollButtonUIView.swift */; };
@@ -118,6 +123,7 @@
 		83D06CDFD77E37E25DDEB3FE /* Pods-ef.pulsar-palace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ef.pulsar-palace.debug.xcconfig"; path = "Target Support Files/Pods-ef.pulsar-palace/Pods-ef.pulsar-palace.debug.xcconfig"; sourceTree = "<group>"; };
 		C73FA9AB19050A1D7E998E8E /* Pods-ef.pulsar-palace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ef.pulsar-palace.release.xcconfig"; path = "Target Support Files/Pods-ef.pulsar-palace/Pods-ef.pulsar-palace.release.xcconfig"; sourceTree = "<group>"; };
 		DA03A54E24FEEB9000E562E0 /* UserDefaultExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultExtensions.swift; sourceTree = "<group>"; };
+		DA0BBC8D2561E7180073D56A /* GotACardUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotACardUIView.swift; sourceTree = "<group>"; };
 		DA0EE4D0251E60D50026E4DF /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		DA153EB9255313460009D21B /* SettingsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUIView.swift; sourceTree = "<group>"; };
 		DA153EC525543C210009D21B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -130,6 +136,10 @@
 		DA24006B24EB54F3009CCD22 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DA29997B250BD9E300A67035 /* AuthenticationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationHelper.swift; sourceTree = "<group>"; };
 		DA2F75E6255EE78A0069FF81 /* NameACharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameACharacterView.swift; sourceTree = "<group>"; };
+		DA3462D12567F7830070F2BA /* CardRecognizedUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRecognizedUIView.swift; sourceTree = "<group>"; };
+		DA3462D52567F7B40070F2BA /* NewAccountUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccountUIView.swift; sourceTree = "<group>"; };
+		DA3462D92567F7FA0070F2BA /* ForgotUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotUIView.swift; sourceTree = "<group>"; };
+		DA3462DF2567F88E0070F2BA /* PreEncounterUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreEncounterUIView.swift; sourceTree = "<group>"; };
 		DA3833BF2523B0CE00C3937E /* PulsarErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulsarErrors.swift; sourceTree = "<group>"; };
 		DA426D222520EFD9005E7B98 /* revealConsequences.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = revealConsequences.json; sourceTree = "<group>"; };
 		DA439F11255C9F0400ED3F5A /* RollButtonUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollButtonUIView.swift; sourceTree = "<group>"; };
@@ -270,6 +280,35 @@
 			path = extensions;
 			sourceTree = "<group>";
 		};
+		DA0BBC892561E5D80073D56A /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				DAAD1C8224F6AE3000872B79 /* ScannerUIViewController.swift */,
+				DAAD1C8424F6B0E000872B79 /* ScannerViewRepresent.swift */,
+				DAAD1C8624F6B24600872B79 /* ScannerView.swift */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
+		DA0BBC8B2561E62A0073D56A /* Character View */ = {
+			isa = PBXGroup;
+			children = (
+				DAA4C8E5251A127C000E15B7 /* CharacterView.swift */,
+				DA784FD4255C55CA0019AD43 /* CharacterHealthUIView.swift */,
+				DAA4C8FB251A70C0000E15B7 /* EntryListView.swift */,
+				DAA4C8FE251A70D2000E15B7 /* EntryListRowView.swift */,
+			);
+			path = "Character View";
+			sourceTree = "<group>";
+		};
+		DA0BBC8C2561E6F40073D56A /* Got A Card */ = {
+			isa = PBXGroup;
+			children = (
+				DA0BBC8D2561E7180073D56A /* GotACardUIView.swift */,
+			);
+			path = "Got A Card";
+			sourceTree = "<group>";
+		};
 		DA153EC92555B2CC0009D21B /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +321,13 @@
 		DA19105F24F0350600C72477 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				DA3462E22567FA9A0070F2BA /* Reader */,
+				DA3462DC2567F84B0070F2BA /* Authoring */,
+				DA3462D42567F79C0070F2BA /* New Account */,
+				DA3462D02567F7650070F2BA /* Card Recognized */,
+				DA0BBC8C2561E6F40073D56A /* Got A Card */,
+				DA0BBC8B2561E62A0073D56A /* Character View */,
+				DA0BBC892561E5D80073D56A /* Scanner */,
 				DA454774255DFFB000F94E51 /* Common */,
 				DA454773255DFF9700F94E51 /* Settings */,
 				DA454772255DFF5F00F94E51 /* Character Creator */,
@@ -289,30 +335,69 @@
 				DA454770255DFF4200F94E51 /* Sign In Up */,
 				DA45476F255DFF3A00F94E51 /* Main */,
 				DA153EC92555B2CC0009D21B /* Graphics */,
-				DA19106A24F03BDA00C72477 /* EntryView.swift */,
-				DAAD1C8224F6AE3000872B79 /* ScannerUIViewController.swift */,
-				DAAD1C8424F6B0E000872B79 /* ScannerViewRepresent.swift */,
-				DAAD1C8624F6B24600872B79 /* ScannerView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		DA3462D02567F7650070F2BA /* Card Recognized */ = {
+			isa = PBXGroup;
+			children = (
+				DA3462D12567F7830070F2BA /* CardRecognizedUIView.swift */,
+			);
+			path = "Card Recognized";
+			sourceTree = "<group>";
+		};
+		DA3462D42567F79C0070F2BA /* New Account */ = {
+			isa = PBXGroup;
+			children = (
+				DA3462D52567F7B40070F2BA /* NewAccountUIView.swift */,
+			);
+			path = "New Account";
+			sourceTree = "<group>";
+		};
+		DA3462DC2567F84B0070F2BA /* Authoring */ = {
+			isa = PBXGroup;
+			children = (
 				DAC2B0C324FA8D8900FF2F9E /* SongPlayerViewController.swift */,
 				DAC2B0C824FA93FF00FF2F9E /* SongPlayerViewRepresent.swift */,
 				DAC2B0CA24FA953200FF2F9E /* SongPlayerView.swift */,
-				DAA4C8EE251A132F000E15B7 /* ActiveCharacterCardView.swift */,
-				DAA4C8E5251A127C000E15B7 /* CharacterView.swift */,
-				DAA4C8F1251A1359000E15B7 /* CharacterListRowView.swift */,
-				DAA4C8F4251A1371000E15B7 /* CharacterListView.swift */,
 				DAA4C8F8251A7068000E15B7 /* AuthoringView.swift */,
-				DAA4C8FB251A70C0000E15B7 /* EntryListView.swift */,
-				DAA4C8FE251A70D2000E15B7 /* EntryListRowView.swift */,
-				DA0EE4D0251E60D50026E4DF /* ResultsView.swift */,
-				DA784FB9255ADB080019AD43 /* CharacterPortraitUIView.swift */,
-				DA784FD4255C55CA0019AD43 /* CharacterHealthUIView.swift */,
+				DA3462DE2567F85D0070F2BA /* Post */,
+				DA3462DD2567F8570070F2BA /* Pre */,
 			);
-			path = UI;
+			path = Authoring;
+			sourceTree = "<group>";
+		};
+		DA3462DD2567F8570070F2BA /* Pre */ = {
+			isa = PBXGroup;
+			children = (
+				DA3462DF2567F88E0070F2BA /* PreEncounterUIView.swift */,
+			);
+			path = Pre;
+			sourceTree = "<group>";
+		};
+		DA3462DE2567F85D0070F2BA /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				DA0EE4D0251E60D50026E4DF /* ResultsView.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		DA3462E22567FA9A0070F2BA /* Reader */ = {
+			isa = PBXGroup;
+			children = (
+				DA19106A24F03BDA00C72477 /* EntryView.swift */,
+			);
+			path = Reader;
 			sourceTree = "<group>";
 		};
 		DA45476F255DFF3A00F94E51 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				DAA4C8EE251A132F000E15B7 /* ActiveCharacterCardView.swift */,
+				DAA4C8F1251A1359000E15B7 /* CharacterListRowView.swift */,
+				DAA4C8F4251A1371000E15B7 /* CharacterListView.swift */,
 				DA19106824F03B3000C72477 /* MainView.swift */,
 			);
 			path = Main;
@@ -322,6 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				DA19106224F0394400C72477 /* SignInView.swift */,
+				DA3462D92567F7FA0070F2BA /* ForgotUIView.swift */,
 			);
 			path = "Sign In Up";
 			sourceTree = "<group>";
@@ -340,6 +426,7 @@
 			children = (
 				DA19106624F03AB500C72477 /* CreateACharacterView.swift */,
 				DA439F11255C9F0400ED3F5A /* RollButtonUIView.swift */,
+				DA784FB9255ADB080019AD43 /* CharacterPortraitUIView.swift */,
 				DA2F75E6255EE78A0069FF81 /* NameACharacterView.swift */,
 			);
 			path = "Character Creator";
@@ -679,8 +766,10 @@
 				DA87074F24EADD9600CF7B62 /* AppDelegate.swift in Sources */,
 				DAA4C8F5251A1371000E15B7 /* CharacterListView.swift in Sources */,
 				DA19106924F03B3000C72477 /* MainView.swift in Sources */,
+				DA3462D22567F7830070F2BA /* CardRecognizedUIView.swift in Sources */,
 				DAB501F024F6E1490048175E /* APITargets.swift in Sources */,
 				DA3833C02523B0CE00C3937E /* PulsarErrors.swift in Sources */,
+				DA0BBC8E2561E7180073D56A /* GotACardUIView.swift in Sources */,
 				DA29997C250BD9E300A67035 /* AuthenticationHelper.swift in Sources */,
 				DAC2B0B924F96DBD00FF2F9E /* Logs.swift in Sources */,
 				DA784FBF255ADDC60019AD43 /* SettingsButtonUIView.swift in Sources */,
@@ -704,6 +793,7 @@
 				DA8A830925263903003CC6A5 /* MediaLookUpHelper.swift in Sources */,
 				DAC2B0BB24F96DD300FF2F9E /* Songs.swift in Sources */,
 				DAC2B0C924FA93FF00FF2F9E /* SongPlayerViewRepresent.swift in Sources */,
+				DA3462DA2567F7FA0070F2BA /* ForgotUIView.swift in Sources */,
 				DAA4C8FF251A70D2000E15B7 /* EntryListRowView.swift in Sources */,
 				DAAD1C8724F6B24600872B79 /* ScannerView.swift in Sources */,
 				DA87075324EADD9600CF7B62 /* StartView.swift in Sources */,
@@ -711,6 +801,7 @@
 				DAC2B0AD24F96D5300FF2F9E /* CharacterDescriptors.swift in Sources */,
 				DAC2B0B524F96D9C00FF2F9E /* Users.swift in Sources */,
 				DA439F12255C9F0400ED3F5A /* RollButtonUIView.swift in Sources */,
+				DA3462D62567F7B40070F2BA /* NewAccountUIView.swift in Sources */,
 				DA0EE4D1251E60D50026E4DF /* ResultsView.swift in Sources */,
 				DAC2B0B124F96D7400FF2F9E /* CharacterRoles.swift in Sources */,
 				DA784FD1255B099A0019AD43 /* SpacingManager.swift in Sources */,
@@ -726,6 +817,7 @@
 				DA19106324F0394400C72477 /* SignInView.swift in Sources */,
 				DA19106B24F03BDA00C72477 /* EntryView.swift in Sources */,
 				DAA4C8F2251A1359000E15B7 /* CharacterListRowView.swift in Sources */,
+				DA3462E02567F88F0070F2BA /* PreEncounterUIView.swift in Sources */,
 				DAE8BC9125507B0D0003B49C /* ColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
